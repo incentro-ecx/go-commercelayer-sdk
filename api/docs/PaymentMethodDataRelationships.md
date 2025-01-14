@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Market** | Pointer to [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | [optional] 
 **PaymentGateway** | Pointer to [**AdyenPaymentDataRelationshipsPaymentGateway**](AdyenPaymentDataRelationshipsPaymentGateway.md) |  | [optional] 
+**Store** | Pointer to [**MarketDataRelationshipsStores**](MarketDataRelationshipsStores.md) |  | [optional] 
+**Orders** | Pointer to [**AdyenPaymentDataRelationshipsOrder**](AdyenPaymentDataRelationshipsOrder.md) |  | [optional] 
 **Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
 **Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 
@@ -77,6 +79,56 @@ SetPaymentGateway sets PaymentGateway field to given value.
 `func (o *PaymentMethodDataRelationships) HasPaymentGateway() bool`
 
 HasPaymentGateway returns a boolean if a field has been set.
+
+### GetStore
+
+`func (o *PaymentMethodDataRelationships) GetStore() MarketDataRelationshipsStores`
+
+GetStore returns the Store field if non-nil, zero value otherwise.
+
+### GetStoreOk
+
+`func (o *PaymentMethodDataRelationships) GetStoreOk() (*MarketDataRelationshipsStores, bool)`
+
+GetStoreOk returns a tuple with the Store field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStore
+
+`func (o *PaymentMethodDataRelationships) SetStore(v MarketDataRelationshipsStores)`
+
+SetStore sets Store field to given value.
+
+### HasStore
+
+`func (o *PaymentMethodDataRelationships) HasStore() bool`
+
+HasStore returns a boolean if a field has been set.
+
+### GetOrders
+
+`func (o *PaymentMethodDataRelationships) GetOrders() AdyenPaymentDataRelationshipsOrder`
+
+GetOrders returns the Orders field if non-nil, zero value otherwise.
+
+### GetOrdersOk
+
+`func (o *PaymentMethodDataRelationships) GetOrdersOk() (*AdyenPaymentDataRelationshipsOrder, bool)`
+
+GetOrdersOk returns a tuple with the Orders field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrders
+
+`func (o *PaymentMethodDataRelationships) SetOrders(v AdyenPaymentDataRelationshipsOrder)`
+
+SetOrders sets Orders field to given value.
+
+### HasOrders
+
+`func (o *PaymentMethodDataRelationships) HasOrders() bool`
+
+HasOrders returns a boolean if a field has been set.
 
 ### GetAttachments
 

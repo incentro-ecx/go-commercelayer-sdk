@@ -4,8 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket**](POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket.md) |  | [optional] 
+**Market** | Pointer to [**POSTBundles201ResponseDataRelationshipsMarket**](POSTBundles201ResponseDataRelationshipsMarket.md) |  | [optional] 
 **PaymentGateway** | Pointer to [**POSTAdyenPayments201ResponseDataRelationshipsPaymentGateway**](POSTAdyenPayments201ResponseDataRelationshipsPaymentGateway.md) |  | [optional] 
+**Store** | Pointer to [**POSTOrders201ResponseDataRelationshipsStore**](POSTOrders201ResponseDataRelationshipsStore.md) |  | [optional] 
+**Orders** | Pointer to [**POSTCustomers201ResponseDataRelationshipsOrders**](POSTCustomers201ResponseDataRelationshipsOrders.md) |  | [optional] 
 **Attachments** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments.md) |  | [optional] 
 **Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
 
@@ -30,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *POSTPaymentMethods201ResponseDataRelationships) GetMarket() POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket`
+`func (o *POSTPaymentMethods201ResponseDataRelationships) GetMarket() POSTBundles201ResponseDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *POSTPaymentMethods201ResponseDataRelationships) GetMarketOk() (*POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket, bool)`
+`func (o *POSTPaymentMethods201ResponseDataRelationships) GetMarketOk() (*POSTBundles201ResponseDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *POSTPaymentMethods201ResponseDataRelationships) SetMarket(v POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket)`
+`func (o *POSTPaymentMethods201ResponseDataRelationships) SetMarket(v POSTBundles201ResponseDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 
@@ -77,6 +79,56 @@ SetPaymentGateway sets PaymentGateway field to given value.
 `func (o *POSTPaymentMethods201ResponseDataRelationships) HasPaymentGateway() bool`
 
 HasPaymentGateway returns a boolean if a field has been set.
+
+### GetStore
+
+`func (o *POSTPaymentMethods201ResponseDataRelationships) GetStore() POSTOrders201ResponseDataRelationshipsStore`
+
+GetStore returns the Store field if non-nil, zero value otherwise.
+
+### GetStoreOk
+
+`func (o *POSTPaymentMethods201ResponseDataRelationships) GetStoreOk() (*POSTOrders201ResponseDataRelationshipsStore, bool)`
+
+GetStoreOk returns a tuple with the Store field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStore
+
+`func (o *POSTPaymentMethods201ResponseDataRelationships) SetStore(v POSTOrders201ResponseDataRelationshipsStore)`
+
+SetStore sets Store field to given value.
+
+### HasStore
+
+`func (o *POSTPaymentMethods201ResponseDataRelationships) HasStore() bool`
+
+HasStore returns a boolean if a field has been set.
+
+### GetOrders
+
+`func (o *POSTPaymentMethods201ResponseDataRelationships) GetOrders() POSTCustomers201ResponseDataRelationshipsOrders`
+
+GetOrders returns the Orders field if non-nil, zero value otherwise.
+
+### GetOrdersOk
+
+`func (o *POSTPaymentMethods201ResponseDataRelationships) GetOrdersOk() (*POSTCustomers201ResponseDataRelationshipsOrders, bool)`
+
+GetOrdersOk returns a tuple with the Orders field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrders
+
+`func (o *POSTPaymentMethods201ResponseDataRelationships) SetOrders(v POSTCustomers201ResponseDataRelationshipsOrders)`
+
+SetOrders sets Orders field to given value.
+
+### HasOrders
+
+`func (o *POSTPaymentMethods201ResponseDataRelationships) HasOrders() bool`
+
+HasOrders returns a boolean if a field has been set.
 
 ### GetAttachments
 

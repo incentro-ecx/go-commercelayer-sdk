@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -24,18 +24,6 @@ type GETTaxRulesTaxRuleId200ResponseDataAttributes struct {
 	Name interface{} `json:"name,omitempty"`
 	// The tax rate for this rule.
 	TaxRate interface{} `json:"tax_rate,omitempty"`
-	// The regex that will be evaluated to match the shipping address country code.
-	CountryCodeRegex interface{} `json:"country_code_regex,omitempty"`
-	// The regex that will be evaluated as negative match for the shipping address country code.
-	NotCountryCodeRegex interface{} `json:"not_country_code_regex,omitempty"`
-	// The regex that will be evaluated to match the shipping address state code.
-	StateCodeRegex interface{} `json:"state_code_regex,omitempty"`
-	// The regex that will be evaluated as negative match for the shipping address state code.
-	NotStateCodeRegex interface{} `json:"not_state_code_regex,omitempty"`
-	// The regex that will be evaluated to match the shipping address zip code.
-	ZipCodeRegex interface{} `json:"zip_code_regex,omitempty"`
-	// The regex that will be evaluated as negative match for the shipping zip country code.
-	NotZipCodeRegex interface{} `json:"not_zip_code_regex,omitempty"`
 	// Indicates if the freight is taxable.
 	FreightTaxable interface{} `json:"freight_taxable,omitempty"`
 	// Indicates if the payment method is taxable.
@@ -46,6 +34,18 @@ type GETTaxRulesTaxRuleId200ResponseDataAttributes struct {
 	AdjustmentTaxable interface{} `json:"adjustment_taxable,omitempty"`
 	// The breakdown for this tax rule (if calculated).
 	Breakdown interface{} `json:"breakdown,omitempty"`
+	// The regex that will be evaluated to match the shipping address country code, max size is 5000.
+	CountryCodeRegex interface{} `json:"country_code_regex,omitempty"`
+	// The regex that will be evaluated as negative match for the shipping address country code, max size is 5000.
+	NotCountryCodeRegex interface{} `json:"not_country_code_regex,omitempty"`
+	// The regex that will be evaluated to match the shipping address state code, max size is 5000.
+	StateCodeRegex interface{} `json:"state_code_regex,omitempty"`
+	// The regex that will be evaluated as negative match for the shipping address state code, max size is 5000.
+	NotStateCodeRegex interface{} `json:"not_state_code_regex,omitempty"`
+	// The regex that will be evaluated to match the shipping address zip code, max size is 5000.
+	ZipCodeRegex interface{} `json:"zip_code_regex,omitempty"`
+	// The regex that will be evaluated as negative match for the shipping zip country code, max size is 5000.
+	NotZipCodeRegex interface{} `json:"not_zip_code_regex,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
@@ -139,6 +139,171 @@ func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) HasTaxRate() bool {
 // SetTaxRate gets a reference to the given interface{} and assigns it to the TaxRate field.
 func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) SetTaxRate(v interface{}) {
 	o.TaxRate = v
+}
+
+// GetFreightTaxable returns the FreightTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetFreightTaxable() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.FreightTaxable
+}
+
+// GetFreightTaxableOk returns a tuple with the FreightTaxable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetFreightTaxableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.FreightTaxable) {
+		return nil, false
+	}
+	return &o.FreightTaxable, true
+}
+
+// HasFreightTaxable returns a boolean if a field has been set.
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) HasFreightTaxable() bool {
+	if o != nil && IsNil(o.FreightTaxable) {
+		return true
+	}
+
+	return false
+}
+
+// SetFreightTaxable gets a reference to the given interface{} and assigns it to the FreightTaxable field.
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) SetFreightTaxable(v interface{}) {
+	o.FreightTaxable = v
+}
+
+// GetPaymentMethodTaxable returns the PaymentMethodTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetPaymentMethodTaxable() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.PaymentMethodTaxable
+}
+
+// GetPaymentMethodTaxableOk returns a tuple with the PaymentMethodTaxable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetPaymentMethodTaxableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PaymentMethodTaxable) {
+		return nil, false
+	}
+	return &o.PaymentMethodTaxable, true
+}
+
+// HasPaymentMethodTaxable returns a boolean if a field has been set.
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) HasPaymentMethodTaxable() bool {
+	if o != nil && IsNil(o.PaymentMethodTaxable) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentMethodTaxable gets a reference to the given interface{} and assigns it to the PaymentMethodTaxable field.
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) SetPaymentMethodTaxable(v interface{}) {
+	o.PaymentMethodTaxable = v
+}
+
+// GetGiftCardTaxable returns the GiftCardTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetGiftCardTaxable() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.GiftCardTaxable
+}
+
+// GetGiftCardTaxableOk returns a tuple with the GiftCardTaxable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetGiftCardTaxableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.GiftCardTaxable) {
+		return nil, false
+	}
+	return &o.GiftCardTaxable, true
+}
+
+// HasGiftCardTaxable returns a boolean if a field has been set.
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) HasGiftCardTaxable() bool {
+	if o != nil && IsNil(o.GiftCardTaxable) {
+		return true
+	}
+
+	return false
+}
+
+// SetGiftCardTaxable gets a reference to the given interface{} and assigns it to the GiftCardTaxable field.
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) SetGiftCardTaxable(v interface{}) {
+	o.GiftCardTaxable = v
+}
+
+// GetAdjustmentTaxable returns the AdjustmentTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetAdjustmentTaxable() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.AdjustmentTaxable
+}
+
+// GetAdjustmentTaxableOk returns a tuple with the AdjustmentTaxable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetAdjustmentTaxableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.AdjustmentTaxable) {
+		return nil, false
+	}
+	return &o.AdjustmentTaxable, true
+}
+
+// HasAdjustmentTaxable returns a boolean if a field has been set.
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) HasAdjustmentTaxable() bool {
+	if o != nil && IsNil(o.AdjustmentTaxable) {
+		return true
+	}
+
+	return false
+}
+
+// SetAdjustmentTaxable gets a reference to the given interface{} and assigns it to the AdjustmentTaxable field.
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) SetAdjustmentTaxable(v interface{}) {
+	o.AdjustmentTaxable = v
+}
+
+// GetBreakdown returns the Breakdown field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetBreakdown() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Breakdown
+}
+
+// GetBreakdownOk returns a tuple with the Breakdown field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetBreakdownOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Breakdown) {
+		return nil, false
+	}
+	return &o.Breakdown, true
+}
+
+// HasBreakdown returns a boolean if a field has been set.
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) HasBreakdown() bool {
+	if o != nil && IsNil(o.Breakdown) {
+		return true
+	}
+
+	return false
+}
+
+// SetBreakdown gets a reference to the given interface{} and assigns it to the Breakdown field.
+func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) SetBreakdown(v interface{}) {
+	o.Breakdown = v
 }
 
 // GetCountryCodeRegex returns the CountryCodeRegex field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -339,171 +504,6 @@ func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) SetNotZipCodeRegex(v int
 	o.NotZipCodeRegex = v
 }
 
-// GetFreightTaxable returns the FreightTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetFreightTaxable() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.FreightTaxable
-}
-
-// GetFreightTaxableOk returns a tuple with the FreightTaxable field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetFreightTaxableOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.FreightTaxable) {
-		return nil, false
-	}
-	return &o.FreightTaxable, true
-}
-
-// HasFreightTaxable returns a boolean if a field has been set.
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) HasFreightTaxable() bool {
-	if o != nil && IsNil(o.FreightTaxable) {
-		return true
-	}
-
-	return false
-}
-
-// SetFreightTaxable gets a reference to the given interface{} and assigns it to the FreightTaxable field.
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) SetFreightTaxable(v interface{}) {
-	o.FreightTaxable = v
-}
-
-// GetPaymentMethodTaxable returns the PaymentMethodTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetPaymentMethodTaxable() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.PaymentMethodTaxable
-}
-
-// GetPaymentMethodTaxableOk returns a tuple with the PaymentMethodTaxable field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetPaymentMethodTaxableOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.PaymentMethodTaxable) {
-		return nil, false
-	}
-	return &o.PaymentMethodTaxable, true
-}
-
-// HasPaymentMethodTaxable returns a boolean if a field has been set.
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) HasPaymentMethodTaxable() bool {
-	if o != nil && IsNil(o.PaymentMethodTaxable) {
-		return true
-	}
-
-	return false
-}
-
-// SetPaymentMethodTaxable gets a reference to the given interface{} and assigns it to the PaymentMethodTaxable field.
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) SetPaymentMethodTaxable(v interface{}) {
-	o.PaymentMethodTaxable = v
-}
-
-// GetGiftCardTaxable returns the GiftCardTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetGiftCardTaxable() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.GiftCardTaxable
-}
-
-// GetGiftCardTaxableOk returns a tuple with the GiftCardTaxable field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetGiftCardTaxableOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.GiftCardTaxable) {
-		return nil, false
-	}
-	return &o.GiftCardTaxable, true
-}
-
-// HasGiftCardTaxable returns a boolean if a field has been set.
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) HasGiftCardTaxable() bool {
-	if o != nil && IsNil(o.GiftCardTaxable) {
-		return true
-	}
-
-	return false
-}
-
-// SetGiftCardTaxable gets a reference to the given interface{} and assigns it to the GiftCardTaxable field.
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) SetGiftCardTaxable(v interface{}) {
-	o.GiftCardTaxable = v
-}
-
-// GetAdjustmentTaxable returns the AdjustmentTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetAdjustmentTaxable() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.AdjustmentTaxable
-}
-
-// GetAdjustmentTaxableOk returns a tuple with the AdjustmentTaxable field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetAdjustmentTaxableOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.AdjustmentTaxable) {
-		return nil, false
-	}
-	return &o.AdjustmentTaxable, true
-}
-
-// HasAdjustmentTaxable returns a boolean if a field has been set.
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) HasAdjustmentTaxable() bool {
-	if o != nil && IsNil(o.AdjustmentTaxable) {
-		return true
-	}
-
-	return false
-}
-
-// SetAdjustmentTaxable gets a reference to the given interface{} and assigns it to the AdjustmentTaxable field.
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) SetAdjustmentTaxable(v interface{}) {
-	o.AdjustmentTaxable = v
-}
-
-// GetBreakdown returns the Breakdown field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetBreakdown() interface{} {
-	if o == nil {
-		var ret interface{}
-		return ret
-	}
-	return o.Breakdown
-}
-
-// GetBreakdownOk returns a tuple with the Breakdown field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetBreakdownOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Breakdown) {
-		return nil, false
-	}
-	return &o.Breakdown, true
-}
-
-// HasBreakdown returns a boolean if a field has been set.
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) HasBreakdown() bool {
-	if o != nil && IsNil(o.Breakdown) {
-		return true
-	}
-
-	return false
-}
-
-// SetBreakdown gets a reference to the given interface{} and assigns it to the Breakdown field.
-func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) SetBreakdown(v interface{}) {
-	o.Breakdown = v
-}
-
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETTaxRulesTaxRuleId200ResponseDataAttributes) GetCreatedAt() interface{} {
 	if o == nil {
@@ -685,6 +685,21 @@ func (o GETTaxRulesTaxRuleId200ResponseDataAttributes) ToMap() (map[string]inter
 	if o.TaxRate != nil {
 		toSerialize["tax_rate"] = o.TaxRate
 	}
+	if o.FreightTaxable != nil {
+		toSerialize["freight_taxable"] = o.FreightTaxable
+	}
+	if o.PaymentMethodTaxable != nil {
+		toSerialize["payment_method_taxable"] = o.PaymentMethodTaxable
+	}
+	if o.GiftCardTaxable != nil {
+		toSerialize["gift_card_taxable"] = o.GiftCardTaxable
+	}
+	if o.AdjustmentTaxable != nil {
+		toSerialize["adjustment_taxable"] = o.AdjustmentTaxable
+	}
+	if o.Breakdown != nil {
+		toSerialize["breakdown"] = o.Breakdown
+	}
 	if o.CountryCodeRegex != nil {
 		toSerialize["country_code_regex"] = o.CountryCodeRegex
 	}
@@ -702,21 +717,6 @@ func (o GETTaxRulesTaxRuleId200ResponseDataAttributes) ToMap() (map[string]inter
 	}
 	if o.NotZipCodeRegex != nil {
 		toSerialize["not_zip_code_regex"] = o.NotZipCodeRegex
-	}
-	if o.FreightTaxable != nil {
-		toSerialize["freight_taxable"] = o.FreightTaxable
-	}
-	if o.PaymentMethodTaxable != nil {
-		toSerialize["payment_method_taxable"] = o.PaymentMethodTaxable
-	}
-	if o.GiftCardTaxable != nil {
-		toSerialize["gift_card_taxable"] = o.GiftCardTaxable
-	}
-	if o.AdjustmentTaxable != nil {
-		toSerialize["adjustment_taxable"] = o.AdjustmentTaxable
-	}
-	if o.Breakdown != nil {
-		toSerialize["breakdown"] = o.Breakdown
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

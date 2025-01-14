@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
 **Id** | **interface{}** | The resource&#39;s id | 
-**Attributes** | [**PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes**](PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewWireTransferUpdateData
 
-`func NewWireTransferUpdateData(type_ interface{}, id interface{}, attributes PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, ) *WireTransferUpdateData`
+`func NewWireTransferUpdateData(type_ interface{}, id interface{}, attributes PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes, ) *WireTransferUpdateData`
 
 NewWireTransferUpdateData instantiates a new WireTransferUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -90,20 +90,20 @@ SetId sets Id field to given value.
 UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
-`func (o *WireTransferUpdateData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes`
+`func (o *WireTransferUpdateData) GetAttributes() PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *WireTransferUpdateData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool)`
+`func (o *WireTransferUpdateData) GetAttributesOk() (*PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *WireTransferUpdateData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes)`
+`func (o *WireTransferUpdateData) SetAttributes(v PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

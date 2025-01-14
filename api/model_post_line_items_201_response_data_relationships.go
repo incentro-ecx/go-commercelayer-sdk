@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -33,6 +33,7 @@ type POSTLineItems201ResponseDataRelationships struct {
 	StockReservations *POSTLineItems201ResponseDataRelationshipsStockReservations          `json:"stock_reservations,omitempty"`
 	StockLineItems    *POSTLineItems201ResponseDataRelationshipsStockLineItems             `json:"stock_line_items,omitempty"`
 	StockTransfers    *POSTLineItems201ResponseDataRelationshipsStockTransfers             `json:"stock_transfers,omitempty"`
+	Notifications     *POSTLineItems201ResponseDataRelationshipsNotifications              `json:"notifications,omitempty"`
 	Events            *POSTAddresses201ResponseDataRelationshipsEvents                     `json:"events,omitempty"`
 	Tags              *POSTAddresses201ResponseDataRelationshipsTags                       `json:"tags,omitempty"`
 }
@@ -470,6 +471,38 @@ func (o *POSTLineItems201ResponseDataRelationships) SetStockTransfers(v POSTLine
 	o.StockTransfers = &v
 }
 
+// GetNotifications returns the Notifications field value if set, zero value otherwise.
+func (o *POSTLineItems201ResponseDataRelationships) GetNotifications() POSTLineItems201ResponseDataRelationshipsNotifications {
+	if o == nil || IsNil(o.Notifications) {
+		var ret POSTLineItems201ResponseDataRelationshipsNotifications
+		return ret
+	}
+	return *o.Notifications
+}
+
+// GetNotificationsOk returns a tuple with the Notifications field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTLineItems201ResponseDataRelationships) GetNotificationsOk() (*POSTLineItems201ResponseDataRelationshipsNotifications, bool) {
+	if o == nil || IsNil(o.Notifications) {
+		return nil, false
+	}
+	return o.Notifications, true
+}
+
+// HasNotifications returns a boolean if a field has been set.
+func (o *POSTLineItems201ResponseDataRelationships) HasNotifications() bool {
+	if o != nil && !IsNil(o.Notifications) {
+		return true
+	}
+
+	return false
+}
+
+// SetNotifications gets a reference to the given POSTLineItems201ResponseDataRelationshipsNotifications and assigns it to the Notifications field.
+func (o *POSTLineItems201ResponseDataRelationships) SetNotifications(v POSTLineItems201ResponseDataRelationshipsNotifications) {
+	o.Notifications = &v
+}
+
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *POSTLineItems201ResponseDataRelationships) GetEvents() POSTAddresses201ResponseDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
@@ -582,6 +615,9 @@ func (o POSTLineItems201ResponseDataRelationships) ToMap() (map[string]interface
 	}
 	if !IsNil(o.StockTransfers) {
 		toSerialize["stock_transfers"] = o.StockTransfers
+	}
+	if !IsNil(o.Notifications) {
+		toSerialize["notifications"] = o.Notifications
 	}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events

@@ -6,16 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **interface{}** | The tax rule internal name. | 
 **TaxRate** | Pointer to **interface{}** | The tax rate for this rule. | [optional] 
-**CountryCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated to match the shipping address country code. | [optional] 
-**NotCountryCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated as negative match for the shipping address country code. | [optional] 
-**StateCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated to match the shipping address state code. | [optional] 
-**NotStateCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated as negative match for the shipping address state code. | [optional] 
-**ZipCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated to match the shipping address zip code. | [optional] 
-**NotZipCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated as negative match for the shipping zip country code. | [optional] 
 **FreightTaxable** | Pointer to **interface{}** | Indicates if the freight is taxable. | [optional] 
 **PaymentMethodTaxable** | Pointer to **interface{}** | Indicates if the payment method is taxable. | [optional] 
 **GiftCardTaxable** | Pointer to **interface{}** | Indicates if gift cards are taxable. | [optional] 
 **AdjustmentTaxable** | Pointer to **interface{}** | Indicates if adjustemnts are taxable. | [optional] 
+**CountryCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated to match the shipping address country code, max size is 5000. | [optional] 
+**NotCountryCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated as negative match for the shipping address country code, max size is 5000. | [optional] 
+**StateCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated to match the shipping address state code, max size is 5000. | [optional] 
+**NotStateCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated as negative match for the shipping address state code, max size is 5000. | [optional] 
+**ZipCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated to match the shipping address zip code, max size is 5000. | [optional] 
+**NotZipCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated as negative match for the shipping zip country code, max size is 5000. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
 **ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
@@ -104,6 +104,146 @@ HasTaxRate returns a boolean if a field has been set.
 `func (o *POSTTaxRules201ResponseDataAttributes) UnsetTaxRate()`
 
 UnsetTaxRate ensures that no value is present for TaxRate, not even an explicit nil
+### GetFreightTaxable
+
+`func (o *POSTTaxRules201ResponseDataAttributes) GetFreightTaxable() interface{}`
+
+GetFreightTaxable returns the FreightTaxable field if non-nil, zero value otherwise.
+
+### GetFreightTaxableOk
+
+`func (o *POSTTaxRules201ResponseDataAttributes) GetFreightTaxableOk() (*interface{}, bool)`
+
+GetFreightTaxableOk returns a tuple with the FreightTaxable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFreightTaxable
+
+`func (o *POSTTaxRules201ResponseDataAttributes) SetFreightTaxable(v interface{})`
+
+SetFreightTaxable sets FreightTaxable field to given value.
+
+### HasFreightTaxable
+
+`func (o *POSTTaxRules201ResponseDataAttributes) HasFreightTaxable() bool`
+
+HasFreightTaxable returns a boolean if a field has been set.
+
+### SetFreightTaxableNil
+
+`func (o *POSTTaxRules201ResponseDataAttributes) SetFreightTaxableNil(b bool)`
+
+ SetFreightTaxableNil sets the value for FreightTaxable to be an explicit nil
+
+### UnsetFreightTaxable
+`func (o *POSTTaxRules201ResponseDataAttributes) UnsetFreightTaxable()`
+
+UnsetFreightTaxable ensures that no value is present for FreightTaxable, not even an explicit nil
+### GetPaymentMethodTaxable
+
+`func (o *POSTTaxRules201ResponseDataAttributes) GetPaymentMethodTaxable() interface{}`
+
+GetPaymentMethodTaxable returns the PaymentMethodTaxable field if non-nil, zero value otherwise.
+
+### GetPaymentMethodTaxableOk
+
+`func (o *POSTTaxRules201ResponseDataAttributes) GetPaymentMethodTaxableOk() (*interface{}, bool)`
+
+GetPaymentMethodTaxableOk returns a tuple with the PaymentMethodTaxable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentMethodTaxable
+
+`func (o *POSTTaxRules201ResponseDataAttributes) SetPaymentMethodTaxable(v interface{})`
+
+SetPaymentMethodTaxable sets PaymentMethodTaxable field to given value.
+
+### HasPaymentMethodTaxable
+
+`func (o *POSTTaxRules201ResponseDataAttributes) HasPaymentMethodTaxable() bool`
+
+HasPaymentMethodTaxable returns a boolean if a field has been set.
+
+### SetPaymentMethodTaxableNil
+
+`func (o *POSTTaxRules201ResponseDataAttributes) SetPaymentMethodTaxableNil(b bool)`
+
+ SetPaymentMethodTaxableNil sets the value for PaymentMethodTaxable to be an explicit nil
+
+### UnsetPaymentMethodTaxable
+`func (o *POSTTaxRules201ResponseDataAttributes) UnsetPaymentMethodTaxable()`
+
+UnsetPaymentMethodTaxable ensures that no value is present for PaymentMethodTaxable, not even an explicit nil
+### GetGiftCardTaxable
+
+`func (o *POSTTaxRules201ResponseDataAttributes) GetGiftCardTaxable() interface{}`
+
+GetGiftCardTaxable returns the GiftCardTaxable field if non-nil, zero value otherwise.
+
+### GetGiftCardTaxableOk
+
+`func (o *POSTTaxRules201ResponseDataAttributes) GetGiftCardTaxableOk() (*interface{}, bool)`
+
+GetGiftCardTaxableOk returns a tuple with the GiftCardTaxable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGiftCardTaxable
+
+`func (o *POSTTaxRules201ResponseDataAttributes) SetGiftCardTaxable(v interface{})`
+
+SetGiftCardTaxable sets GiftCardTaxable field to given value.
+
+### HasGiftCardTaxable
+
+`func (o *POSTTaxRules201ResponseDataAttributes) HasGiftCardTaxable() bool`
+
+HasGiftCardTaxable returns a boolean if a field has been set.
+
+### SetGiftCardTaxableNil
+
+`func (o *POSTTaxRules201ResponseDataAttributes) SetGiftCardTaxableNil(b bool)`
+
+ SetGiftCardTaxableNil sets the value for GiftCardTaxable to be an explicit nil
+
+### UnsetGiftCardTaxable
+`func (o *POSTTaxRules201ResponseDataAttributes) UnsetGiftCardTaxable()`
+
+UnsetGiftCardTaxable ensures that no value is present for GiftCardTaxable, not even an explicit nil
+### GetAdjustmentTaxable
+
+`func (o *POSTTaxRules201ResponseDataAttributes) GetAdjustmentTaxable() interface{}`
+
+GetAdjustmentTaxable returns the AdjustmentTaxable field if non-nil, zero value otherwise.
+
+### GetAdjustmentTaxableOk
+
+`func (o *POSTTaxRules201ResponseDataAttributes) GetAdjustmentTaxableOk() (*interface{}, bool)`
+
+GetAdjustmentTaxableOk returns a tuple with the AdjustmentTaxable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdjustmentTaxable
+
+`func (o *POSTTaxRules201ResponseDataAttributes) SetAdjustmentTaxable(v interface{})`
+
+SetAdjustmentTaxable sets AdjustmentTaxable field to given value.
+
+### HasAdjustmentTaxable
+
+`func (o *POSTTaxRules201ResponseDataAttributes) HasAdjustmentTaxable() bool`
+
+HasAdjustmentTaxable returns a boolean if a field has been set.
+
+### SetAdjustmentTaxableNil
+
+`func (o *POSTTaxRules201ResponseDataAttributes) SetAdjustmentTaxableNil(b bool)`
+
+ SetAdjustmentTaxableNil sets the value for AdjustmentTaxable to be an explicit nil
+
+### UnsetAdjustmentTaxable
+`func (o *POSTTaxRules201ResponseDataAttributes) UnsetAdjustmentTaxable()`
+
+UnsetAdjustmentTaxable ensures that no value is present for AdjustmentTaxable, not even an explicit nil
 ### GetCountryCodeRegex
 
 `func (o *POSTTaxRules201ResponseDataAttributes) GetCountryCodeRegex() interface{}`
@@ -314,146 +454,6 @@ HasNotZipCodeRegex returns a boolean if a field has been set.
 `func (o *POSTTaxRules201ResponseDataAttributes) UnsetNotZipCodeRegex()`
 
 UnsetNotZipCodeRegex ensures that no value is present for NotZipCodeRegex, not even an explicit nil
-### GetFreightTaxable
-
-`func (o *POSTTaxRules201ResponseDataAttributes) GetFreightTaxable() interface{}`
-
-GetFreightTaxable returns the FreightTaxable field if non-nil, zero value otherwise.
-
-### GetFreightTaxableOk
-
-`func (o *POSTTaxRules201ResponseDataAttributes) GetFreightTaxableOk() (*interface{}, bool)`
-
-GetFreightTaxableOk returns a tuple with the FreightTaxable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFreightTaxable
-
-`func (o *POSTTaxRules201ResponseDataAttributes) SetFreightTaxable(v interface{})`
-
-SetFreightTaxable sets FreightTaxable field to given value.
-
-### HasFreightTaxable
-
-`func (o *POSTTaxRules201ResponseDataAttributes) HasFreightTaxable() bool`
-
-HasFreightTaxable returns a boolean if a field has been set.
-
-### SetFreightTaxableNil
-
-`func (o *POSTTaxRules201ResponseDataAttributes) SetFreightTaxableNil(b bool)`
-
- SetFreightTaxableNil sets the value for FreightTaxable to be an explicit nil
-
-### UnsetFreightTaxable
-`func (o *POSTTaxRules201ResponseDataAttributes) UnsetFreightTaxable()`
-
-UnsetFreightTaxable ensures that no value is present for FreightTaxable, not even an explicit nil
-### GetPaymentMethodTaxable
-
-`func (o *POSTTaxRules201ResponseDataAttributes) GetPaymentMethodTaxable() interface{}`
-
-GetPaymentMethodTaxable returns the PaymentMethodTaxable field if non-nil, zero value otherwise.
-
-### GetPaymentMethodTaxableOk
-
-`func (o *POSTTaxRules201ResponseDataAttributes) GetPaymentMethodTaxableOk() (*interface{}, bool)`
-
-GetPaymentMethodTaxableOk returns a tuple with the PaymentMethodTaxable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPaymentMethodTaxable
-
-`func (o *POSTTaxRules201ResponseDataAttributes) SetPaymentMethodTaxable(v interface{})`
-
-SetPaymentMethodTaxable sets PaymentMethodTaxable field to given value.
-
-### HasPaymentMethodTaxable
-
-`func (o *POSTTaxRules201ResponseDataAttributes) HasPaymentMethodTaxable() bool`
-
-HasPaymentMethodTaxable returns a boolean if a field has been set.
-
-### SetPaymentMethodTaxableNil
-
-`func (o *POSTTaxRules201ResponseDataAttributes) SetPaymentMethodTaxableNil(b bool)`
-
- SetPaymentMethodTaxableNil sets the value for PaymentMethodTaxable to be an explicit nil
-
-### UnsetPaymentMethodTaxable
-`func (o *POSTTaxRules201ResponseDataAttributes) UnsetPaymentMethodTaxable()`
-
-UnsetPaymentMethodTaxable ensures that no value is present for PaymentMethodTaxable, not even an explicit nil
-### GetGiftCardTaxable
-
-`func (o *POSTTaxRules201ResponseDataAttributes) GetGiftCardTaxable() interface{}`
-
-GetGiftCardTaxable returns the GiftCardTaxable field if non-nil, zero value otherwise.
-
-### GetGiftCardTaxableOk
-
-`func (o *POSTTaxRules201ResponseDataAttributes) GetGiftCardTaxableOk() (*interface{}, bool)`
-
-GetGiftCardTaxableOk returns a tuple with the GiftCardTaxable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGiftCardTaxable
-
-`func (o *POSTTaxRules201ResponseDataAttributes) SetGiftCardTaxable(v interface{})`
-
-SetGiftCardTaxable sets GiftCardTaxable field to given value.
-
-### HasGiftCardTaxable
-
-`func (o *POSTTaxRules201ResponseDataAttributes) HasGiftCardTaxable() bool`
-
-HasGiftCardTaxable returns a boolean if a field has been set.
-
-### SetGiftCardTaxableNil
-
-`func (o *POSTTaxRules201ResponseDataAttributes) SetGiftCardTaxableNil(b bool)`
-
- SetGiftCardTaxableNil sets the value for GiftCardTaxable to be an explicit nil
-
-### UnsetGiftCardTaxable
-`func (o *POSTTaxRules201ResponseDataAttributes) UnsetGiftCardTaxable()`
-
-UnsetGiftCardTaxable ensures that no value is present for GiftCardTaxable, not even an explicit nil
-### GetAdjustmentTaxable
-
-`func (o *POSTTaxRules201ResponseDataAttributes) GetAdjustmentTaxable() interface{}`
-
-GetAdjustmentTaxable returns the AdjustmentTaxable field if non-nil, zero value otherwise.
-
-### GetAdjustmentTaxableOk
-
-`func (o *POSTTaxRules201ResponseDataAttributes) GetAdjustmentTaxableOk() (*interface{}, bool)`
-
-GetAdjustmentTaxableOk returns a tuple with the AdjustmentTaxable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAdjustmentTaxable
-
-`func (o *POSTTaxRules201ResponseDataAttributes) SetAdjustmentTaxable(v interface{})`
-
-SetAdjustmentTaxable sets AdjustmentTaxable field to given value.
-
-### HasAdjustmentTaxable
-
-`func (o *POSTTaxRules201ResponseDataAttributes) HasAdjustmentTaxable() bool`
-
-HasAdjustmentTaxable returns a boolean if a field has been set.
-
-### SetAdjustmentTaxableNil
-
-`func (o *POSTTaxRules201ResponseDataAttributes) SetAdjustmentTaxableNil(b bool)`
-
- SetAdjustmentTaxableNil sets the value for AdjustmentTaxable to be an explicit nil
-
-### UnsetAdjustmentTaxable
-`func (o *POSTTaxRules201ResponseDataAttributes) UnsetAdjustmentTaxable()`
-
-UnsetAdjustmentTaxable ensures that no value is present for AdjustmentTaxable, not even an explicit nil
 ### GetReference
 
 `func (o *POSTTaxRules201ResponseDataAttributes) GetReference() interface{}`

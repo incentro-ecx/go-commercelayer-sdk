@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Number** | Pointer to **interface{}** | The order identifier. Can be specified if unique within the organization (for enterprise plans only), default to numeric ID otherwise. Cannot be passed by sales channels. | [optional] 
-**AffiliateCode** | Pointer to **interface{}** | The affiliate code, if any, the seller will transfer commission on shop by link transactions. | [optional] 
+**AffiliateCode** | Pointer to **interface{}** | The affiliate code, if any, to track commissions using any third party services. | [optional] 
 **Autorefresh** | Pointer to **interface{}** | Save this attribute as &#39;false&#39; if you want prevent the order to be refreshed automatically at each change (much faster). | [optional] 
 **PlaceAsync** | Pointer to **interface{}** | Save this attribute as &#39;true&#39; if you want perform the place asynchronously. Payment errors, if any, will be collected afterwards. | [optional] 
 **Status** | Pointer to **interface{}** | The order status. One of &#39;draft&#39; (default), &#39;pending&#39;, &#39;editing&#39;, &#39;placing&#39;, &#39;placed&#39;, &#39;approved&#39;, or &#39;cancelled&#39;. | [optional] 

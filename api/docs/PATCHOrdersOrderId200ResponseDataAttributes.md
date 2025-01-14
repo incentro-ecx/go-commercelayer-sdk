@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Number** | Pointer to **interface{}** | The order identifier. Can be specified if unique within the organization (for enterprise plans only), default to numeric ID otherwise. Cannot be passed by sales channels. | [optional] 
-**AffiliateCode** | Pointer to **interface{}** | The affiliate code, if any, the seller will transfer commission on shop by link transactions. | [optional] 
+**AffiliateCode** | Pointer to **interface{}** | The affiliate code, if any, to track commissions using any third party services. | [optional] 
 **Autorefresh** | Pointer to **interface{}** | Save this attribute as &#39;false&#39; if you want prevent the order to be refreshed automatically at each change (much faster). | [optional] 
 **PlaceAsync** | Pointer to **interface{}** | Save this attribute as &#39;true&#39; if you want perform the place asynchronously. Payment errors, if any, will be collected afterwards. | [optional] 
 **Guest** | Pointer to **interface{}** | Indicates if the order has been placed as guest. | [optional] 
@@ -37,6 +37,7 @@ Name | Type | Description | Notes
 **Fulfill** | Pointer to **interface{}** | Send this attribute if you want to mark as fulfilled the order (shipments must be cancelled, shipped or delivered). Cannot be passed by sales channels. | [optional] 
 **UpdateTaxes** | Pointer to **interface{}** | Send this attribute if you want to force tax calculation for this order (a tax calculator must be associated to the order&#39;s market). | [optional] 
 **NullifyPaymentSource** | Pointer to **interface{}** | Send this attribute if you want to nullify the payment source for this order. | [optional] 
+**FixPaymentSource** | Pointer to **interface{}** | Send this attribute if you want to set the payment source associated with the last succeeded authorization. At the end of the fix the order should be placed and authorized and ready for approval. Cannot be passed by sales channels. | [optional] 
 **BillingAddressCloneId** | Pointer to **interface{}** | The id of the address that you want to clone to create the order&#39;s billing address. | [optional] 
 **ShippingAddressCloneId** | Pointer to **interface{}** | The id of the address that you want to clone to create the order&#39;s shipping address. | [optional] 
 **CustomerPaymentSourceId** | Pointer to **interface{}** | The id of the customer payment source (i.e. credit card) that you want to use as the order&#39;s payment source. | [optional] 
@@ -1231,6 +1232,41 @@ HasNullifyPaymentSource returns a boolean if a field has been set.
 `func (o *PATCHOrdersOrderId200ResponseDataAttributes) UnsetNullifyPaymentSource()`
 
 UnsetNullifyPaymentSource ensures that no value is present for NullifyPaymentSource, not even an explicit nil
+### GetFixPaymentSource
+
+`func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetFixPaymentSource() interface{}`
+
+GetFixPaymentSource returns the FixPaymentSource field if non-nil, zero value otherwise.
+
+### GetFixPaymentSourceOk
+
+`func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetFixPaymentSourceOk() (*interface{}, bool)`
+
+GetFixPaymentSourceOk returns a tuple with the FixPaymentSource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFixPaymentSource
+
+`func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetFixPaymentSource(v interface{})`
+
+SetFixPaymentSource sets FixPaymentSource field to given value.
+
+### HasFixPaymentSource
+
+`func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasFixPaymentSource() bool`
+
+HasFixPaymentSource returns a boolean if a field has been set.
+
+### SetFixPaymentSourceNil
+
+`func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetFixPaymentSourceNil(b bool)`
+
+ SetFixPaymentSourceNil sets the value for FixPaymentSource to be an explicit nil
+
+### UnsetFixPaymentSource
+`func (o *PATCHOrdersOrderId200ResponseDataAttributes) UnsetFixPaymentSource()`
+
+UnsetFixPaymentSource ensures that no value is present for FixPaymentSource, not even an explicit nil
 ### GetBillingAddressCloneId
 
 `func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressCloneId() interface{}`

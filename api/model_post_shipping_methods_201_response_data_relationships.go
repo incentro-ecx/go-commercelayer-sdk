@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &POSTShippingMethods201ResponseDataRelationships{}
 
 // POSTShippingMethods201ResponseDataRelationships struct for POSTShippingMethods201ResponseDataRelationships
 type POSTShippingMethods201ResponseDataRelationships struct {
-	Market                      *POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket           `json:"market,omitempty"`
+	Market                      *POSTBundles201ResponseDataRelationshipsMarket                              `json:"market,omitempty"`
 	ShippingZone                *POSTShippingMethods201ResponseDataRelationshipsShippingZone                `json:"shipping_zone,omitempty"`
 	ShippingCategory            *POSTShipments201ResponseDataRelationshipsShippingCategory                  `json:"shipping_category,omitempty"`
 	StockLocation               *POSTDeliveryLeadTimes201ResponseDataRelationshipsStockLocation             `json:"stock_location,omitempty"`
@@ -49,9 +49,9 @@ func NewPOSTShippingMethods201ResponseDataRelationshipsWithDefaults() *POSTShipp
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *POSTShippingMethods201ResponseDataRelationships) GetMarket() POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket {
+func (o *POSTShippingMethods201ResponseDataRelationships) GetMarket() POSTBundles201ResponseDataRelationshipsMarket {
 	if o == nil || IsNil(o.Market) {
-		var ret POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket
+		var ret POSTBundles201ResponseDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -59,7 +59,7 @@ func (o *POSTShippingMethods201ResponseDataRelationships) GetMarket() POSTBillin
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTShippingMethods201ResponseDataRelationships) GetMarketOk() (*POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket, bool) {
+func (o *POSTShippingMethods201ResponseDataRelationships) GetMarketOk() (*POSTBundles201ResponseDataRelationshipsMarket, bool) {
 	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
@@ -75,8 +75,8 @@ func (o *POSTShippingMethods201ResponseDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket and assigns it to the Market field.
-func (o *POSTShippingMethods201ResponseDataRelationships) SetMarket(v POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket) {
+// SetMarket gets a reference to the given POSTBundles201ResponseDataRelationshipsMarket and assigns it to the Market field.
+func (o *POSTShippingMethods201ResponseDataRelationships) SetMarket(v POSTBundles201ResponseDataRelationshipsMarket) {
 	o.Market = &v
 }
 

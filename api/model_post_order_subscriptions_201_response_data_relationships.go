@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &POSTOrderSubscriptions201ResponseDataRelationships{}
 
 // POSTOrderSubscriptions201ResponseDataRelationships struct for POSTOrderSubscriptions201ResponseDataRelationships
 type POSTOrderSubscriptions201ResponseDataRelationships struct {
-	Market                 *POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket         `json:"market,omitempty"`
+	Market                 *POSTBundles201ResponseDataRelationshipsMarket                            `json:"market,omitempty"`
 	SubscriptionModel      *POSTMarkets201ResponseDataRelationshipsSubscriptionModel                 `json:"subscription_model,omitempty"`
 	SourceOrder            *POSTOrderCopies201ResponseDataRelationshipsSourceOrder                   `json:"source_order,omitempty"`
 	Customer               *POSTCouponRecipients201ResponseDataRelationshipsCustomer                 `json:"customer,omitempty"`
@@ -52,9 +52,9 @@ func NewPOSTOrderSubscriptions201ResponseDataRelationshipsWithDefaults() *POSTOr
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetMarket() POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket {
+func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetMarket() POSTBundles201ResponseDataRelationshipsMarket {
 	if o == nil || IsNil(o.Market) {
-		var ret POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket
+		var ret POSTBundles201ResponseDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -62,7 +62,7 @@ func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetMarket() POSTBil
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetMarketOk() (*POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket, bool) {
+func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetMarketOk() (*POSTBundles201ResponseDataRelationshipsMarket, bool) {
 	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
@@ -78,8 +78,8 @@ func (o *POSTOrderSubscriptions201ResponseDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket and assigns it to the Market field.
-func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetMarket(v POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket) {
+// SetMarket gets a reference to the given POSTBundles201ResponseDataRelationshipsMarket and assigns it to the Market field.
+func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetMarket(v POSTBundles201ResponseDataRelationshipsMarket) {
 	o.Market = &v
 }
 

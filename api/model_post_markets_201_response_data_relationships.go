@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -28,6 +28,7 @@ type POSTMarkets201ResponseDataRelationships struct {
 	TaxCalculator       *POSTMarkets201ResponseDataRelationshipsTaxCalculator                    `json:"tax_calculator,omitempty"`
 	CustomerGroup       *POSTCustomers201ResponseDataRelationshipsCustomerGroup                  `json:"customer_group,omitempty"`
 	Geocoder            *POSTAddresses201ResponseDataRelationshipsGeocoder                       `json:"geocoder,omitempty"`
+	Stores              *POSTMarkets201ResponseDataRelationshipsStores                           `json:"stores,omitempty"`
 	PriceListSchedulers *POSTMarkets201ResponseDataRelationshipsPriceListSchedulers              `json:"price_list_schedulers,omitempty"`
 	Attachments         *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
 	Versions            *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
@@ -306,6 +307,38 @@ func (o *POSTMarkets201ResponseDataRelationships) SetGeocoder(v POSTAddresses201
 	o.Geocoder = &v
 }
 
+// GetStores returns the Stores field value if set, zero value otherwise.
+func (o *POSTMarkets201ResponseDataRelationships) GetStores() POSTMarkets201ResponseDataRelationshipsStores {
+	if o == nil || IsNil(o.Stores) {
+		var ret POSTMarkets201ResponseDataRelationshipsStores
+		return ret
+	}
+	return *o.Stores
+}
+
+// GetStoresOk returns a tuple with the Stores field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTMarkets201ResponseDataRelationships) GetStoresOk() (*POSTMarkets201ResponseDataRelationshipsStores, bool) {
+	if o == nil || IsNil(o.Stores) {
+		return nil, false
+	}
+	return o.Stores, true
+}
+
+// HasStores returns a boolean if a field has been set.
+func (o *POSTMarkets201ResponseDataRelationships) HasStores() bool {
+	if o != nil && !IsNil(o.Stores) {
+		return true
+	}
+
+	return false
+}
+
+// SetStores gets a reference to the given POSTMarkets201ResponseDataRelationshipsStores and assigns it to the Stores field.
+func (o *POSTMarkets201ResponseDataRelationships) SetStores(v POSTMarkets201ResponseDataRelationshipsStores) {
+	o.Stores = &v
+}
+
 // GetPriceListSchedulers returns the PriceListSchedulers field value if set, zero value otherwise.
 func (o *POSTMarkets201ResponseDataRelationships) GetPriceListSchedulers() POSTMarkets201ResponseDataRelationshipsPriceListSchedulers {
 	if o == nil || IsNil(o.PriceListSchedulers) {
@@ -435,6 +468,9 @@ func (o POSTMarkets201ResponseDataRelationships) ToMap() (map[string]interface{}
 	}
 	if !IsNil(o.Geocoder) {
 		toSerialize["geocoder"] = o.Geocoder
+	}
+	if !IsNil(o.Stores) {
+		toSerialize["stores"] = o.Stores
 	}
 	if !IsNil(o.PriceListSchedulers) {
 		toSerialize["price_list_schedulers"] = o.PriceListSchedulers

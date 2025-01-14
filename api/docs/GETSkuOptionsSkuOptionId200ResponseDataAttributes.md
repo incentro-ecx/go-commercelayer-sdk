@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **FormattedPriceAmount** | Pointer to **interface{}** | The price of this shipping method, formatted. | [optional] 
 **DelayHours** | Pointer to **interface{}** | The delay time (in hours) that should be added to the delivery lead time when this option is purchased. | [optional] 
 **DelayDays** | Pointer to **interface{}** | The delay time, in days (rounded). | [optional] 
-**SkuCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated to match the SKU codes. | [optional] 
+**SkuCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated to match the SKU codes, max size is 5000. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 

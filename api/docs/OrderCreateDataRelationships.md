@@ -4,10 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | [optional] 
+**Market** | Pointer to [**BundleCreateDataRelationshipsMarket**](BundleCreateDataRelationshipsMarket.md) |  | [optional] 
 **Customer** | Pointer to [**CouponRecipientCreateDataRelationshipsCustomer**](CouponRecipientCreateDataRelationshipsCustomer.md) |  | [optional] 
 **ShippingAddress** | Pointer to [**CustomerAddressCreateDataRelationshipsAddress**](CustomerAddressCreateDataRelationshipsAddress.md) |  | [optional] 
 **BillingAddress** | Pointer to [**CustomerAddressCreateDataRelationshipsAddress**](CustomerAddressCreateDataRelationshipsAddress.md) |  | [optional] 
+**Store** | Pointer to [**OrderCreateDataRelationshipsStore**](OrderCreateDataRelationshipsStore.md) |  | [optional] 
 **PaymentMethod** | Pointer to [**CustomerPaymentSourceCreateDataRelationshipsPaymentMethod**](CustomerPaymentSourceCreateDataRelationshipsPaymentMethod.md) |  | [optional] 
 **PaymentSource** | Pointer to [**CustomerPaymentSourceCreateDataRelationshipsPaymentSource**](CustomerPaymentSourceCreateDataRelationshipsPaymentSource.md) |  | [optional] 
 **Tags** | Pointer to [**AddressCreateDataRelationshipsTags**](AddressCreateDataRelationshipsTags.md) |  | [optional] 
@@ -33,20 +34,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *OrderCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket`
+`func (o *OrderCreateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *OrderCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool)`
+`func (o *OrderCreateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *OrderCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket)`
+`func (o *OrderCreateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 
@@ -130,6 +131,31 @@ SetBillingAddress sets BillingAddress field to given value.
 `func (o *OrderCreateDataRelationships) HasBillingAddress() bool`
 
 HasBillingAddress returns a boolean if a field has been set.
+
+### GetStore
+
+`func (o *OrderCreateDataRelationships) GetStore() OrderCreateDataRelationshipsStore`
+
+GetStore returns the Store field if non-nil, zero value otherwise.
+
+### GetStoreOk
+
+`func (o *OrderCreateDataRelationships) GetStoreOk() (*OrderCreateDataRelationshipsStore, bool)`
+
+GetStoreOk returns a tuple with the Store field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStore
+
+`func (o *OrderCreateDataRelationships) SetStore(v OrderCreateDataRelationshipsStore)`
+
+SetStore sets Store field to given value.
+
+### HasStore
+
+`func (o *OrderCreateDataRelationships) HasStore() bool`
+
+HasStore returns a boolean if a field has been set.
 
 ### GetPaymentMethod
 

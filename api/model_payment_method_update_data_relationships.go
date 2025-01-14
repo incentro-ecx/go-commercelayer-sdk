@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,9 @@ var _ MappedNullable = &PaymentMethodUpdateDataRelationships{}
 
 // PaymentMethodUpdateDataRelationships struct for PaymentMethodUpdateDataRelationships
 type PaymentMethodUpdateDataRelationships struct {
-	Market         *BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market,omitempty"`
-	PaymentGateway *PaymentMethodCreateDataRelationshipsPaymentGateway     `json:"payment_gateway,omitempty"`
+	Market         *BundleCreateDataRelationshipsMarket                `json:"market,omitempty"`
+	PaymentGateway *PaymentMethodCreateDataRelationshipsPaymentGateway `json:"payment_gateway,omitempty"`
+	Store          *OrderCreateDataRelationshipsStore                  `json:"store,omitempty"`
 }
 
 // NewPaymentMethodUpdateDataRelationships instantiates a new PaymentMethodUpdateDataRelationships object
@@ -42,9 +43,9 @@ func NewPaymentMethodUpdateDataRelationshipsWithDefaults() *PaymentMethodUpdateD
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *PaymentMethodUpdateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
+func (o *PaymentMethodUpdateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket {
 	if o == nil || IsNil(o.Market) {
-		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
+		var ret BundleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -52,7 +53,7 @@ func (o *PaymentMethodUpdateDataRelationships) GetMarket() BillingInfoValidation
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaymentMethodUpdateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
+func (o *PaymentMethodUpdateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool) {
 	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
@@ -68,8 +69,8 @@ func (o *PaymentMethodUpdateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
-func (o *PaymentMethodUpdateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
+// SetMarket gets a reference to the given BundleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *PaymentMethodUpdateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 
@@ -105,6 +106,38 @@ func (o *PaymentMethodUpdateDataRelationships) SetPaymentGateway(v PaymentMethod
 	o.PaymentGateway = &v
 }
 
+// GetStore returns the Store field value if set, zero value otherwise.
+func (o *PaymentMethodUpdateDataRelationships) GetStore() OrderCreateDataRelationshipsStore {
+	if o == nil || IsNil(o.Store) {
+		var ret OrderCreateDataRelationshipsStore
+		return ret
+	}
+	return *o.Store
+}
+
+// GetStoreOk returns a tuple with the Store field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PaymentMethodUpdateDataRelationships) GetStoreOk() (*OrderCreateDataRelationshipsStore, bool) {
+	if o == nil || IsNil(o.Store) {
+		return nil, false
+	}
+	return o.Store, true
+}
+
+// HasStore returns a boolean if a field has been set.
+func (o *PaymentMethodUpdateDataRelationships) HasStore() bool {
+	if o != nil && !IsNil(o.Store) {
+		return true
+	}
+
+	return false
+}
+
+// SetStore gets a reference to the given OrderCreateDataRelationshipsStore and assigns it to the Store field.
+func (o *PaymentMethodUpdateDataRelationships) SetStore(v OrderCreateDataRelationshipsStore) {
+	o.Store = &v
+}
+
 func (o PaymentMethodUpdateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -120,6 +153,9 @@ func (o PaymentMethodUpdateDataRelationships) ToMap() (map[string]interface{}, e
 	}
 	if !IsNil(o.PaymentGateway) {
 		toSerialize["payment_gateway"] = o.PaymentGateway
+	}
+	if !IsNil(o.Store) {
+		toSerialize["store"] = o.Store
 	}
 	return toSerialize, nil
 }

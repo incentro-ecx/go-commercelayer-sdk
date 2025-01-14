@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Number** | Pointer to **interface{}** | Unique identifier for the stock transfer (numeric). | [optional] 
 **SkuCode** | Pointer to **interface{}** | The code of the associated SKU. | [optional] 
+**Quantity** | Pointer to **interface{}** | The stock quantity to be transferred from the origin stock location to destination one. Updatable unless stock transfer is completed or cancelled and depending on origin stock availability. | [optional] 
 **Upcoming** | Pointer to **interface{}** | Send this attribute if you want to mark this stock transfer as upcoming. | [optional] 
 **OnHold** | Pointer to **interface{}** | Send this attribute if you want to put this stock transfer on hold. | [optional] 
 **Picking** | Pointer to **interface{}** | Send this attribute if you want to start picking this stock transfer. | [optional] 
@@ -105,6 +106,41 @@ HasSkuCode returns a boolean if a field has been set.
 `func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) UnsetSkuCode()`
 
 UnsetSkuCode ensures that no value is present for SkuCode, not even an explicit nil
+### GetQuantity
+
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetQuantity() interface{}`
+
+GetQuantity returns the Quantity field if non-nil, zero value otherwise.
+
+### GetQuantityOk
+
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetQuantityOk() (*interface{}, bool)`
+
+GetQuantityOk returns a tuple with the Quantity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQuantity
+
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) SetQuantity(v interface{})`
+
+SetQuantity sets Quantity field to given value.
+
+### HasQuantity
+
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasQuantity() bool`
+
+HasQuantity returns a boolean if a field has been set.
+
+### SetQuantityNil
+
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) SetQuantityNil(b bool)`
+
+ SetQuantityNil sets the value for Quantity to be an explicit nil
+
+### UnsetQuantity
+`func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) UnsetQuantity()`
+
+UnsetQuantity ensures that no value is present for Quantity, not even an explicit nil
 ### GetUpcoming
 
 `func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetUpcoming() interface{}`

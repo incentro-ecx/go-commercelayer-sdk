@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
 **Id** | **interface{}** | The resource&#39;s id | 
-**Attributes** | [**PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**PATCHCleanupsCleanupId200ResponseDataAttributes**](PATCHCleanupsCleanupId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewExportUpdateData
 
-`func NewExportUpdateData(type_ interface{}, id interface{}, attributes PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, ) *ExportUpdateData`
+`func NewExportUpdateData(type_ interface{}, id interface{}, attributes PATCHCleanupsCleanupId200ResponseDataAttributes, ) *ExportUpdateData`
 
 NewExportUpdateData instantiates a new ExportUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -90,20 +90,20 @@ SetId sets Id field to given value.
 UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
-`func (o *ExportUpdateData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes`
+`func (o *ExportUpdateData) GetAttributes() PATCHCleanupsCleanupId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExportUpdateData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool)`
+`func (o *ExportUpdateData) GetAttributesOk() (*PATCHCleanupsCleanupId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExportUpdateData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes)`
+`func (o *ExportUpdateData) SetAttributes(v PATCHCleanupsCleanupId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

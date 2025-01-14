@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -46,6 +46,12 @@ type GETOrganizationOrganizationId200ResponseDataAttributes struct {
 	ApiAuthRedirect interface{} `json:"api_auth_redirect,omitempty"`
 	// Enables the rules engine for flex promotions and price list rules.
 	ApiRulesEngine interface{} `json:"api_rules_engine,omitempty"`
+	// Forces the usage of the new Authentication API.
+	ApiNewAuth interface{} `json:"api_new_auth,omitempty"`
+	// Enables the purge of cached single resources when list is purged.
+	ApiPurgeSingleResource interface{} `json:"api_purge_single_resource,omitempty"`
+	// The maximum length for the regular expressions, default is 5000.
+	ApiMaxRegexLength interface{} `json:"api_max_regex_length,omitempty"`
 	// Indicates if the phone attribute is required for addresses, default is true.
 	AddressesPhoneRequired interface{} `json:"addresses_phone_required,omitempty"`
 	// The maximum number line items allowed for a test order before disabling the autorefresh option.
@@ -74,10 +80,20 @@ type GETOrganizationOrganizationId200ResponseDataAttributes struct {
 	ExportsMaxConcurrentCount interface{} `json:"exports_max_concurrent_count,omitempty"`
 	// The maximum number of concurrent imports allowed for your organization, default is 10.
 	ImportsMaxConcurrentCount interface{} `json:"imports_max_concurrent_count,omitempty"`
+	// Enables purging of cached resources upon succeeded imports.
+	ImportsPurgeCache interface{} `json:"imports_purge_cache,omitempty"`
+	// Disables the interruption of the import in case its errors exceeds the 10% threshold, default is false.
+	ImportsSkipErrors interface{} `json:"imports_skip_errors,omitempty"`
 	// The maximum number of active concurrent promotions allowed for your organization, default is 10.
 	PromotionsMaxConcurrentCount interface{} `json:"promotions_max_concurrent_count,omitempty"`
 	// Enables triggering of webhooks during imports, default is false.
 	ImportsTriggerWebhooks interface{} `json:"imports_trigger_webhooks,omitempty"`
+	// Enables the use of an external discount engine in place of the standard one, default is false.
+	DiscountEnginesEnabled interface{} `json:"discount_engines_enabled,omitempty"`
+	// Enables raising of API errors in case of discount engine failure, default is false.
+	DiscountEnginesErrors interface{} `json:"discount_engines_errors,omitempty"`
+	// The maximum length for the tag name, default is 25.
+	TagsMaxNameLength interface{} `json:"tags_max_name_length,omitempty"`
 	// Enables raising of API errors in case of tax calculation failure, default is false.
 	TaxCalculatorsErrors interface{} `json:"tax_calculators_errors,omitempty"`
 	// Enables raising of API errors in case of external promotion failure, default is false.
@@ -538,6 +554,105 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasApiRulesEngi
 // SetApiRulesEngine gets a reference to the given interface{} and assigns it to the ApiRulesEngine field.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetApiRulesEngine(v interface{}) {
 	o.ApiRulesEngine = v
+}
+
+// GetApiNewAuth returns the ApiNewAuth field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiNewAuth() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ApiNewAuth
+}
+
+// GetApiNewAuthOk returns a tuple with the ApiNewAuth field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiNewAuthOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ApiNewAuth) {
+		return nil, false
+	}
+	return &o.ApiNewAuth, true
+}
+
+// HasApiNewAuth returns a boolean if a field has been set.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasApiNewAuth() bool {
+	if o != nil && IsNil(o.ApiNewAuth) {
+		return true
+	}
+
+	return false
+}
+
+// SetApiNewAuth gets a reference to the given interface{} and assigns it to the ApiNewAuth field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetApiNewAuth(v interface{}) {
+	o.ApiNewAuth = v
+}
+
+// GetApiPurgeSingleResource returns the ApiPurgeSingleResource field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiPurgeSingleResource() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ApiPurgeSingleResource
+}
+
+// GetApiPurgeSingleResourceOk returns a tuple with the ApiPurgeSingleResource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiPurgeSingleResourceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ApiPurgeSingleResource) {
+		return nil, false
+	}
+	return &o.ApiPurgeSingleResource, true
+}
+
+// HasApiPurgeSingleResource returns a boolean if a field has been set.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasApiPurgeSingleResource() bool {
+	if o != nil && IsNil(o.ApiPurgeSingleResource) {
+		return true
+	}
+
+	return false
+}
+
+// SetApiPurgeSingleResource gets a reference to the given interface{} and assigns it to the ApiPurgeSingleResource field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetApiPurgeSingleResource(v interface{}) {
+	o.ApiPurgeSingleResource = v
+}
+
+// GetApiMaxRegexLength returns the ApiMaxRegexLength field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiMaxRegexLength() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ApiMaxRegexLength
+}
+
+// GetApiMaxRegexLengthOk returns a tuple with the ApiMaxRegexLength field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiMaxRegexLengthOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ApiMaxRegexLength) {
+		return nil, false
+	}
+	return &o.ApiMaxRegexLength, true
+}
+
+// HasApiMaxRegexLength returns a boolean if a field has been set.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasApiMaxRegexLength() bool {
+	if o != nil && IsNil(o.ApiMaxRegexLength) {
+		return true
+	}
+
+	return false
+}
+
+// SetApiMaxRegexLength gets a reference to the given interface{} and assigns it to the ApiMaxRegexLength field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetApiMaxRegexLength(v interface{}) {
+	o.ApiMaxRegexLength = v
 }
 
 // GetAddressesPhoneRequired returns the AddressesPhoneRequired field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1002,6 +1117,72 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetImportsMaxCo
 	o.ImportsMaxConcurrentCount = v
 }
 
+// GetImportsPurgeCache returns the ImportsPurgeCache field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetImportsPurgeCache() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ImportsPurgeCache
+}
+
+// GetImportsPurgeCacheOk returns a tuple with the ImportsPurgeCache field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetImportsPurgeCacheOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ImportsPurgeCache) {
+		return nil, false
+	}
+	return &o.ImportsPurgeCache, true
+}
+
+// HasImportsPurgeCache returns a boolean if a field has been set.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasImportsPurgeCache() bool {
+	if o != nil && IsNil(o.ImportsPurgeCache) {
+		return true
+	}
+
+	return false
+}
+
+// SetImportsPurgeCache gets a reference to the given interface{} and assigns it to the ImportsPurgeCache field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetImportsPurgeCache(v interface{}) {
+	o.ImportsPurgeCache = v
+}
+
+// GetImportsSkipErrors returns the ImportsSkipErrors field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetImportsSkipErrors() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ImportsSkipErrors
+}
+
+// GetImportsSkipErrorsOk returns a tuple with the ImportsSkipErrors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetImportsSkipErrorsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ImportsSkipErrors) {
+		return nil, false
+	}
+	return &o.ImportsSkipErrors, true
+}
+
+// HasImportsSkipErrors returns a boolean if a field has been set.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasImportsSkipErrors() bool {
+	if o != nil && IsNil(o.ImportsSkipErrors) {
+		return true
+	}
+
+	return false
+}
+
+// SetImportsSkipErrors gets a reference to the given interface{} and assigns it to the ImportsSkipErrors field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetImportsSkipErrors(v interface{}) {
+	o.ImportsSkipErrors = v
+}
+
 // GetPromotionsMaxConcurrentCount returns the PromotionsMaxConcurrentCount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetPromotionsMaxConcurrentCount() interface{} {
 	if o == nil {
@@ -1066,6 +1247,105 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasImportsTrigg
 // SetImportsTriggerWebhooks gets a reference to the given interface{} and assigns it to the ImportsTriggerWebhooks field.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetImportsTriggerWebhooks(v interface{}) {
 	o.ImportsTriggerWebhooks = v
+}
+
+// GetDiscountEnginesEnabled returns the DiscountEnginesEnabled field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountEnginesEnabled() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.DiscountEnginesEnabled
+}
+
+// GetDiscountEnginesEnabledOk returns a tuple with the DiscountEnginesEnabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountEnginesEnabledOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DiscountEnginesEnabled) {
+		return nil, false
+	}
+	return &o.DiscountEnginesEnabled, true
+}
+
+// HasDiscountEnginesEnabled returns a boolean if a field has been set.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasDiscountEnginesEnabled() bool {
+	if o != nil && IsNil(o.DiscountEnginesEnabled) {
+		return true
+	}
+
+	return false
+}
+
+// SetDiscountEnginesEnabled gets a reference to the given interface{} and assigns it to the DiscountEnginesEnabled field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetDiscountEnginesEnabled(v interface{}) {
+	o.DiscountEnginesEnabled = v
+}
+
+// GetDiscountEnginesErrors returns the DiscountEnginesErrors field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountEnginesErrors() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.DiscountEnginesErrors
+}
+
+// GetDiscountEnginesErrorsOk returns a tuple with the DiscountEnginesErrors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountEnginesErrorsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DiscountEnginesErrors) {
+		return nil, false
+	}
+	return &o.DiscountEnginesErrors, true
+}
+
+// HasDiscountEnginesErrors returns a boolean if a field has been set.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasDiscountEnginesErrors() bool {
+	if o != nil && IsNil(o.DiscountEnginesErrors) {
+		return true
+	}
+
+	return false
+}
+
+// SetDiscountEnginesErrors gets a reference to the given interface{} and assigns it to the DiscountEnginesErrors field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetDiscountEnginesErrors(v interface{}) {
+	o.DiscountEnginesErrors = v
+}
+
+// GetTagsMaxNameLength returns the TagsMaxNameLength field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetTagsMaxNameLength() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.TagsMaxNameLength
+}
+
+// GetTagsMaxNameLengthOk returns a tuple with the TagsMaxNameLength field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetTagsMaxNameLengthOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.TagsMaxNameLength) {
+		return nil, false
+	}
+	return &o.TagsMaxNameLength, true
+}
+
+// HasTagsMaxNameLength returns a boolean if a field has been set.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasTagsMaxNameLength() bool {
+	if o != nil && IsNil(o.TagsMaxNameLength) {
+		return true
+	}
+
+	return false
+}
+
+// SetTagsMaxNameLength gets a reference to the given interface{} and assigns it to the TagsMaxNameLength field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetTagsMaxNameLength(v interface{}) {
+	o.TagsMaxNameLength = v
 }
 
 // GetTaxCalculatorsErrors returns the TaxCalculatorsErrors field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1348,6 +1628,15 @@ func (o GETOrganizationOrganizationId200ResponseDataAttributes) ToMap() (map[str
 	if o.ApiRulesEngine != nil {
 		toSerialize["api_rules_engine"] = o.ApiRulesEngine
 	}
+	if o.ApiNewAuth != nil {
+		toSerialize["api_new_auth"] = o.ApiNewAuth
+	}
+	if o.ApiPurgeSingleResource != nil {
+		toSerialize["api_purge_single_resource"] = o.ApiPurgeSingleResource
+	}
+	if o.ApiMaxRegexLength != nil {
+		toSerialize["api_max_regex_length"] = o.ApiMaxRegexLength
+	}
 	if o.AddressesPhoneRequired != nil {
 		toSerialize["addresses_phone_required"] = o.AddressesPhoneRequired
 	}
@@ -1390,11 +1679,26 @@ func (o GETOrganizationOrganizationId200ResponseDataAttributes) ToMap() (map[str
 	if o.ImportsMaxConcurrentCount != nil {
 		toSerialize["imports_max_concurrent_count"] = o.ImportsMaxConcurrentCount
 	}
+	if o.ImportsPurgeCache != nil {
+		toSerialize["imports_purge_cache"] = o.ImportsPurgeCache
+	}
+	if o.ImportsSkipErrors != nil {
+		toSerialize["imports_skip_errors"] = o.ImportsSkipErrors
+	}
 	if o.PromotionsMaxConcurrentCount != nil {
 		toSerialize["promotions_max_concurrent_count"] = o.PromotionsMaxConcurrentCount
 	}
 	if o.ImportsTriggerWebhooks != nil {
 		toSerialize["imports_trigger_webhooks"] = o.ImportsTriggerWebhooks
+	}
+	if o.DiscountEnginesEnabled != nil {
+		toSerialize["discount_engines_enabled"] = o.DiscountEnginesEnabled
+	}
+	if o.DiscountEnginesErrors != nil {
+		toSerialize["discount_engines_errors"] = o.DiscountEnginesErrors
+	}
+	if o.TagsMaxNameLength != nil {
+		toSerialize["tags_max_name_length"] = o.TagsMaxNameLength
 	}
 	if o.TaxCalculatorsErrors != nil {
 		toSerialize["tax_calculators_errors"] = o.TaxCalculatorsErrors

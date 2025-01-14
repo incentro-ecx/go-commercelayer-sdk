@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**GETOrderSubscriptionIdSourceOrder**](OrdersApi.md#GETOrderSubscriptionIdSourceOrder) | **Get** /order_subscriptions/{orderSubscriptionId}/source_order | Retrieve the source order associated to the order subscription
 [**GETOrders**](OrdersApi.md#GETOrders) | **Get** /orders | List all orders
 [**GETOrdersOrderId**](OrdersApi.md#GETOrdersOrderId) | **Get** /orders/{orderId} | Retrieve an order
+[**GETPaymentMethodIdOrders**](OrdersApi.md#GETPaymentMethodIdOrders) | **Get** /payment_methods/{paymentMethodId}/orders | Retrieve the orders associated to the payment method
 [**GETPaymentOptionIdOrder**](OrdersApi.md#GETPaymentOptionIdOrder) | **Get** /payment_options/{paymentOptionId}/order | Retrieve the order associated to the payment option
 [**GETPaypalPaymentIdOrder**](OrdersApi.md#GETPaypalPaymentIdOrder) | **Get** /paypal_payments/{paypalPaymentId}/order | Retrieve the order associated to the paypal payment
 [**GETRecurringOrderCopyIdSourceOrder**](OrdersApi.md#GETRecurringOrderCopyIdSourceOrder) | **Get** /recurring_order_copies/{recurringOrderCopyId}/source_order | Retrieve the source order associated to the recurring order copy
@@ -32,6 +33,7 @@ Method | HTTP request | Description
 [**GETSatispayPaymentIdOrder**](OrdersApi.md#GETSatispayPaymentIdOrder) | **Get** /satispay_payments/{satispayPaymentId}/order | Retrieve the order associated to the satispay payment
 [**GETShipmentIdOrder**](OrdersApi.md#GETShipmentIdOrder) | **Get** /shipments/{shipmentId}/order | Retrieve the order associated to the shipment
 [**GETStockReservationIdOrder**](OrdersApi.md#GETStockReservationIdOrder) | **Get** /stock_reservations/{stockReservationId}/order | Retrieve the order associated to the stock reservation
+[**GETStoreIdOrders**](OrdersApi.md#GETStoreIdOrders) | **Get** /stores/{storeId}/orders | Retrieve the orders associated to the store
 [**GETStripePaymentIdOrder**](OrdersApi.md#GETStripePaymentIdOrder) | **Get** /stripe_payments/{stripePaymentId}/order | Retrieve the order associated to the stripe payment
 [**GETTransactionIdOrder**](OrdersApi.md#GETTransactionIdOrder) | **Get** /transactions/{transactionId}/order | Retrieve the order associated to the transaction
 [**GETVoidIdOrder**](OrdersApi.md#GETVoidIdOrder) | **Get** /voids/{voidId}/order | Retrieve the order associated to the void
@@ -58,7 +60,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -126,7 +128,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -194,7 +196,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -262,7 +264,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -330,7 +332,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -398,7 +400,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -466,7 +468,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -534,7 +536,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -602,7 +604,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -670,7 +672,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -738,7 +740,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -806,7 +808,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -874,7 +876,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -942,7 +944,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1010,7 +1012,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1078,7 +1080,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1146,7 +1148,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1214,7 +1216,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1275,7 +1277,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1328,6 +1330,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETPaymentMethodIdOrders
+
+> GETPaymentMethodIdOrders(ctx, paymentMethodId).Execute()
+
+Retrieve the orders associated to the payment method
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
+)
+
+func main() {
+    paymentMethodId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.OrdersApi.GETPaymentMethodIdOrders(context.Background(), paymentMethodId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETPaymentMethodIdOrders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**paymentMethodId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPaymentMethodIdOrdersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETPaymentOptionIdOrder
 
 > GETPaymentOptionIdOrder(ctx, paymentOptionId).Execute()
@@ -1345,7 +1415,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1413,7 +1483,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1481,7 +1551,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1549,7 +1619,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1617,7 +1687,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1685,7 +1755,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1753,7 +1823,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1821,7 +1891,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1889,7 +1959,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1940,6 +2010,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETStoreIdOrders
+
+> GETStoreIdOrders(ctx, storeId).Execute()
+
+Retrieve the orders associated to the store
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
+)
+
+func main() {
+    storeId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.OrdersApi.GETStoreIdOrders(context.Background(), storeId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETStoreIdOrders``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**storeId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStoreIdOrdersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETStripePaymentIdOrder
 
 > GETStripePaymentIdOrder(ctx, stripePaymentId).Execute()
@@ -1957,7 +2095,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -2025,7 +2163,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -2093,7 +2231,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -2161,7 +2299,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -2229,7 +2367,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -2301,7 +2439,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {

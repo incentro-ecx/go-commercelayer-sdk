@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **TaxCalculator** | Pointer to [**POSTMarkets201ResponseDataRelationshipsTaxCalculator**](POSTMarkets201ResponseDataRelationshipsTaxCalculator.md) |  | [optional] 
 **CustomerGroup** | Pointer to [**POSTCustomers201ResponseDataRelationshipsCustomerGroup**](POSTCustomers201ResponseDataRelationshipsCustomerGroup.md) |  | [optional] 
 **Geocoder** | Pointer to [**POSTAddresses201ResponseDataRelationshipsGeocoder**](POSTAddresses201ResponseDataRelationshipsGeocoder.md) |  | [optional] 
+**Stores** | Pointer to [**POSTMarkets201ResponseDataRelationshipsStores**](POSTMarkets201ResponseDataRelationshipsStores.md) |  | [optional] 
 **PriceListSchedulers** | Pointer to [**POSTMarkets201ResponseDataRelationshipsPriceListSchedulers**](POSTMarkets201ResponseDataRelationshipsPriceListSchedulers.md) |  | [optional] 
 **Attachments** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments.md) |  | [optional] 
 **Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
@@ -234,6 +235,31 @@ SetGeocoder sets Geocoder field to given value.
 `func (o *POSTMarkets201ResponseDataRelationships) HasGeocoder() bool`
 
 HasGeocoder returns a boolean if a field has been set.
+
+### GetStores
+
+`func (o *POSTMarkets201ResponseDataRelationships) GetStores() POSTMarkets201ResponseDataRelationshipsStores`
+
+GetStores returns the Stores field if non-nil, zero value otherwise.
+
+### GetStoresOk
+
+`func (o *POSTMarkets201ResponseDataRelationships) GetStoresOk() (*POSTMarkets201ResponseDataRelationshipsStores, bool)`
+
+GetStoresOk returns a tuple with the Stores field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStores
+
+`func (o *POSTMarkets201ResponseDataRelationships) SetStores(v POSTMarkets201ResponseDataRelationshipsStores)`
+
+SetStores sets Stores field to given value.
+
+### HasStores
+
+`func (o *POSTMarkets201ResponseDataRelationships) HasStores() bool`
+
+HasStores returns a boolean if a field has been set.
 
 ### GetPriceListSchedulers
 

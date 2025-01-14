@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -23,16 +23,16 @@ type CleanupUpdateData struct {
 	// The resource's type
 	Type interface{} `json:"type"`
 	// The resource's id
-	Id            interface{}                                                                         `json:"id"`
-	Attributes    PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes `json:"attributes"`
-	Relationships interface{}                                                                         `json:"relationships,omitempty"`
+	Id            interface{}                                     `json:"id"`
+	Attributes    PATCHCleanupsCleanupId200ResponseDataAttributes `json:"attributes"`
+	Relationships interface{}                                     `json:"relationships,omitempty"`
 }
 
 // NewCleanupUpdateData instantiates a new CleanupUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCleanupUpdateData(type_ interface{}, id interface{}, attributes PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) *CleanupUpdateData {
+func NewCleanupUpdateData(type_ interface{}, id interface{}, attributes PATCHCleanupsCleanupId200ResponseDataAttributes) *CleanupUpdateData {
 	this := CleanupUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -101,9 +101,9 @@ func (o *CleanupUpdateData) SetId(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CleanupUpdateData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes {
+func (o *CleanupUpdateData) GetAttributes() PATCHCleanupsCleanupId200ResponseDataAttributes {
 	if o == nil {
-		var ret PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes
+		var ret PATCHCleanupsCleanupId200ResponseDataAttributes
 		return ret
 	}
 
@@ -112,7 +112,7 @@ func (o *CleanupUpdateData) GetAttributes() PATCHBillingInfoValidationRulesBilli
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CleanupUpdateData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool) {
+func (o *CleanupUpdateData) GetAttributesOk() (*PATCHCleanupsCleanupId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -120,7 +120,7 @@ func (o *CleanupUpdateData) GetAttributesOk() (*PATCHBillingInfoValidationRulesB
 }
 
 // SetAttributes sets field value
-func (o *CleanupUpdateData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) {
+func (o *CleanupUpdateData) SetAttributes(v PATCHCleanupsCleanupId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

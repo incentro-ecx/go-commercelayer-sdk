@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **InventoryReturnLocations** | Pointer to [**InventoryModelDataRelationshipsInventoryReturnLocations**](InventoryModelDataRelationshipsInventoryReturnLocations.md) |  | [optional] 
 **StockItems** | Pointer to [**ReservedStockDataRelationshipsStockItem**](ReservedStockDataRelationshipsStockItem.md) |  | [optional] 
 **StockTransfers** | Pointer to [**LineItemDataRelationshipsStockTransfers**](LineItemDataRelationshipsStockTransfers.md) |  | [optional] 
+**Stores** | Pointer to [**MarketDataRelationshipsStores**](MarketDataRelationshipsStores.md) |  | [optional] 
 **Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
 **Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
 
@@ -155,6 +156,31 @@ SetStockTransfers sets StockTransfers field to given value.
 `func (o *StockLocationDataRelationships) HasStockTransfers() bool`
 
 HasStockTransfers returns a boolean if a field has been set.
+
+### GetStores
+
+`func (o *StockLocationDataRelationships) GetStores() MarketDataRelationshipsStores`
+
+GetStores returns the Stores field if non-nil, zero value otherwise.
+
+### GetStoresOk
+
+`func (o *StockLocationDataRelationships) GetStoresOk() (*MarketDataRelationshipsStores, bool)`
+
+GetStoresOk returns a tuple with the Stores field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStores
+
+`func (o *StockLocationDataRelationships) SetStores(v MarketDataRelationshipsStores)`
+
+SetStores sets Stores field to given value.
+
+### HasStores
+
+`func (o *StockLocationDataRelationships) HasStores() bool`
+
+HasStores returns a boolean if a field has been set.
 
 ### GetAttachments
 

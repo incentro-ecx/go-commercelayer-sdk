@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Order** | Pointer to [**AdyenPaymentDataRelationshipsOrder**](AdyenPaymentDataRelationshipsOrder.md) |  | [optional] 
+**PaymentSource** | Pointer to [**AuthorizationDataRelationshipsPaymentSource**](AuthorizationDataRelationshipsPaymentSource.md) |  | [optional] 
 **Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
 **Events** | Pointer to [**AddressDataRelationshipsEvents**](AddressDataRelationshipsEvents.md) |  | [optional] 
 **Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
@@ -55,6 +56,31 @@ SetOrder sets Order field to given value.
 `func (o *CaptureDataRelationships) HasOrder() bool`
 
 HasOrder returns a boolean if a field has been set.
+
+### GetPaymentSource
+
+`func (o *CaptureDataRelationships) GetPaymentSource() AuthorizationDataRelationshipsPaymentSource`
+
+GetPaymentSource returns the PaymentSource field if non-nil, zero value otherwise.
+
+### GetPaymentSourceOk
+
+`func (o *CaptureDataRelationships) GetPaymentSourceOk() (*AuthorizationDataRelationshipsPaymentSource, bool)`
+
+GetPaymentSourceOk returns a tuple with the PaymentSource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentSource
+
+`func (o *CaptureDataRelationships) SetPaymentSource(v AuthorizationDataRelationshipsPaymentSource)`
+
+SetPaymentSource sets PaymentSource field to given value.
+
+### HasPaymentSource
+
+`func (o *CaptureDataRelationships) HasPaymentSource() bool`
+
+HasPaymentSource returns a boolean if a field has been set.
 
 ### GetAttachments
 

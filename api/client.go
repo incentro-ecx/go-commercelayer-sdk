@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -41,7 +41,7 @@ var (
 	queryDescape    = strings.NewReplacer("%5B", "[", "%5D", "]")
 )
 
-// APIClient manages communication with the Commerce Layer API API v7.3.1
+// APIClient manages communication with the Commerce Layer API API v7.6.1
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -68,8 +68,6 @@ type APIClient struct {
 	AxerveGatewaysApi *AxerveGatewaysApiService
 
 	AxervePaymentsApi *AxervePaymentsApiService
-
-	BillingInfoValidationRulesApi *BillingInfoValidationRulesApiService
 
 	BingGeocodersApi *BingGeocodersApiService
 
@@ -177,6 +175,8 @@ type APIClient struct {
 
 	MerchantsApi *MerchantsApiService
 
+	NotificationsApi *NotificationsApiService
+
 	OrderAmountPromotionRulesApi *OrderAmountPromotionRulesApiService
 
 	OrderCopiesApi *OrderCopiesApiService
@@ -275,6 +275,8 @@ type APIClient struct {
 
 	StockTransfersApi *StockTransfersApiService
 
+	StoresApi *StoresApiService
+
 	StripeGatewaysApi *StripeGatewaysApiService
 
 	StripePaymentsApi *StripePaymentsApiService
@@ -328,7 +330,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.AvalaraAccountsApi = (*AvalaraAccountsApiService)(&c.common)
 	c.AxerveGatewaysApi = (*AxerveGatewaysApiService)(&c.common)
 	c.AxervePaymentsApi = (*AxervePaymentsApiService)(&c.common)
-	c.BillingInfoValidationRulesApi = (*BillingInfoValidationRulesApiService)(&c.common)
 	c.BingGeocodersApi = (*BingGeocodersApiService)(&c.common)
 	c.BraintreeGatewaysApi = (*BraintreeGatewaysApiService)(&c.common)
 	c.BraintreePaymentsApi = (*BraintreePaymentsApiService)(&c.common)
@@ -382,6 +383,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ManualTaxCalculatorsApi = (*ManualTaxCalculatorsApiService)(&c.common)
 	c.MarketsApi = (*MarketsApiService)(&c.common)
 	c.MerchantsApi = (*MerchantsApiService)(&c.common)
+	c.NotificationsApi = (*NotificationsApiService)(&c.common)
 	c.OrderAmountPromotionRulesApi = (*OrderAmountPromotionRulesApiService)(&c.common)
 	c.OrderCopiesApi = (*OrderCopiesApiService)(&c.common)
 	c.OrderFactoriesApi = (*OrderFactoriesApiService)(&c.common)
@@ -431,6 +433,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.StockLocationsApi = (*StockLocationsApiService)(&c.common)
 	c.StockReservationsApi = (*StockReservationsApiService)(&c.common)
 	c.StockTransfersApi = (*StockTransfersApiService)(&c.common)
+	c.StoresApi = (*StoresApiService)(&c.common)
 	c.StripeGatewaysApi = (*StripeGatewaysApiService)(&c.common)
 	c.StripePaymentsApi = (*StripePaymentsApiService)(&c.common)
 	c.SubscriptionModelsApi = (*SubscriptionModelsApiService)(&c.common)

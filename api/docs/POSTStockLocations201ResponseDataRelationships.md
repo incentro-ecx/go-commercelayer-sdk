@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **InventoryReturnLocations** | Pointer to [**POSTInventoryModels201ResponseDataRelationshipsInventoryReturnLocations**](POSTInventoryModels201ResponseDataRelationshipsInventoryReturnLocations.md) |  | [optional] 
 **StockItems** | Pointer to [**POSTSkus201ResponseDataRelationshipsStockItems**](POSTSkus201ResponseDataRelationshipsStockItems.md) |  | [optional] 
 **StockTransfers** | Pointer to [**POSTLineItems201ResponseDataRelationshipsStockTransfers**](POSTLineItems201ResponseDataRelationshipsStockTransfers.md) |  | [optional] 
+**Stores** | Pointer to [**POSTMarkets201ResponseDataRelationshipsStores**](POSTMarkets201ResponseDataRelationshipsStores.md) |  | [optional] 
 **Attachments** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments.md) |  | [optional] 
 **Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
 
@@ -155,6 +156,31 @@ SetStockTransfers sets StockTransfers field to given value.
 `func (o *POSTStockLocations201ResponseDataRelationships) HasStockTransfers() bool`
 
 HasStockTransfers returns a boolean if a field has been set.
+
+### GetStores
+
+`func (o *POSTStockLocations201ResponseDataRelationships) GetStores() POSTMarkets201ResponseDataRelationshipsStores`
+
+GetStores returns the Stores field if non-nil, zero value otherwise.
+
+### GetStoresOk
+
+`func (o *POSTStockLocations201ResponseDataRelationships) GetStoresOk() (*POSTMarkets201ResponseDataRelationshipsStores, bool)`
+
+GetStoresOk returns a tuple with the Stores field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStores
+
+`func (o *POSTStockLocations201ResponseDataRelationships) SetStores(v POSTMarkets201ResponseDataRelationshipsStores)`
+
+SetStores sets Stores field to given value.
+
+### HasStores
+
+`func (o *POSTStockLocations201ResponseDataRelationships) HasStores() bool`
+
+HasStores returns a boolean if a field has been set.
 
 ### GetAttachments
 

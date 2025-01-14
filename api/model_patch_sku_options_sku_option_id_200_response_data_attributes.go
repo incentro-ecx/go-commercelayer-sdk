@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -30,7 +30,7 @@ type PATCHSkuOptionsSkuOptionId200ResponseDataAttributes struct {
 	PriceAmountCents interface{} `json:"price_amount_cents,omitempty"`
 	// The delay time (in hours) that should be added to the delivery lead time when this option is purchased.
 	DelayHours interface{} `json:"delay_hours,omitempty"`
-	// The regex that will be evaluated to match the SKU codes.
+	// The regex that will be evaluated to match the SKU codes, max size is 5000.
 	SkuCodeRegex interface{} `json:"sku_code_regex,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`

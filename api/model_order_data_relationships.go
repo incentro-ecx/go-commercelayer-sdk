@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -24,12 +24,13 @@ type OrderDataRelationships struct {
 	Customer                        *CouponRecipientDataRelationshipsCustomer               `json:"customer,omitempty"`
 	ShippingAddress                 *BingGeocoderDataRelationshipsAddresses                 `json:"shipping_address,omitempty"`
 	BillingAddress                  *BingGeocoderDataRelationshipsAddresses                 `json:"billing_address,omitempty"`
+	Store                           *MarketDataRelationshipsStores                          `json:"store,omitempty"`
 	AvailablePaymentMethods         *AdyenGatewayDataRelationshipsPaymentMethods            `json:"available_payment_methods,omitempty"`
 	AvailableCustomerPaymentSources *CustomerDataRelationshipsCustomerPaymentSources        `json:"available_customer_payment_sources,omitempty"`
 	AvailableFreeSkus               *BundleDataRelationshipsSkus                            `json:"available_free_skus,omitempty"`
 	AvailableFreeBundles            *LineItemDataRelationshipsBundle                        `json:"available_free_bundles,omitempty"`
 	PaymentMethod                   *AdyenGatewayDataRelationshipsPaymentMethods            `json:"payment_method,omitempty"`
-	PaymentSource                   *CustomerPaymentSourceDataRelationshipsPaymentSource    `json:"payment_source,omitempty"`
+	PaymentSource                   *AuthorizationDataRelationshipsPaymentSource            `json:"payment_source,omitempty"`
 	LineItems                       *LineItemOptionDataRelationshipsLineItem                `json:"line_items,omitempty"`
 	LineItemOptions                 *LineItemDataRelationshipsLineItemOptions               `json:"line_item_options,omitempty"`
 	StockReservations               *LineItemDataRelationshipsStockReservations             `json:"stock_reservations,omitempty"`
@@ -49,6 +50,7 @@ type OrderDataRelationships struct {
 	OrderCopies                     *OrderDataRelationshipsOrderCopies                      `json:"order_copies,omitempty"`
 	RecurringOrderCopies            *OrderSubscriptionDataRelationshipsRecurringOrderCopies `json:"recurring_order_copies,omitempty"`
 	Attachments                     *AuthorizationDataRelationshipsAttachments              `json:"attachments,omitempty"`
+	Notifications                   *LineItemDataRelationshipsNotifications                 `json:"notifications,omitempty"`
 	Links                           *OrderDataRelationshipsLinks                            `json:"links,omitempty"`
 	ResourceErrors                  *OrderDataRelationshipsResourceErrors                   `json:"resource_errors,omitempty"`
 	Events                          *AddressDataRelationshipsEvents                         `json:"events,omitempty"`
@@ -199,6 +201,38 @@ func (o *OrderDataRelationships) HasBillingAddress() bool {
 // SetBillingAddress gets a reference to the given BingGeocoderDataRelationshipsAddresses and assigns it to the BillingAddress field.
 func (o *OrderDataRelationships) SetBillingAddress(v BingGeocoderDataRelationshipsAddresses) {
 	o.BillingAddress = &v
+}
+
+// GetStore returns the Store field value if set, zero value otherwise.
+func (o *OrderDataRelationships) GetStore() MarketDataRelationshipsStores {
+	if o == nil || IsNil(o.Store) {
+		var ret MarketDataRelationshipsStores
+		return ret
+	}
+	return *o.Store
+}
+
+// GetStoreOk returns a tuple with the Store field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDataRelationships) GetStoreOk() (*MarketDataRelationshipsStores, bool) {
+	if o == nil || IsNil(o.Store) {
+		return nil, false
+	}
+	return o.Store, true
+}
+
+// HasStore returns a boolean if a field has been set.
+func (o *OrderDataRelationships) HasStore() bool {
+	if o != nil && !IsNil(o.Store) {
+		return true
+	}
+
+	return false
+}
+
+// SetStore gets a reference to the given MarketDataRelationshipsStores and assigns it to the Store field.
+func (o *OrderDataRelationships) SetStore(v MarketDataRelationshipsStores) {
+	o.Store = &v
 }
 
 // GetAvailablePaymentMethods returns the AvailablePaymentMethods field value if set, zero value otherwise.
@@ -362,9 +396,9 @@ func (o *OrderDataRelationships) SetPaymentMethod(v AdyenGatewayDataRelationship
 }
 
 // GetPaymentSource returns the PaymentSource field value if set, zero value otherwise.
-func (o *OrderDataRelationships) GetPaymentSource() CustomerPaymentSourceDataRelationshipsPaymentSource {
+func (o *OrderDataRelationships) GetPaymentSource() AuthorizationDataRelationshipsPaymentSource {
 	if o == nil || IsNil(o.PaymentSource) {
-		var ret CustomerPaymentSourceDataRelationshipsPaymentSource
+		var ret AuthorizationDataRelationshipsPaymentSource
 		return ret
 	}
 	return *o.PaymentSource
@@ -372,7 +406,7 @@ func (o *OrderDataRelationships) GetPaymentSource() CustomerPaymentSourceDataRel
 
 // GetPaymentSourceOk returns a tuple with the PaymentSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderDataRelationships) GetPaymentSourceOk() (*CustomerPaymentSourceDataRelationshipsPaymentSource, bool) {
+func (o *OrderDataRelationships) GetPaymentSourceOk() (*AuthorizationDataRelationshipsPaymentSource, bool) {
 	if o == nil || IsNil(o.PaymentSource) {
 		return nil, false
 	}
@@ -388,8 +422,8 @@ func (o *OrderDataRelationships) HasPaymentSource() bool {
 	return false
 }
 
-// SetPaymentSource gets a reference to the given CustomerPaymentSourceDataRelationshipsPaymentSource and assigns it to the PaymentSource field.
-func (o *OrderDataRelationships) SetPaymentSource(v CustomerPaymentSourceDataRelationshipsPaymentSource) {
+// SetPaymentSource gets a reference to the given AuthorizationDataRelationshipsPaymentSource and assigns it to the PaymentSource field.
+func (o *OrderDataRelationships) SetPaymentSource(v AuthorizationDataRelationshipsPaymentSource) {
 	o.PaymentSource = &v
 }
 
@@ -1001,6 +1035,38 @@ func (o *OrderDataRelationships) SetAttachments(v AuthorizationDataRelationships
 	o.Attachments = &v
 }
 
+// GetNotifications returns the Notifications field value if set, zero value otherwise.
+func (o *OrderDataRelationships) GetNotifications() LineItemDataRelationshipsNotifications {
+	if o == nil || IsNil(o.Notifications) {
+		var ret LineItemDataRelationshipsNotifications
+		return ret
+	}
+	return *o.Notifications
+}
+
+// GetNotificationsOk returns a tuple with the Notifications field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDataRelationships) GetNotificationsOk() (*LineItemDataRelationshipsNotifications, bool) {
+	if o == nil || IsNil(o.Notifications) {
+		return nil, false
+	}
+	return o.Notifications, true
+}
+
+// HasNotifications returns a boolean if a field has been set.
+func (o *OrderDataRelationships) HasNotifications() bool {
+	if o != nil && !IsNil(o.Notifications) {
+		return true
+	}
+
+	return false
+}
+
+// SetNotifications gets a reference to the given LineItemDataRelationshipsNotifications and assigns it to the Notifications field.
+func (o *OrderDataRelationships) SetNotifications(v LineItemDataRelationshipsNotifications) {
+	o.Notifications = &v
+}
+
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *OrderDataRelationships) GetLinks() OrderDataRelationshipsLinks {
 	if o == nil || IsNil(o.Links) {
@@ -1183,6 +1249,9 @@ func (o OrderDataRelationships) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.BillingAddress) {
 		toSerialize["billing_address"] = o.BillingAddress
 	}
+	if !IsNil(o.Store) {
+		toSerialize["store"] = o.Store
+	}
 	if !IsNil(o.AvailablePaymentMethods) {
 		toSerialize["available_payment_methods"] = o.AvailablePaymentMethods
 	}
@@ -1257,6 +1326,9 @@ func (o OrderDataRelationships) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Notifications) {
+		toSerialize["notifications"] = o.Notifications
 	}
 	if !IsNil(o.Links) {
 		toSerialize["links"] = o.Links

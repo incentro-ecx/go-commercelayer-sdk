@@ -4,16 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket**](POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket.md) |  | [optional] 
+**Market** | Pointer to [**POSTBundles201ResponseDataRelationshipsMarket**](POSTBundles201ResponseDataRelationshipsMarket.md) |  | [optional] 
 **Customer** | Pointer to [**POSTCouponRecipients201ResponseDataRelationshipsCustomer**](POSTCouponRecipients201ResponseDataRelationshipsCustomer.md) |  | [optional] 
 **ShippingAddress** | Pointer to [**POSTOrders201ResponseDataRelationshipsShippingAddress**](POSTOrders201ResponseDataRelationshipsShippingAddress.md) |  | [optional] 
 **BillingAddress** | Pointer to [**POSTOrders201ResponseDataRelationshipsBillingAddress**](POSTOrders201ResponseDataRelationshipsBillingAddress.md) |  | [optional] 
+**Store** | Pointer to [**POSTOrders201ResponseDataRelationshipsStore**](POSTOrders201ResponseDataRelationshipsStore.md) |  | [optional] 
 **AvailablePaymentMethods** | Pointer to [**POSTOrders201ResponseDataRelationshipsAvailablePaymentMethods**](POSTOrders201ResponseDataRelationshipsAvailablePaymentMethods.md) |  | [optional] 
 **AvailableCustomerPaymentSources** | Pointer to [**POSTOrders201ResponseDataRelationshipsAvailableCustomerPaymentSources**](POSTOrders201ResponseDataRelationshipsAvailableCustomerPaymentSources.md) |  | [optional] 
 **AvailableFreeSkus** | Pointer to [**POSTOrders201ResponseDataRelationshipsAvailableFreeSkus**](POSTOrders201ResponseDataRelationshipsAvailableFreeSkus.md) |  | [optional] 
 **AvailableFreeBundles** | Pointer to [**POSTOrders201ResponseDataRelationshipsAvailableFreeBundles**](POSTOrders201ResponseDataRelationshipsAvailableFreeBundles.md) |  | [optional] 
 **PaymentMethod** | Pointer to [**POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentMethod**](POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentMethod.md) |  | [optional] 
-**PaymentSource** | Pointer to [**POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource**](POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource.md) |  | [optional] 
+**PaymentSource** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource.md) |  | [optional] 
 **LineItems** | Pointer to [**POSTOrders201ResponseDataRelationshipsLineItems**](POSTOrders201ResponseDataRelationshipsLineItems.md) |  | [optional] 
 **LineItemOptions** | Pointer to [**POSTLineItems201ResponseDataRelationshipsLineItemOptions**](POSTLineItems201ResponseDataRelationshipsLineItemOptions.md) |  | [optional] 
 **StockReservations** | Pointer to [**POSTLineItems201ResponseDataRelationshipsStockReservations**](POSTLineItems201ResponseDataRelationshipsStockReservations.md) |  | [optional] 
@@ -33,6 +34,7 @@ Name | Type | Description | Notes
 **OrderCopies** | Pointer to [**POSTOrders201ResponseDataRelationshipsOrderCopies**](POSTOrders201ResponseDataRelationshipsOrderCopies.md) |  | [optional] 
 **RecurringOrderCopies** | Pointer to [**POSTOrderSubscriptions201ResponseDataRelationshipsRecurringOrderCopies**](POSTOrderSubscriptions201ResponseDataRelationshipsRecurringOrderCopies.md) |  | [optional] 
 **Attachments** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments.md) |  | [optional] 
+**Notifications** | Pointer to [**POSTLineItems201ResponseDataRelationshipsNotifications**](POSTLineItems201ResponseDataRelationshipsNotifications.md) |  | [optional] 
 **Links** | Pointer to [**POSTOrders201ResponseDataRelationshipsLinks**](POSTOrders201ResponseDataRelationshipsLinks.md) |  | [optional] 
 **ResourceErrors** | Pointer to [**POSTOrders201ResponseDataRelationshipsResourceErrors**](POSTOrders201ResponseDataRelationshipsResourceErrors.md) |  | [optional] 
 **Events** | Pointer to [**POSTAddresses201ResponseDataRelationshipsEvents**](POSTAddresses201ResponseDataRelationshipsEvents.md) |  | [optional] 
@@ -60,20 +62,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *POSTOrders201ResponseDataRelationships) GetMarket() POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket`
+`func (o *POSTOrders201ResponseDataRelationships) GetMarket() POSTBundles201ResponseDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *POSTOrders201ResponseDataRelationships) GetMarketOk() (*POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket, bool)`
+`func (o *POSTOrders201ResponseDataRelationships) GetMarketOk() (*POSTBundles201ResponseDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *POSTOrders201ResponseDataRelationships) SetMarket(v POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket)`
+`func (o *POSTOrders201ResponseDataRelationships) SetMarket(v POSTBundles201ResponseDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 
@@ -157,6 +159,31 @@ SetBillingAddress sets BillingAddress field to given value.
 `func (o *POSTOrders201ResponseDataRelationships) HasBillingAddress() bool`
 
 HasBillingAddress returns a boolean if a field has been set.
+
+### GetStore
+
+`func (o *POSTOrders201ResponseDataRelationships) GetStore() POSTOrders201ResponseDataRelationshipsStore`
+
+GetStore returns the Store field if non-nil, zero value otherwise.
+
+### GetStoreOk
+
+`func (o *POSTOrders201ResponseDataRelationships) GetStoreOk() (*POSTOrders201ResponseDataRelationshipsStore, bool)`
+
+GetStoreOk returns a tuple with the Store field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStore
+
+`func (o *POSTOrders201ResponseDataRelationships) SetStore(v POSTOrders201ResponseDataRelationshipsStore)`
+
+SetStore sets Store field to given value.
+
+### HasStore
+
+`func (o *POSTOrders201ResponseDataRelationships) HasStore() bool`
+
+HasStore returns a boolean if a field has been set.
 
 ### GetAvailablePaymentMethods
 
@@ -285,20 +312,20 @@ HasPaymentMethod returns a boolean if a field has been set.
 
 ### GetPaymentSource
 
-`func (o *POSTOrders201ResponseDataRelationships) GetPaymentSource() POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource`
+`func (o *POSTOrders201ResponseDataRelationships) GetPaymentSource() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource`
 
 GetPaymentSource returns the PaymentSource field if non-nil, zero value otherwise.
 
 ### GetPaymentSourceOk
 
-`func (o *POSTOrders201ResponseDataRelationships) GetPaymentSourceOk() (*POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource, bool)`
+`func (o *POSTOrders201ResponseDataRelationships) GetPaymentSourceOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource, bool)`
 
 GetPaymentSourceOk returns a tuple with the PaymentSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaymentSource
 
-`func (o *POSTOrders201ResponseDataRelationships) SetPaymentSource(v POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource)`
+`func (o *POSTOrders201ResponseDataRelationships) SetPaymentSource(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource)`
 
 SetPaymentSource sets PaymentSource field to given value.
 
@@ -782,6 +809,31 @@ SetAttachments sets Attachments field to given value.
 `func (o *POSTOrders201ResponseDataRelationships) HasAttachments() bool`
 
 HasAttachments returns a boolean if a field has been set.
+
+### GetNotifications
+
+`func (o *POSTOrders201ResponseDataRelationships) GetNotifications() POSTLineItems201ResponseDataRelationshipsNotifications`
+
+GetNotifications returns the Notifications field if non-nil, zero value otherwise.
+
+### GetNotificationsOk
+
+`func (o *POSTOrders201ResponseDataRelationships) GetNotificationsOk() (*POSTLineItems201ResponseDataRelationshipsNotifications, bool)`
+
+GetNotificationsOk returns a tuple with the Notifications field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotifications
+
+`func (o *POSTOrders201ResponseDataRelationships) SetNotifications(v POSTLineItems201ResponseDataRelationshipsNotifications)`
+
+SetNotifications sets Notifications field to given value.
+
+### HasNotifications
+
+`func (o *POSTOrders201ResponseDataRelationships) HasNotifications() bool`
+
+HasNotifications returns a boolean if a field has been set.
 
 ### GetLinks
 

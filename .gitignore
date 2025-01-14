@@ -27,3 +27,5 @@ _testmain.go
 openapi.json
 
 /.idea
+
+/openapi.yaml

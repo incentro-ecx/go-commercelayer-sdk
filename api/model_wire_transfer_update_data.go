@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -23,16 +23,16 @@ type WireTransferUpdateData struct {
 	// The resource's type
 	Type interface{} `json:"type"`
 	// The resource's id
-	Id            interface{}                                                                         `json:"id"`
-	Attributes    PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentUpdateDataRelationships                                                `json:"relationships,omitempty"`
+	Id            interface{}                                                                       `json:"id"`
+	Attributes    PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentUpdateDataRelationships                                              `json:"relationships,omitempty"`
 }
 
 // NewWireTransferUpdateData instantiates a new WireTransferUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWireTransferUpdateData(type_ interface{}, id interface{}, attributes PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) *WireTransferUpdateData {
+func NewWireTransferUpdateData(type_ interface{}, id interface{}, attributes PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes) *WireTransferUpdateData {
 	this := WireTransferUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -101,9 +101,9 @@ func (o *WireTransferUpdateData) SetId(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *WireTransferUpdateData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes {
+func (o *WireTransferUpdateData) GetAttributes() PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes {
 	if o == nil {
-		var ret PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes
+		var ret PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes
 		return ret
 	}
 
@@ -112,7 +112,7 @@ func (o *WireTransferUpdateData) GetAttributes() PATCHBillingInfoValidationRules
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *WireTransferUpdateData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool) {
+func (o *WireTransferUpdateData) GetAttributesOk() (*PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -120,7 +120,7 @@ func (o *WireTransferUpdateData) GetAttributesOk() (*PATCHBillingInfoValidationR
 }
 
 // SetAttributes sets field value
-func (o *WireTransferUpdateData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) {
+func (o *WireTransferUpdateData) SetAttributes(v PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

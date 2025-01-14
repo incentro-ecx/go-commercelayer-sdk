@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &SkuOptionCreateDataRelationships{}
 
 // SkuOptionCreateDataRelationships struct for SkuOptionCreateDataRelationships
 type SkuOptionCreateDataRelationships struct {
-	Market *BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market,omitempty"`
-	Tags   *AddressCreateDataRelationshipsTags                     `json:"tags,omitempty"`
+	Market *BundleCreateDataRelationshipsMarket `json:"market,omitempty"`
+	Tags   *AddressCreateDataRelationshipsTags  `json:"tags,omitempty"`
 }
 
 // NewSkuOptionCreateDataRelationships instantiates a new SkuOptionCreateDataRelationships object
@@ -42,9 +42,9 @@ func NewSkuOptionCreateDataRelationshipsWithDefaults() *SkuOptionCreateDataRelat
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *SkuOptionCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
+func (o *SkuOptionCreateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket {
 	if o == nil || IsNil(o.Market) {
-		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
+		var ret BundleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -52,7 +52,7 @@ func (o *SkuOptionCreateDataRelationships) GetMarket() BillingInfoValidationRule
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuOptionCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
+func (o *SkuOptionCreateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool) {
 	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *SkuOptionCreateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
-func (o *SkuOptionCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
+// SetMarket gets a reference to the given BundleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *SkuOptionCreateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 

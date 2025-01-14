@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &BuyXPayYPromotionUpdateDataRelationships{}
 
 // BuyXPayYPromotionUpdateDataRelationships struct for BuyXPayYPromotionUpdateDataRelationships
 type BuyXPayYPromotionUpdateDataRelationships struct {
-	Market                   *BillingInfoValidationRuleCreateDataRelationshipsMarket           `json:"market,omitempty"`
+	Market                   *BundleCreateDataRelationshipsMarket                              `json:"market,omitempty"`
 	OrderAmountPromotionRule *BuyXPayYPromotionCreateDataRelationshipsOrderAmountPromotionRule `json:"order_amount_promotion_rule,omitempty"`
 	SkuListPromotionRule     *BuyXPayYPromotionCreateDataRelationshipsSkuListPromotionRule     `json:"sku_list_promotion_rule,omitempty"`
 	CouponCodesPromotionRule *BuyXPayYPromotionCreateDataRelationshipsCouponCodesPromotionRule `json:"coupon_codes_promotion_rule,omitempty"`
@@ -47,9 +47,9 @@ func NewBuyXPayYPromotionUpdateDataRelationshipsWithDefaults() *BuyXPayYPromotio
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *BuyXPayYPromotionUpdateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
+func (o *BuyXPayYPromotionUpdateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket {
 	if o == nil || IsNil(o.Market) {
-		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
+		var ret BundleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -57,7 +57,7 @@ func (o *BuyXPayYPromotionUpdateDataRelationships) GetMarket() BillingInfoValida
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BuyXPayYPromotionUpdateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
+func (o *BuyXPayYPromotionUpdateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool) {
 	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
@@ -73,8 +73,8 @@ func (o *BuyXPayYPromotionUpdateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
-func (o *BuyXPayYPromotionUpdateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
+// SetMarket gets a reference to the given BundleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *BuyXPayYPromotionUpdateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 

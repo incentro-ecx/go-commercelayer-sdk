@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -30,7 +30,7 @@ type GETLineItemsLineItemId200ResponseDataAttributes struct {
 	ExternalPrice interface{} `json:"_external_price,omitempty"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard, automatically inherited from the order's market.
 	CurrencyCode interface{} `json:"currency_code,omitempty"`
-	// The unit amount of the line item, in cents. Can be specified only via an integration application, or when the item is missing, otherwise is automatically computed by using one of the available methods.
+	// The unit amount of the line item, in cents. Can be specified only via an integration application, or when the item is missing, otherwise is automatically computed by using one of the available methods. Cannot be passed by sales channels.
 	UnitAmountCents interface{} `json:"unit_amount_cents,omitempty"`
 	// The unit amount of the line item, float. This can be useful to track the purchase on thrid party systems, e.g Google Analyitcs Enhanced Ecommerce.
 	UnitAmountFloat interface{} `json:"unit_amount_float,omitempty"`
@@ -76,7 +76,7 @@ type GETLineItemsLineItemId200ResponseDataAttributes struct {
 	TaxRate interface{} `json:"tax_rate,omitempty"`
 	// The tax breakdown for this line item (if calculated).
 	TaxBreakdown interface{} `json:"tax_breakdown,omitempty"`
-	// The type of the associated item. One of 'skus', 'bundles', 'gift_cards', 'shipments', 'payment_methods', 'adjustments', 'percentage_discount_promotions', 'free_shipping_promotions', 'buy_x_pay_y_promotions', 'free_gift_promotions', 'fixed_price_promotions', 'external_promotions', 'fixed_amount_promotions', or 'flex_promotions'.
+	// The type of the associated item. One of 'skus', 'bundles', 'gift_cards', 'shipments', 'payment_methods', 'adjustments', 'discount_engine_items', 'percentage_discount_promotions', 'free_shipping_promotions', 'buy_x_pay_y_promotions', 'free_gift_promotions', 'fixed_price_promotions', 'external_promotions', 'fixed_amount_promotions', or 'flex_promotions'.
 	ItemType interface{} `json:"item_type,omitempty"`
 	// The frequency which generates a subscription. Must be supported by existing associated subscription_model.
 	Frequency interface{} `json:"frequency,omitempty"`

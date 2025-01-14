@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket**](POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket.md) |  | [optional] 
+**Market** | Pointer to [**POSTBundles201ResponseDataRelationshipsMarket**](POSTBundles201ResponseDataRelationshipsMarket.md) |  | [optional] 
 **PromotionRules** | Pointer to [**POSTBuyXPayYPromotions201ResponseDataRelationshipsPromotionRules**](POSTBuyXPayYPromotions201ResponseDataRelationshipsPromotionRules.md) |  | [optional] 
 **OrderAmountPromotionRule** | Pointer to [**POSTBuyXPayYPromotions201ResponseDataRelationshipsOrderAmountPromotionRule**](POSTBuyXPayYPromotions201ResponseDataRelationshipsOrderAmountPromotionRule.md) |  | [optional] 
 **SkuListPromotionRule** | Pointer to [**POSTBuyXPayYPromotions201ResponseDataRelationshipsSkuListPromotionRule**](POSTBuyXPayYPromotions201ResponseDataRelationshipsSkuListPromotionRule.md) |  | [optional] 
@@ -39,20 +39,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *POSTBuyXPayYPromotions201ResponseDataRelationships) GetMarket() POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket`
+`func (o *POSTBuyXPayYPromotions201ResponseDataRelationships) GetMarket() POSTBundles201ResponseDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *POSTBuyXPayYPromotions201ResponseDataRelationships) GetMarketOk() (*POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket, bool)`
+`func (o *POSTBuyXPayYPromotions201ResponseDataRelationships) GetMarketOk() (*POSTBundles201ResponseDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *POSTBuyXPayYPromotions201ResponseDataRelationships) SetMarket(v POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket)`
+`func (o *POSTBuyXPayYPromotions201ResponseDataRelationships) SetMarket(v POSTBundles201ResponseDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 

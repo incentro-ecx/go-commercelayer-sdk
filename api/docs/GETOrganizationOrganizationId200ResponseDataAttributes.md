@@ -17,6 +17,9 @@ Name | Type | Description | Notes
 **Config** | Pointer to **interface{}** | The organization&#39;s configuration. | [optional] 
 **ApiAuthRedirect** | Pointer to **interface{}** | Enables the redirect on the new Auth API. | [optional] 
 **ApiRulesEngine** | Pointer to **interface{}** | Enables the rules engine for flex promotions and price list rules. | [optional] 
+**ApiNewAuth** | Pointer to **interface{}** | Forces the usage of the new Authentication API. | [optional] 
+**ApiPurgeSingleResource** | Pointer to **interface{}** | Enables the purge of cached single resources when list is purged. | [optional] 
+**ApiMaxRegexLength** | Pointer to **interface{}** | The maximum length for the regular expressions, default is 5000. | [optional] 
 **AddressesPhoneRequired** | Pointer to **interface{}** | Indicates if the phone attribute is required for addresses, default is true. | [optional] 
 **OrdersAutorefreshCutoffTest** | Pointer to **interface{}** | The maximum number line items allowed for a test order before disabling the autorefresh option. | [optional] 
 **OrdersAutorefreshCutoffLive** | Pointer to **interface{}** | The maximum number line items allowed for a live order before disabling the autorefresh option. | [optional] 
@@ -31,8 +34,13 @@ Name | Type | Description | Notes
 **CleanupsMaxConcurrentCount** | Pointer to **interface{}** | The maximum number of concurrent cleanups allowed for your organization, default is 10. | [optional] 
 **ExportsMaxConcurrentCount** | Pointer to **interface{}** | The maximum number of concurrent exports allowed for your organization, default is 10. | [optional] 
 **ImportsMaxConcurrentCount** | Pointer to **interface{}** | The maximum number of concurrent imports allowed for your organization, default is 10. | [optional] 
+**ImportsPurgeCache** | Pointer to **interface{}** | Enables purging of cached resources upon succeeded imports. | [optional] 
+**ImportsSkipErrors** | Pointer to **interface{}** | Disables the interruption of the import in case its errors exceeds the 10% threshold, default is false. | [optional] 
 **PromotionsMaxConcurrentCount** | Pointer to **interface{}** | The maximum number of active concurrent promotions allowed for your organization, default is 10. | [optional] 
 **ImportsTriggerWebhooks** | Pointer to **interface{}** | Enables triggering of webhooks during imports, default is false. | [optional] 
+**DiscountEnginesEnabled** | Pointer to **interface{}** | Enables the use of an external discount engine in place of the standard one, default is false. | [optional] 
+**DiscountEnginesErrors** | Pointer to **interface{}** | Enables raising of API errors in case of discount engine failure, default is false. | [optional] 
+**TagsMaxNameLength** | Pointer to **interface{}** | The maximum length for the tag name, default is 25. | [optional] 
 **TaxCalculatorsErrors** | Pointer to **interface{}** | Enables raising of API errors in case of tax calculation failure, default is false. | [optional] 
 **ExternalPromotionsErrors** | Pointer to **interface{}** | Enables raising of API errors in case of external promotion failure, default is false. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
@@ -515,6 +523,111 @@ HasApiRulesEngine returns a boolean if a field has been set.
 `func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetApiRulesEngine()`
 
 UnsetApiRulesEngine ensures that no value is present for ApiRulesEngine, not even an explicit nil
+### GetApiNewAuth
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiNewAuth() interface{}`
+
+GetApiNewAuth returns the ApiNewAuth field if non-nil, zero value otherwise.
+
+### GetApiNewAuthOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiNewAuthOk() (*interface{}, bool)`
+
+GetApiNewAuthOk returns a tuple with the ApiNewAuth field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiNewAuth
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetApiNewAuth(v interface{})`
+
+SetApiNewAuth sets ApiNewAuth field to given value.
+
+### HasApiNewAuth
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasApiNewAuth() bool`
+
+HasApiNewAuth returns a boolean if a field has been set.
+
+### SetApiNewAuthNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetApiNewAuthNil(b bool)`
+
+ SetApiNewAuthNil sets the value for ApiNewAuth to be an explicit nil
+
+### UnsetApiNewAuth
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetApiNewAuth()`
+
+UnsetApiNewAuth ensures that no value is present for ApiNewAuth, not even an explicit nil
+### GetApiPurgeSingleResource
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiPurgeSingleResource() interface{}`
+
+GetApiPurgeSingleResource returns the ApiPurgeSingleResource field if non-nil, zero value otherwise.
+
+### GetApiPurgeSingleResourceOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiPurgeSingleResourceOk() (*interface{}, bool)`
+
+GetApiPurgeSingleResourceOk returns a tuple with the ApiPurgeSingleResource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiPurgeSingleResource
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetApiPurgeSingleResource(v interface{})`
+
+SetApiPurgeSingleResource sets ApiPurgeSingleResource field to given value.
+
+### HasApiPurgeSingleResource
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasApiPurgeSingleResource() bool`
+
+HasApiPurgeSingleResource returns a boolean if a field has been set.
+
+### SetApiPurgeSingleResourceNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetApiPurgeSingleResourceNil(b bool)`
+
+ SetApiPurgeSingleResourceNil sets the value for ApiPurgeSingleResource to be an explicit nil
+
+### UnsetApiPurgeSingleResource
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetApiPurgeSingleResource()`
+
+UnsetApiPurgeSingleResource ensures that no value is present for ApiPurgeSingleResource, not even an explicit nil
+### GetApiMaxRegexLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiMaxRegexLength() interface{}`
+
+GetApiMaxRegexLength returns the ApiMaxRegexLength field if non-nil, zero value otherwise.
+
+### GetApiMaxRegexLengthOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetApiMaxRegexLengthOk() (*interface{}, bool)`
+
+GetApiMaxRegexLengthOk returns a tuple with the ApiMaxRegexLength field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiMaxRegexLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetApiMaxRegexLength(v interface{})`
+
+SetApiMaxRegexLength sets ApiMaxRegexLength field to given value.
+
+### HasApiMaxRegexLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasApiMaxRegexLength() bool`
+
+HasApiMaxRegexLength returns a boolean if a field has been set.
+
+### SetApiMaxRegexLengthNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetApiMaxRegexLengthNil(b bool)`
+
+ SetApiMaxRegexLengthNil sets the value for ApiMaxRegexLength to be an explicit nil
+
+### UnsetApiMaxRegexLength
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetApiMaxRegexLength()`
+
+UnsetApiMaxRegexLength ensures that no value is present for ApiMaxRegexLength, not even an explicit nil
 ### GetAddressesPhoneRequired
 
 `func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAddressesPhoneRequired() interface{}`
@@ -1005,6 +1118,76 @@ HasImportsMaxConcurrentCount returns a boolean if a field has been set.
 `func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetImportsMaxConcurrentCount()`
 
 UnsetImportsMaxConcurrentCount ensures that no value is present for ImportsMaxConcurrentCount, not even an explicit nil
+### GetImportsPurgeCache
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetImportsPurgeCache() interface{}`
+
+GetImportsPurgeCache returns the ImportsPurgeCache field if non-nil, zero value otherwise.
+
+### GetImportsPurgeCacheOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetImportsPurgeCacheOk() (*interface{}, bool)`
+
+GetImportsPurgeCacheOk returns a tuple with the ImportsPurgeCache field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportsPurgeCache
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetImportsPurgeCache(v interface{})`
+
+SetImportsPurgeCache sets ImportsPurgeCache field to given value.
+
+### HasImportsPurgeCache
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasImportsPurgeCache() bool`
+
+HasImportsPurgeCache returns a boolean if a field has been set.
+
+### SetImportsPurgeCacheNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetImportsPurgeCacheNil(b bool)`
+
+ SetImportsPurgeCacheNil sets the value for ImportsPurgeCache to be an explicit nil
+
+### UnsetImportsPurgeCache
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetImportsPurgeCache()`
+
+UnsetImportsPurgeCache ensures that no value is present for ImportsPurgeCache, not even an explicit nil
+### GetImportsSkipErrors
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetImportsSkipErrors() interface{}`
+
+GetImportsSkipErrors returns the ImportsSkipErrors field if non-nil, zero value otherwise.
+
+### GetImportsSkipErrorsOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetImportsSkipErrorsOk() (*interface{}, bool)`
+
+GetImportsSkipErrorsOk returns a tuple with the ImportsSkipErrors field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportsSkipErrors
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetImportsSkipErrors(v interface{})`
+
+SetImportsSkipErrors sets ImportsSkipErrors field to given value.
+
+### HasImportsSkipErrors
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasImportsSkipErrors() bool`
+
+HasImportsSkipErrors returns a boolean if a field has been set.
+
+### SetImportsSkipErrorsNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetImportsSkipErrorsNil(b bool)`
+
+ SetImportsSkipErrorsNil sets the value for ImportsSkipErrors to be an explicit nil
+
+### UnsetImportsSkipErrors
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetImportsSkipErrors()`
+
+UnsetImportsSkipErrors ensures that no value is present for ImportsSkipErrors, not even an explicit nil
 ### GetPromotionsMaxConcurrentCount
 
 `func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetPromotionsMaxConcurrentCount() interface{}`
@@ -1075,6 +1258,111 @@ HasImportsTriggerWebhooks returns a boolean if a field has been set.
 `func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetImportsTriggerWebhooks()`
 
 UnsetImportsTriggerWebhooks ensures that no value is present for ImportsTriggerWebhooks, not even an explicit nil
+### GetDiscountEnginesEnabled
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountEnginesEnabled() interface{}`
+
+GetDiscountEnginesEnabled returns the DiscountEnginesEnabled field if non-nil, zero value otherwise.
+
+### GetDiscountEnginesEnabledOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountEnginesEnabledOk() (*interface{}, bool)`
+
+GetDiscountEnginesEnabledOk returns a tuple with the DiscountEnginesEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountEnginesEnabled
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetDiscountEnginesEnabled(v interface{})`
+
+SetDiscountEnginesEnabled sets DiscountEnginesEnabled field to given value.
+
+### HasDiscountEnginesEnabled
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasDiscountEnginesEnabled() bool`
+
+HasDiscountEnginesEnabled returns a boolean if a field has been set.
+
+### SetDiscountEnginesEnabledNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetDiscountEnginesEnabledNil(b bool)`
+
+ SetDiscountEnginesEnabledNil sets the value for DiscountEnginesEnabled to be an explicit nil
+
+### UnsetDiscountEnginesEnabled
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetDiscountEnginesEnabled()`
+
+UnsetDiscountEnginesEnabled ensures that no value is present for DiscountEnginesEnabled, not even an explicit nil
+### GetDiscountEnginesErrors
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountEnginesErrors() interface{}`
+
+GetDiscountEnginesErrors returns the DiscountEnginesErrors field if non-nil, zero value otherwise.
+
+### GetDiscountEnginesErrorsOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountEnginesErrorsOk() (*interface{}, bool)`
+
+GetDiscountEnginesErrorsOk returns a tuple with the DiscountEnginesErrors field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDiscountEnginesErrors
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetDiscountEnginesErrors(v interface{})`
+
+SetDiscountEnginesErrors sets DiscountEnginesErrors field to given value.
+
+### HasDiscountEnginesErrors
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasDiscountEnginesErrors() bool`
+
+HasDiscountEnginesErrors returns a boolean if a field has been set.
+
+### SetDiscountEnginesErrorsNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetDiscountEnginesErrorsNil(b bool)`
+
+ SetDiscountEnginesErrorsNil sets the value for DiscountEnginesErrors to be an explicit nil
+
+### UnsetDiscountEnginesErrors
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetDiscountEnginesErrors()`
+
+UnsetDiscountEnginesErrors ensures that no value is present for DiscountEnginesErrors, not even an explicit nil
+### GetTagsMaxNameLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetTagsMaxNameLength() interface{}`
+
+GetTagsMaxNameLength returns the TagsMaxNameLength field if non-nil, zero value otherwise.
+
+### GetTagsMaxNameLengthOk
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetTagsMaxNameLengthOk() (*interface{}, bool)`
+
+GetTagsMaxNameLengthOk returns a tuple with the TagsMaxNameLength field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTagsMaxNameLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetTagsMaxNameLength(v interface{})`
+
+SetTagsMaxNameLength sets TagsMaxNameLength field to given value.
+
+### HasTagsMaxNameLength
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasTagsMaxNameLength() bool`
+
+HasTagsMaxNameLength returns a boolean if a field has been set.
+
+### SetTagsMaxNameLengthNil
+
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetTagsMaxNameLengthNil(b bool)`
+
+ SetTagsMaxNameLengthNil sets the value for TagsMaxNameLength to be an explicit nil
+
+### UnsetTagsMaxNameLength
+`func (o *GETOrganizationOrganizationId200ResponseDataAttributes) UnsetTagsMaxNameLength()`
+
+UnsetTagsMaxNameLength ensures that no value is present for TagsMaxNameLength, not even an explicit nil
 ### GetTaxCalculatorsErrors
 
 `func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetTaxCalculatorsErrors() interface{}`

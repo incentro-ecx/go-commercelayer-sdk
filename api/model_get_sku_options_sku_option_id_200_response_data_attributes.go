@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -36,7 +36,7 @@ type GETSkuOptionsSkuOptionId200ResponseDataAttributes struct {
 	DelayHours interface{} `json:"delay_hours,omitempty"`
 	// The delay time, in days (rounded).
 	DelayDays interface{} `json:"delay_days,omitempty"`
-	// The regex that will be evaluated to match the SKU codes.
+	// The regex that will be evaluated to match the SKU codes, max size is 5000.
 	SkuCodeRegex interface{} `json:"sku_code_regex,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`

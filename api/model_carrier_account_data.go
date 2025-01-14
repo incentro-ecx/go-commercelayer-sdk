@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -23,7 +23,7 @@ type CarrierAccountData struct {
 	// The resource's type
 	Type          interface{}                                                 `json:"type"`
 	Attributes    GETCarrierAccountsCarrierAccountId200ResponseDataAttributes `json:"attributes"`
-	Relationships *BillingInfoValidationRuleDataRelationships                 `json:"relationships,omitempty"`
+	Relationships *CarrierAccountDataRelationships                            `json:"relationships,omitempty"`
 }
 
 // NewCarrierAccountData instantiates a new CarrierAccountData object
@@ -96,9 +96,9 @@ func (o *CarrierAccountData) SetAttributes(v GETCarrierAccountsCarrierAccountId2
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CarrierAccountData) GetRelationships() BillingInfoValidationRuleDataRelationships {
+func (o *CarrierAccountData) GetRelationships() CarrierAccountDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret BillingInfoValidationRuleDataRelationships
+		var ret CarrierAccountDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -106,7 +106,7 @@ func (o *CarrierAccountData) GetRelationships() BillingInfoValidationRuleDataRel
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CarrierAccountData) GetRelationshipsOk() (*BillingInfoValidationRuleDataRelationships, bool) {
+func (o *CarrierAccountData) GetRelationshipsOk() (*CarrierAccountDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -122,8 +122,8 @@ func (o *CarrierAccountData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given BillingInfoValidationRuleDataRelationships and assigns it to the Relationships field.
-func (o *CarrierAccountData) SetRelationships(v BillingInfoValidationRuleDataRelationships) {
+// SetRelationships gets a reference to the given CarrierAccountDataRelationships and assigns it to the Relationships field.
+func (o *CarrierAccountData) SetRelationships(v CarrierAccountDataRelationships) {
 	o.Relationships = &v
 }
 

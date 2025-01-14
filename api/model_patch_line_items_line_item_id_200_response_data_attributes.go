@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -30,7 +30,7 @@ type PATCHLineItemsLineItemId200ResponseDataAttributes struct {
 	ExternalPrice interface{} `json:"_external_price,omitempty"`
 	// Send this attribute if you want to reserve the stock for the line item's SKUs quantity. Stock reservations expiration depends on the inventory model's cutoff. When used on update the existing active stock reservations are renewed. Cannot be passed by sales channels.
 	ReserveStock interface{} `json:"_reserve_stock,omitempty"`
-	// The unit amount of the line item, in cents. Can be specified only via an integration application, or when the item is missing, otherwise is automatically computed by using one of the available methods.
+	// The unit amount of the line item, in cents. Can be specified only via an integration application, or when the item is missing, otherwise is automatically computed by using one of the available methods. Cannot be passed by sales channels.
 	UnitAmountCents interface{} `json:"unit_amount_cents,omitempty"`
 	// The compared price amount, in cents. Useful to display a percentage discount.
 	CompareAtAmountCents interface{} `json:"compare_at_amount_cents,omitempty"`

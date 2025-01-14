@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | 
+**Market** | [**BundleCreateDataRelationshipsMarket**](BundleCreateDataRelationshipsMarket.md) |  | 
 **PriceList** | [**MarketCreateDataRelationshipsPriceList**](MarketCreateDataRelationshipsPriceList.md) |  | 
 
 ## Methods
 
 ### NewPriceListSchedulerCreateDataRelationships
 
-`func NewPriceListSchedulerCreateDataRelationships(market BillingInfoValidationRuleCreateDataRelationshipsMarket, priceList MarketCreateDataRelationshipsPriceList, ) *PriceListSchedulerCreateDataRelationships`
+`func NewPriceListSchedulerCreateDataRelationships(market BundleCreateDataRelationshipsMarket, priceList MarketCreateDataRelationshipsPriceList, ) *PriceListSchedulerCreateDataRelationships`
 
 NewPriceListSchedulerCreateDataRelationships instantiates a new PriceListSchedulerCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *PriceListSchedulerCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket`
+`func (o *PriceListSchedulerCreateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *PriceListSchedulerCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool)`
+`func (o *PriceListSchedulerCreateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *PriceListSchedulerCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket)`
+`func (o *PriceListSchedulerCreateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &GiftCardCreateDataRelationships{}
 
 // GiftCardCreateDataRelationships struct for GiftCardCreateDataRelationships
 type GiftCardCreateDataRelationships struct {
-	Market            *BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market,omitempty"`
-	GiftCardRecipient *GiftCardCreateDataRelationshipsGiftCardRecipient       `json:"gift_card_recipient,omitempty"`
-	Tags              *AddressCreateDataRelationshipsTags                     `json:"tags,omitempty"`
+	Market            *BundleCreateDataRelationshipsMarket              `json:"market,omitempty"`
+	GiftCardRecipient *GiftCardCreateDataRelationshipsGiftCardRecipient `json:"gift_card_recipient,omitempty"`
+	Tags              *AddressCreateDataRelationshipsTags               `json:"tags,omitempty"`
 }
 
 // NewGiftCardCreateDataRelationships instantiates a new GiftCardCreateDataRelationships object
@@ -43,9 +43,9 @@ func NewGiftCardCreateDataRelationshipsWithDefaults() *GiftCardCreateDataRelatio
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *GiftCardCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
+func (o *GiftCardCreateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket {
 	if o == nil || IsNil(o.Market) {
-		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
+		var ret BundleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -53,7 +53,7 @@ func (o *GiftCardCreateDataRelationships) GetMarket() BillingInfoValidationRuleC
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GiftCardCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
+func (o *GiftCardCreateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool) {
 	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *GiftCardCreateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
-func (o *GiftCardCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
+// SetMarket gets a reference to the given BundleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *GiftCardCreateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 

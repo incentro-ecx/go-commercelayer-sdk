@@ -4,3 +4,5 @@
 /api/go.sum
 /api/git_push.sh
 /api/.openapi-generator-ignore
+/api/api/openapi.yaml
+/api/test/*.go

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | [optional] 
+**Market** | Pointer to [**BundleCreateDataRelationshipsMarket**](BundleCreateDataRelationshipsMarket.md) |  | [optional] 
 **PriceList** | Pointer to [**MarketCreateDataRelationshipsPriceList**](MarketCreateDataRelationshipsPriceList.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *PriceListSchedulerUpdateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket`
+`func (o *PriceListSchedulerUpdateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *PriceListSchedulerUpdateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool)`
+`func (o *PriceListSchedulerUpdateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *PriceListSchedulerUpdateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket)`
+`func (o *PriceListSchedulerUpdateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 

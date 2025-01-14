@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | [optional] 
+**Market** | Pointer to [**BundleCreateDataRelationshipsMarket**](BundleCreateDataRelationshipsMarket.md) |  | [optional] 
 **ShippingZone** | Pointer to [**ShippingMethodCreateDataRelationshipsShippingZone**](ShippingMethodCreateDataRelationshipsShippingZone.md) |  | [optional] 
 **ShippingCategory** | Pointer to [**ShipmentCreateDataRelationshipsShippingCategory**](ShipmentCreateDataRelationshipsShippingCategory.md) |  | [optional] 
 **StockLocation** | Pointer to [**DeliveryLeadTimeCreateDataRelationshipsStockLocation**](DeliveryLeadTimeCreateDataRelationshipsStockLocation.md) |  | [optional] 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *ShippingMethodCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket`
+`func (o *ShippingMethodCreateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *ShippingMethodCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool)`
+`func (o *ShippingMethodCreateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *ShippingMethodCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket)`
+`func (o *ShippingMethodCreateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 

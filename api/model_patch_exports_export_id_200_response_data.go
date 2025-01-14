@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -23,10 +23,10 @@ type PATCHExportsExportId200ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                                                                          `json:"type,omitempty"`
-	Links         *POSTAddresses201ResponseDataLinks                                                   `json:"links,omitempty"`
-	Attributes    *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTExports201ResponseDataRelationships                                             `json:"relationships,omitempty"`
+	Type          interface{}                                      `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks               `json:"links,omitempty"`
+	Attributes    *PATCHCleanupsCleanupId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *POSTExports201ResponseDataRelationships         `json:"relationships,omitempty"`
 }
 
 // NewPATCHExportsExportId200ResponseData instantiates a new PATCHExportsExportId200ResponseData object
@@ -145,9 +145,9 @@ func (o *PATCHExportsExportId200ResponseData) SetLinks(v POSTAddresses201Respons
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *PATCHExportsExportId200ResponseData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes {
+func (o *PATCHExportsExportId200ResponseData) GetAttributes() PATCHCleanupsCleanupId200ResponseDataAttributes {
 	if o == nil || IsNil(o.Attributes) {
-		var ret PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes
+		var ret PATCHCleanupsCleanupId200ResponseDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -155,7 +155,7 @@ func (o *PATCHExportsExportId200ResponseData) GetAttributes() PATCHBillingInfoVa
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHExportsExportId200ResponseData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool) {
+func (o *PATCHExportsExportId200ResponseData) GetAttributesOk() (*PATCHCleanupsCleanupId200ResponseDataAttributes, bool) {
 	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
@@ -171,8 +171,8 @@ func (o *PATCHExportsExportId200ResponseData) HasAttributes() bool {
 	return false
 }
 
-// SetAttributes gets a reference to the given PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes and assigns it to the Attributes field.
-func (o *PATCHExportsExportId200ResponseData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) {
+// SetAttributes gets a reference to the given PATCHCleanupsCleanupId200ResponseDataAttributes and assigns it to the Attributes field.
+func (o *PATCHExportsExportId200ResponseData) SetAttributes(v PATCHCleanupsCleanupId200ResponseDataAttributes) {
 	o.Attributes = &v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | 
+**Market** | [**BundleCreateDataRelationshipsMarket**](BundleCreateDataRelationshipsMarket.md) |  | 
 **Customer** | [**CouponRecipientCreateDataRelationshipsCustomer**](CouponRecipientCreateDataRelationshipsCustomer.md) |  | 
 **Sku** | [**InStockSubscriptionCreateDataRelationshipsSku**](InStockSubscriptionCreateDataRelationshipsSku.md) |  | 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewInStockSubscriptionCreateDataRelationships
 
-`func NewInStockSubscriptionCreateDataRelationships(market BillingInfoValidationRuleCreateDataRelationshipsMarket, customer CouponRecipientCreateDataRelationshipsCustomer, sku InStockSubscriptionCreateDataRelationshipsSku, ) *InStockSubscriptionCreateDataRelationships`
+`func NewInStockSubscriptionCreateDataRelationships(market BundleCreateDataRelationshipsMarket, customer CouponRecipientCreateDataRelationshipsCustomer, sku InStockSubscriptionCreateDataRelationshipsSku, ) *InStockSubscriptionCreateDataRelationships`
 
 NewInStockSubscriptionCreateDataRelationships instantiates a new InStockSubscriptionCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *InStockSubscriptionCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket`
+`func (o *InStockSubscriptionCreateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *InStockSubscriptionCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool)`
+`func (o *InStockSubscriptionCreateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *InStockSubscriptionCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket)`
+`func (o *InStockSubscriptionCreateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -22,6 +22,8 @@ var _ MappedNullable = &PaymentMethodDataRelationships{}
 type PaymentMethodDataRelationships struct {
 	Market         *AvalaraAccountDataRelationshipsMarkets      `json:"market,omitempty"`
 	PaymentGateway *AdyenPaymentDataRelationshipsPaymentGateway `json:"payment_gateway,omitempty"`
+	Store          *MarketDataRelationshipsStores               `json:"store,omitempty"`
+	Orders         *AdyenPaymentDataRelationshipsOrder          `json:"orders,omitempty"`
 	Attachments    *AuthorizationDataRelationshipsAttachments   `json:"attachments,omitempty"`
 	Versions       *AddressDataRelationshipsVersions            `json:"versions,omitempty"`
 }
@@ -107,6 +109,70 @@ func (o *PaymentMethodDataRelationships) SetPaymentGateway(v AdyenPaymentDataRel
 	o.PaymentGateway = &v
 }
 
+// GetStore returns the Store field value if set, zero value otherwise.
+func (o *PaymentMethodDataRelationships) GetStore() MarketDataRelationshipsStores {
+	if o == nil || IsNil(o.Store) {
+		var ret MarketDataRelationshipsStores
+		return ret
+	}
+	return *o.Store
+}
+
+// GetStoreOk returns a tuple with the Store field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PaymentMethodDataRelationships) GetStoreOk() (*MarketDataRelationshipsStores, bool) {
+	if o == nil || IsNil(o.Store) {
+		return nil, false
+	}
+	return o.Store, true
+}
+
+// HasStore returns a boolean if a field has been set.
+func (o *PaymentMethodDataRelationships) HasStore() bool {
+	if o != nil && !IsNil(o.Store) {
+		return true
+	}
+
+	return false
+}
+
+// SetStore gets a reference to the given MarketDataRelationshipsStores and assigns it to the Store field.
+func (o *PaymentMethodDataRelationships) SetStore(v MarketDataRelationshipsStores) {
+	o.Store = &v
+}
+
+// GetOrders returns the Orders field value if set, zero value otherwise.
+func (o *PaymentMethodDataRelationships) GetOrders() AdyenPaymentDataRelationshipsOrder {
+	if o == nil || IsNil(o.Orders) {
+		var ret AdyenPaymentDataRelationshipsOrder
+		return ret
+	}
+	return *o.Orders
+}
+
+// GetOrdersOk returns a tuple with the Orders field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PaymentMethodDataRelationships) GetOrdersOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
+	if o == nil || IsNil(o.Orders) {
+		return nil, false
+	}
+	return o.Orders, true
+}
+
+// HasOrders returns a boolean if a field has been set.
+func (o *PaymentMethodDataRelationships) HasOrders() bool {
+	if o != nil && !IsNil(o.Orders) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrders gets a reference to the given AdyenPaymentDataRelationshipsOrder and assigns it to the Orders field.
+func (o *PaymentMethodDataRelationships) SetOrders(v AdyenPaymentDataRelationshipsOrder) {
+	o.Orders = &v
+}
+
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *PaymentMethodDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
@@ -186,6 +252,12 @@ func (o PaymentMethodDataRelationships) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.PaymentGateway) {
 		toSerialize["payment_gateway"] = o.PaymentGateway
+	}
+	if !IsNil(o.Store) {
+		toSerialize["store"] = o.Store
+	}
+	if !IsNil(o.Orders) {
+		toSerialize["orders"] = o.Orders
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments

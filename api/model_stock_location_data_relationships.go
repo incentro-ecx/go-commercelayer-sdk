@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -25,6 +25,7 @@ type StockLocationDataRelationships struct {
 	InventoryReturnLocations *InventoryModelDataRelationshipsInventoryReturnLocations `json:"inventory_return_locations,omitempty"`
 	StockItems               *ReservedStockDataRelationshipsStockItem                 `json:"stock_items,omitempty"`
 	StockTransfers           *LineItemDataRelationshipsStockTransfers                 `json:"stock_transfers,omitempty"`
+	Stores                   *MarketDataRelationshipsStores                           `json:"stores,omitempty"`
 	Attachments              *AuthorizationDataRelationshipsAttachments               `json:"attachments,omitempty"`
 	Versions                 *AddressDataRelationshipsVersions                        `json:"versions,omitempty"`
 }
@@ -206,6 +207,38 @@ func (o *StockLocationDataRelationships) SetStockTransfers(v LineItemDataRelatio
 	o.StockTransfers = &v
 }
 
+// GetStores returns the Stores field value if set, zero value otherwise.
+func (o *StockLocationDataRelationships) GetStores() MarketDataRelationshipsStores {
+	if o == nil || IsNil(o.Stores) {
+		var ret MarketDataRelationshipsStores
+		return ret
+	}
+	return *o.Stores
+}
+
+// GetStoresOk returns a tuple with the Stores field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StockLocationDataRelationships) GetStoresOk() (*MarketDataRelationshipsStores, bool) {
+	if o == nil || IsNil(o.Stores) {
+		return nil, false
+	}
+	return o.Stores, true
+}
+
+// HasStores returns a boolean if a field has been set.
+func (o *StockLocationDataRelationships) HasStores() bool {
+	if o != nil && !IsNil(o.Stores) {
+		return true
+	}
+
+	return false
+}
+
+// SetStores gets a reference to the given MarketDataRelationshipsStores and assigns it to the Stores field.
+func (o *StockLocationDataRelationships) SetStores(v MarketDataRelationshipsStores) {
+	o.Stores = &v
+}
+
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *StockLocationDataRelationships) GetAttachments() AuthorizationDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
@@ -294,6 +327,9 @@ func (o StockLocationDataRelationships) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.StockTransfers) {
 		toSerialize["stock_transfers"] = o.StockTransfers
+	}
+	if !IsNil(o.Stores) {
+		toSerialize["stores"] = o.Stores
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments

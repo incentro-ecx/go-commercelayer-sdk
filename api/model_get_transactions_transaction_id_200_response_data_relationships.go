@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,11 @@ var _ MappedNullable = &GETTransactionsTransactionId200ResponseDataRelationships
 
 // GETTransactionsTransactionId200ResponseDataRelationships struct for GETTransactionsTransactionId200ResponseDataRelationships
 type GETTransactionsTransactionId200ResponseDataRelationships struct {
-	Order       *POSTAdyenPayments201ResponseDataRelationshipsOrder                      `json:"order,omitempty"`
-	Attachments *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
-	Events      *POSTAddresses201ResponseDataRelationshipsEvents                         `json:"events,omitempty"`
-	Versions    *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
+	Order         *POSTAdyenPayments201ResponseDataRelationshipsOrder                        `json:"order,omitempty"`
+	PaymentSource *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
+	Attachments   *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments   `json:"attachments,omitempty"`
+	Events        *POSTAddresses201ResponseDataRelationshipsEvents                           `json:"events,omitempty"`
+	Versions      *POSTAddresses201ResponseDataRelationshipsVersions                         `json:"versions,omitempty"`
 }
 
 // NewGETTransactionsTransactionId200ResponseDataRelationships instantiates a new GETTransactionsTransactionId200ResponseDataRelationships object
@@ -73,6 +74,38 @@ func (o *GETTransactionsTransactionId200ResponseDataRelationships) HasOrder() bo
 // SetOrder gets a reference to the given POSTAdyenPayments201ResponseDataRelationshipsOrder and assigns it to the Order field.
 func (o *GETTransactionsTransactionId200ResponseDataRelationships) SetOrder(v POSTAdyenPayments201ResponseDataRelationshipsOrder) {
 	o.Order = &v
+}
+
+// GetPaymentSource returns the PaymentSource field value if set, zero value otherwise.
+func (o *GETTransactionsTransactionId200ResponseDataRelationships) GetPaymentSource() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource {
+	if o == nil || IsNil(o.PaymentSource) {
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource
+		return ret
+	}
+	return *o.PaymentSource
+}
+
+// GetPaymentSourceOk returns a tuple with the PaymentSource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETTransactionsTransactionId200ResponseDataRelationships) GetPaymentSourceOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource, bool) {
+	if o == nil || IsNil(o.PaymentSource) {
+		return nil, false
+	}
+	return o.PaymentSource, true
+}
+
+// HasPaymentSource returns a boolean if a field has been set.
+func (o *GETTransactionsTransactionId200ResponseDataRelationships) HasPaymentSource() bool {
+	if o != nil && !IsNil(o.PaymentSource) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentSource gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource and assigns it to the PaymentSource field.
+func (o *GETTransactionsTransactionId200ResponseDataRelationships) SetPaymentSource(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource) {
+	o.PaymentSource = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
@@ -183,6 +216,9 @@ func (o GETTransactionsTransactionId200ResponseDataRelationships) ToMap() (map[s
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
+	}
+	if !IsNil(o.PaymentSource) {
+		toSerialize["payment_source"] = o.PaymentSource
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments

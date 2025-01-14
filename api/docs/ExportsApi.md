@@ -29,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,7 +158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -228,11 +228,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
-    exportUpdate := *openapiclient.NewExportUpdate(*openapiclient.NewExportUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // ExportUpdate | 
+    exportUpdate := *openapiclient.NewExportUpdate(*openapiclient.NewExportUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCleanupsCleanupId200ResponseDataAttributes())) // ExportUpdate | 
     exportId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -300,7 +300,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {

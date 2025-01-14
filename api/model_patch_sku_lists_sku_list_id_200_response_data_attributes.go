@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -28,7 +28,7 @@ type PATCHSkuListsSkuListId200ResponseDataAttributes struct {
 	ImageUrl interface{} `json:"image_url,omitempty"`
 	// Indicates if the SKU list is populated manually.
 	Manual interface{} `json:"manual,omitempty"`
-	// The regex that will be evaluated to match the SKU codes.
+	// The regex that will be evaluated to match the SKU codes, max size is 5000.
 	SkuCodeRegex interface{} `json:"sku_code_regex,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`

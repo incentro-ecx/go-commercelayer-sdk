@@ -8,12 +8,13 @@ Name | Type | Description | Notes
 **Customer** | Pointer to [**CouponRecipientDataRelationshipsCustomer**](CouponRecipientDataRelationshipsCustomer.md) |  | [optional] 
 **ShippingAddress** | Pointer to [**BingGeocoderDataRelationshipsAddresses**](BingGeocoderDataRelationshipsAddresses.md) |  | [optional] 
 **BillingAddress** | Pointer to [**BingGeocoderDataRelationshipsAddresses**](BingGeocoderDataRelationshipsAddresses.md) |  | [optional] 
+**Store** | Pointer to [**MarketDataRelationshipsStores**](MarketDataRelationshipsStores.md) |  | [optional] 
 **AvailablePaymentMethods** | Pointer to [**AdyenGatewayDataRelationshipsPaymentMethods**](AdyenGatewayDataRelationshipsPaymentMethods.md) |  | [optional] 
 **AvailableCustomerPaymentSources** | Pointer to [**CustomerDataRelationshipsCustomerPaymentSources**](CustomerDataRelationshipsCustomerPaymentSources.md) |  | [optional] 
 **AvailableFreeSkus** | Pointer to [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | [optional] 
 **AvailableFreeBundles** | Pointer to [**LineItemDataRelationshipsBundle**](LineItemDataRelationshipsBundle.md) |  | [optional] 
 **PaymentMethod** | Pointer to [**AdyenGatewayDataRelationshipsPaymentMethods**](AdyenGatewayDataRelationshipsPaymentMethods.md) |  | [optional] 
-**PaymentSource** | Pointer to [**CustomerPaymentSourceDataRelationshipsPaymentSource**](CustomerPaymentSourceDataRelationshipsPaymentSource.md) |  | [optional] 
+**PaymentSource** | Pointer to [**AuthorizationDataRelationshipsPaymentSource**](AuthorizationDataRelationshipsPaymentSource.md) |  | [optional] 
 **LineItems** | Pointer to [**LineItemOptionDataRelationshipsLineItem**](LineItemOptionDataRelationshipsLineItem.md) |  | [optional] 
 **LineItemOptions** | Pointer to [**LineItemDataRelationshipsLineItemOptions**](LineItemDataRelationshipsLineItemOptions.md) |  | [optional] 
 **StockReservations** | Pointer to [**LineItemDataRelationshipsStockReservations**](LineItemDataRelationshipsStockReservations.md) |  | [optional] 
@@ -33,6 +34,7 @@ Name | Type | Description | Notes
 **OrderCopies** | Pointer to [**OrderDataRelationshipsOrderCopies**](OrderDataRelationshipsOrderCopies.md) |  | [optional] 
 **RecurringOrderCopies** | Pointer to [**OrderSubscriptionDataRelationshipsRecurringOrderCopies**](OrderSubscriptionDataRelationshipsRecurringOrderCopies.md) |  | [optional] 
 **Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
+**Notifications** | Pointer to [**LineItemDataRelationshipsNotifications**](LineItemDataRelationshipsNotifications.md) |  | [optional] 
 **Links** | Pointer to [**OrderDataRelationshipsLinks**](OrderDataRelationshipsLinks.md) |  | [optional] 
 **ResourceErrors** | Pointer to [**OrderDataRelationshipsResourceErrors**](OrderDataRelationshipsResourceErrors.md) |  | [optional] 
 **Events** | Pointer to [**AddressDataRelationshipsEvents**](AddressDataRelationshipsEvents.md) |  | [optional] 
@@ -157,6 +159,31 @@ SetBillingAddress sets BillingAddress field to given value.
 `func (o *OrderDataRelationships) HasBillingAddress() bool`
 
 HasBillingAddress returns a boolean if a field has been set.
+
+### GetStore
+
+`func (o *OrderDataRelationships) GetStore() MarketDataRelationshipsStores`
+
+GetStore returns the Store field if non-nil, zero value otherwise.
+
+### GetStoreOk
+
+`func (o *OrderDataRelationships) GetStoreOk() (*MarketDataRelationshipsStores, bool)`
+
+GetStoreOk returns a tuple with the Store field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStore
+
+`func (o *OrderDataRelationships) SetStore(v MarketDataRelationshipsStores)`
+
+SetStore sets Store field to given value.
+
+### HasStore
+
+`func (o *OrderDataRelationships) HasStore() bool`
+
+HasStore returns a boolean if a field has been set.
 
 ### GetAvailablePaymentMethods
 
@@ -285,20 +312,20 @@ HasPaymentMethod returns a boolean if a field has been set.
 
 ### GetPaymentSource
 
-`func (o *OrderDataRelationships) GetPaymentSource() CustomerPaymentSourceDataRelationshipsPaymentSource`
+`func (o *OrderDataRelationships) GetPaymentSource() AuthorizationDataRelationshipsPaymentSource`
 
 GetPaymentSource returns the PaymentSource field if non-nil, zero value otherwise.
 
 ### GetPaymentSourceOk
 
-`func (o *OrderDataRelationships) GetPaymentSourceOk() (*CustomerPaymentSourceDataRelationshipsPaymentSource, bool)`
+`func (o *OrderDataRelationships) GetPaymentSourceOk() (*AuthorizationDataRelationshipsPaymentSource, bool)`
 
 GetPaymentSourceOk returns a tuple with the PaymentSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaymentSource
 
-`func (o *OrderDataRelationships) SetPaymentSource(v CustomerPaymentSourceDataRelationshipsPaymentSource)`
+`func (o *OrderDataRelationships) SetPaymentSource(v AuthorizationDataRelationshipsPaymentSource)`
 
 SetPaymentSource sets PaymentSource field to given value.
 
@@ -782,6 +809,31 @@ SetAttachments sets Attachments field to given value.
 `func (o *OrderDataRelationships) HasAttachments() bool`
 
 HasAttachments returns a boolean if a field has been set.
+
+### GetNotifications
+
+`func (o *OrderDataRelationships) GetNotifications() LineItemDataRelationshipsNotifications`
+
+GetNotifications returns the Notifications field if non-nil, zero value otherwise.
+
+### GetNotificationsOk
+
+`func (o *OrderDataRelationships) GetNotificationsOk() (*LineItemDataRelationshipsNotifications, bool)`
+
+GetNotificationsOk returns a tuple with the Notifications field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotifications
+
+`func (o *OrderDataRelationships) SetNotifications(v LineItemDataRelationshipsNotifications)`
+
+SetNotifications sets Notifications field to given value.
+
+### HasNotifications
+
+`func (o *OrderDataRelationships) HasNotifications() bool`
+
+HasNotifications returns a boolean if a field has been set.
 
 ### GetLinks
 

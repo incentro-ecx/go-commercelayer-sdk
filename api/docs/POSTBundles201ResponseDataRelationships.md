@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket**](POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket.md) |  | [optional] 
+**Market** | Pointer to [**POSTBundles201ResponseDataRelationshipsMarket**](POSTBundles201ResponseDataRelationshipsMarket.md) |  | [optional] 
 **SkuList** | Pointer to [**POSTBundles201ResponseDataRelationshipsSkuList**](POSTBundles201ResponseDataRelationshipsSkuList.md) |  | [optional] 
 **Skus** | Pointer to [**POSTBundles201ResponseDataRelationshipsSkus**](POSTBundles201ResponseDataRelationshipsSkus.md) |  | [optional] 
 **Attachments** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments.md) |  | [optional] 
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *POSTBundles201ResponseDataRelationships) GetMarket() POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket`
+`func (o *POSTBundles201ResponseDataRelationships) GetMarket() POSTBundles201ResponseDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *POSTBundles201ResponseDataRelationships) GetMarketOk() (*POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket, bool)`
+`func (o *POSTBundles201ResponseDataRelationships) GetMarketOk() (*POSTBundles201ResponseDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *POSTBundles201ResponseDataRelationships) SetMarket(v POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket)`
+`func (o *POSTBundles201ResponseDataRelationships) SetMarket(v POSTBundles201ResponseDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 

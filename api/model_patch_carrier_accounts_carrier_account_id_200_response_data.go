@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -26,7 +26,7 @@ type PATCHCarrierAccountsCarrierAccountId200ResponseData struct {
 	Type          interface{}                                                    `json:"type,omitempty"`
 	Links         *POSTAddresses201ResponseDataLinks                             `json:"links,omitempty"`
 	Attributes    *PATCHCarrierAccountsCarrierAccountId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTBillingInfoValidationRules201ResponseDataRelationships    `json:"relationships,omitempty"`
+	Relationships *POSTCarrierAccounts201ResponseDataRelationships               `json:"relationships,omitempty"`
 }
 
 // NewPATCHCarrierAccountsCarrierAccountId200ResponseData instantiates a new PATCHCarrierAccountsCarrierAccountId200ResponseData object
@@ -177,9 +177,9 @@ func (o *PATCHCarrierAccountsCarrierAccountId200ResponseData) SetAttributes(v PA
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHCarrierAccountsCarrierAccountId200ResponseData) GetRelationships() POSTBillingInfoValidationRules201ResponseDataRelationships {
+func (o *PATCHCarrierAccountsCarrierAccountId200ResponseData) GetRelationships() POSTCarrierAccounts201ResponseDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret POSTBillingInfoValidationRules201ResponseDataRelationships
+		var ret POSTCarrierAccounts201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,7 +187,7 @@ func (o *PATCHCarrierAccountsCarrierAccountId200ResponseData) GetRelationships()
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCarrierAccountsCarrierAccountId200ResponseData) GetRelationshipsOk() (*POSTBillingInfoValidationRules201ResponseDataRelationships, bool) {
+func (o *PATCHCarrierAccountsCarrierAccountId200ResponseData) GetRelationshipsOk() (*POSTCarrierAccounts201ResponseDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -203,8 +203,8 @@ func (o *PATCHCarrierAccountsCarrierAccountId200ResponseData) HasRelationships()
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTBillingInfoValidationRules201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHCarrierAccountsCarrierAccountId200ResponseData) SetRelationships(v POSTBillingInfoValidationRules201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given POSTCarrierAccounts201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PATCHCarrierAccountsCarrierAccountId200ResponseData) SetRelationships(v POSTCarrierAccounts201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

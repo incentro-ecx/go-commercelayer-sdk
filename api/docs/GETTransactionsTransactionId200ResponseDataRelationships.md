@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Order** | Pointer to [**POSTAdyenPayments201ResponseDataRelationshipsOrder**](POSTAdyenPayments201ResponseDataRelationshipsOrder.md) |  | [optional] 
+**PaymentSource** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource.md) |  | [optional] 
 **Attachments** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments.md) |  | [optional] 
 **Events** | Pointer to [**POSTAddresses201ResponseDataRelationshipsEvents**](POSTAddresses201ResponseDataRelationshipsEvents.md) |  | [optional] 
 **Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
@@ -52,6 +53,31 @@ SetOrder sets Order field to given value.
 `func (o *GETTransactionsTransactionId200ResponseDataRelationships) HasOrder() bool`
 
 HasOrder returns a boolean if a field has been set.
+
+### GetPaymentSource
+
+`func (o *GETTransactionsTransactionId200ResponseDataRelationships) GetPaymentSource() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource`
+
+GetPaymentSource returns the PaymentSource field if non-nil, zero value otherwise.
+
+### GetPaymentSourceOk
+
+`func (o *GETTransactionsTransactionId200ResponseDataRelationships) GetPaymentSourceOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource, bool)`
+
+GetPaymentSourceOk returns a tuple with the PaymentSource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentSource
+
+`func (o *GETTransactionsTransactionId200ResponseDataRelationships) SetPaymentSource(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource)`
+
+SetPaymentSource sets PaymentSource field to given value.
+
+### HasPaymentSource
+
+`func (o *GETTransactionsTransactionId200ResponseDataRelationships) HasPaymentSource() bool`
+
+HasPaymentSource returns a boolean if a field has been set.
 
 ### GetAttachments
 

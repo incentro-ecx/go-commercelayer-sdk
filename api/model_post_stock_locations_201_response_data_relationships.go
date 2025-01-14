@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -25,6 +25,7 @@ type POSTStockLocations201ResponseDataRelationships struct {
 	InventoryReturnLocations *POSTInventoryModels201ResponseDataRelationshipsInventoryReturnLocations `json:"inventory_return_locations,omitempty"`
 	StockItems               *POSTSkus201ResponseDataRelationshipsStockItems                          `json:"stock_items,omitempty"`
 	StockTransfers           *POSTLineItems201ResponseDataRelationshipsStockTransfers                 `json:"stock_transfers,omitempty"`
+	Stores                   *POSTMarkets201ResponseDataRelationshipsStores                           `json:"stores,omitempty"`
 	Attachments              *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
 	Versions                 *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
 }
@@ -206,6 +207,38 @@ func (o *POSTStockLocations201ResponseDataRelationships) SetStockTransfers(v POS
 	o.StockTransfers = &v
 }
 
+// GetStores returns the Stores field value if set, zero value otherwise.
+func (o *POSTStockLocations201ResponseDataRelationships) GetStores() POSTMarkets201ResponseDataRelationshipsStores {
+	if o == nil || IsNil(o.Stores) {
+		var ret POSTMarkets201ResponseDataRelationshipsStores
+		return ret
+	}
+	return *o.Stores
+}
+
+// GetStoresOk returns a tuple with the Stores field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTStockLocations201ResponseDataRelationships) GetStoresOk() (*POSTMarkets201ResponseDataRelationshipsStores, bool) {
+	if o == nil || IsNil(o.Stores) {
+		return nil, false
+	}
+	return o.Stores, true
+}
+
+// HasStores returns a boolean if a field has been set.
+func (o *POSTStockLocations201ResponseDataRelationships) HasStores() bool {
+	if o != nil && !IsNil(o.Stores) {
+		return true
+	}
+
+	return false
+}
+
+// SetStores gets a reference to the given POSTMarkets201ResponseDataRelationshipsStores and assigns it to the Stores field.
+func (o *POSTStockLocations201ResponseDataRelationships) SetStores(v POSTMarkets201ResponseDataRelationshipsStores) {
+	o.Stores = &v
+}
+
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *POSTStockLocations201ResponseDataRelationships) GetAttachments() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments {
 	if o == nil || IsNil(o.Attachments) {
@@ -294,6 +327,9 @@ func (o POSTStockLocations201ResponseDataRelationships) ToMap() (map[string]inte
 	}
 	if !IsNil(o.StockTransfers) {
 		toSerialize["stock_transfers"] = o.StockTransfers
+	}
+	if !IsNil(o.Stores) {
+		toSerialize["stores"] = o.Stores
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments

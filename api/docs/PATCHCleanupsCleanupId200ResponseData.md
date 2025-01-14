@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes.md) |  | [optional] 
+**Attributes** | Pointer to [**PATCHCleanupsCleanupId200ResponseDataAttributes**](PATCHCleanupsCleanupId200ResponseDataAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**POSTCleanups201ResponseDataRelationships**](POSTCleanups201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *PATCHCleanupsCleanupId200ResponseData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes`
+`func (o *PATCHCleanupsCleanupId200ResponseData) GetAttributes() PATCHCleanupsCleanupId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PATCHCleanupsCleanupId200ResponseData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool)`
+`func (o *PATCHCleanupsCleanupId200ResponseData) GetAttributesOk() (*PATCHCleanupsCleanupId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PATCHCleanupsCleanupId200ResponseData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes)`
+`func (o *PATCHCleanupsCleanupId200ResponseData) SetAttributes(v PATCHCleanupsCleanupId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

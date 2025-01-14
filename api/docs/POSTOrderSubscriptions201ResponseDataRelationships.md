@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket**](POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket.md) |  | [optional] 
+**Market** | Pointer to [**POSTBundles201ResponseDataRelationshipsMarket**](POSTBundles201ResponseDataRelationshipsMarket.md) |  | [optional] 
 **SubscriptionModel** | Pointer to [**POSTMarkets201ResponseDataRelationshipsSubscriptionModel**](POSTMarkets201ResponseDataRelationshipsSubscriptionModel.md) |  | [optional] 
 **SourceOrder** | Pointer to [**POSTOrderCopies201ResponseDataRelationshipsSourceOrder**](POSTOrderCopies201ResponseDataRelationshipsSourceOrder.md) |  | [optional] 
 **Customer** | Pointer to [**POSTCouponRecipients201ResponseDataRelationshipsCustomer**](POSTCouponRecipients201ResponseDataRelationshipsCustomer.md) |  | [optional] 
@@ -38,20 +38,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetMarket() POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket`
+`func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetMarket() POSTBundles201ResponseDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetMarketOk() (*POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket, bool)`
+`func (o *POSTOrderSubscriptions201ResponseDataRelationships) GetMarketOk() (*POSTBundles201ResponseDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetMarket(v POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket)`
+`func (o *POSTOrderSubscriptions201ResponseDataRelationships) SetMarket(v POSTBundles201ResponseDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Number** | Pointer to **interface{}** | Unique identifier for the stock transfer (numeric). | [optional] 
 **SkuCode** | Pointer to **interface{}** | The code of the associated SKU. | [optional] 
 **Status** | Pointer to **interface{}** | The stock transfer status. One of &#39;draft&#39; (default), &#39;upcoming&#39;, &#39;on_hold&#39;, &#39;picking&#39;, &#39;in_transit&#39;, &#39;completed&#39;, or &#39;cancelled&#39;. | [optional] 
-**Quantity** | Pointer to **interface{}** | The stock quantity to be transferred from the origin stock location to destination one. | [optional] 
+**Quantity** | Pointer to **interface{}** | The stock quantity to be transferred from the origin stock location to destination one. Updatable unless stock transfer is completed or cancelled and depending on origin stock availability. | [optional] 
 **OnHoldAt** | Pointer to **interface{}** | Time at which the stock transfer was put on hold. | [optional] 
 **PickingAt** | Pointer to **interface{}** | Time at which the stock transfer was picking. | [optional] 
 **InTransitAt** | Pointer to **interface{}** | Time at which the stock transfer was in transit. | [optional] 

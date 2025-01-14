@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,8 +20,8 @@ var _ MappedNullable = &PriceListSchedulerUpdateDataRelationships{}
 
 // PriceListSchedulerUpdateDataRelationships struct for PriceListSchedulerUpdateDataRelationships
 type PriceListSchedulerUpdateDataRelationships struct {
-	Market    *BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market,omitempty"`
-	PriceList *MarketCreateDataRelationshipsPriceList                 `json:"price_list,omitempty"`
+	Market    *BundleCreateDataRelationshipsMarket    `json:"market,omitempty"`
+	PriceList *MarketCreateDataRelationshipsPriceList `json:"price_list,omitempty"`
 }
 
 // NewPriceListSchedulerUpdateDataRelationships instantiates a new PriceListSchedulerUpdateDataRelationships object
@@ -42,9 +42,9 @@ func NewPriceListSchedulerUpdateDataRelationshipsWithDefaults() *PriceListSchedu
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *PriceListSchedulerUpdateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
+func (o *PriceListSchedulerUpdateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket {
 	if o == nil || IsNil(o.Market) {
-		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
+		var ret BundleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -52,7 +52,7 @@ func (o *PriceListSchedulerUpdateDataRelationships) GetMarket() BillingInfoValid
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceListSchedulerUpdateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
+func (o *PriceListSchedulerUpdateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool) {
 	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *PriceListSchedulerUpdateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
-func (o *PriceListSchedulerUpdateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
+// SetMarket gets a reference to the given BundleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *PriceListSchedulerUpdateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ var _ MappedNullable = &CustomerPaymentSourceDataRelationships{}
 
 // CustomerPaymentSourceDataRelationships struct for CustomerPaymentSourceDataRelationships
 type CustomerPaymentSourceDataRelationships struct {
-	Customer      *CouponRecipientDataRelationshipsCustomer            `json:"customer,omitempty"`
-	PaymentMethod *AdyenGatewayDataRelationshipsPaymentMethods         `json:"payment_method,omitempty"`
-	PaymentSource *CustomerPaymentSourceDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
-	Versions      *AddressDataRelationshipsVersions                    `json:"versions,omitempty"`
+	Customer      *CouponRecipientDataRelationshipsCustomer    `json:"customer,omitempty"`
+	PaymentMethod *AdyenGatewayDataRelationshipsPaymentMethods `json:"payment_method,omitempty"`
+	PaymentSource *AuthorizationDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
+	Versions      *AddressDataRelationshipsVersions            `json:"versions,omitempty"`
 }
 
 // NewCustomerPaymentSourceDataRelationships instantiates a new CustomerPaymentSourceDataRelationships object
@@ -108,9 +108,9 @@ func (o *CustomerPaymentSourceDataRelationships) SetPaymentMethod(v AdyenGateway
 }
 
 // GetPaymentSource returns the PaymentSource field value if set, zero value otherwise.
-func (o *CustomerPaymentSourceDataRelationships) GetPaymentSource() CustomerPaymentSourceDataRelationshipsPaymentSource {
+func (o *CustomerPaymentSourceDataRelationships) GetPaymentSource() AuthorizationDataRelationshipsPaymentSource {
 	if o == nil || IsNil(o.PaymentSource) {
-		var ret CustomerPaymentSourceDataRelationshipsPaymentSource
+		var ret AuthorizationDataRelationshipsPaymentSource
 		return ret
 	}
 	return *o.PaymentSource
@@ -118,7 +118,7 @@ func (o *CustomerPaymentSourceDataRelationships) GetPaymentSource() CustomerPaym
 
 // GetPaymentSourceOk returns a tuple with the PaymentSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceDataRelationships) GetPaymentSourceOk() (*CustomerPaymentSourceDataRelationshipsPaymentSource, bool) {
+func (o *CustomerPaymentSourceDataRelationships) GetPaymentSourceOk() (*AuthorizationDataRelationshipsPaymentSource, bool) {
 	if o == nil || IsNil(o.PaymentSource) {
 		return nil, false
 	}
@@ -134,8 +134,8 @@ func (o *CustomerPaymentSourceDataRelationships) HasPaymentSource() bool {
 	return false
 }
 
-// SetPaymentSource gets a reference to the given CustomerPaymentSourceDataRelationshipsPaymentSource and assigns it to the PaymentSource field.
-func (o *CustomerPaymentSourceDataRelationships) SetPaymentSource(v CustomerPaymentSourceDataRelationshipsPaymentSource) {
+// SetPaymentSource gets a reference to the given AuthorizationDataRelationshipsPaymentSource and assigns it to the PaymentSource field.
+func (o *CustomerPaymentSourceDataRelationships) SetPaymentSource(v AuthorizationDataRelationshipsPaymentSource) {
 	o.PaymentSource = &v
 }
 

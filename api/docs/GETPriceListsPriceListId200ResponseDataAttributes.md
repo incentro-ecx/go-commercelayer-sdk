@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Rules** | Pointer to **interface{}** | The rules (using Rules Engine) to be applied. | [optional] 
 **RuleOutcomes** | Pointer to **interface{}** | The rule outcomes. | [optional] 
+**ResourcePayload** | Pointer to **interface{}** | The payload used to evaluate the rules. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -385,6 +386,41 @@ HasRuleOutcomes returns a boolean if a field has been set.
 `func (o *GETPriceListsPriceListId200ResponseDataAttributes) UnsetRuleOutcomes()`
 
 UnsetRuleOutcomes ensures that no value is present for RuleOutcomes, not even an explicit nil
+### GetResourcePayload
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) GetResourcePayload() interface{}`
+
+GetResourcePayload returns the ResourcePayload field if non-nil, zero value otherwise.
+
+### GetResourcePayloadOk
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) GetResourcePayloadOk() (*interface{}, bool)`
+
+GetResourcePayloadOk returns a tuple with the ResourcePayload field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourcePayload
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) SetResourcePayload(v interface{})`
+
+SetResourcePayload sets ResourcePayload field to given value.
+
+### HasResourcePayload
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) HasResourcePayload() bool`
+
+HasResourcePayload returns a boolean if a field has been set.
+
+### SetResourcePayloadNil
+
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) SetResourcePayloadNil(b bool)`
+
+ SetResourcePayloadNil sets the value for ResourcePayload to be an explicit nil
+
+### UnsetResourcePayload
+`func (o *GETPriceListsPriceListId200ResponseDataAttributes) UnsetResourcePayload()`
+
+UnsetResourcePayload ensures that no value is present for ResourcePayload, not even an explicit nil
 ### GetMetadata
 
 `func (o *GETPriceListsPriceListId200ResponseDataAttributes) GetMetadata() interface{}`

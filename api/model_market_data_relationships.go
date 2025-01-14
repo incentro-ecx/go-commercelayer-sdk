@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -28,6 +28,7 @@ type MarketDataRelationships struct {
 	TaxCalculator       *MarketDataRelationshipsTaxCalculator                   `json:"tax_calculator,omitempty"`
 	CustomerGroup       *CustomerDataRelationshipsCustomerGroup                 `json:"customer_group,omitempty"`
 	Geocoder            *AddressDataRelationshipsGeocoder                       `json:"geocoder,omitempty"`
+	Stores              *MarketDataRelationshipsStores                          `json:"stores,omitempty"`
 	PriceListSchedulers *MarketDataRelationshipsPriceListSchedulers             `json:"price_list_schedulers,omitempty"`
 	Attachments         *AuthorizationDataRelationshipsAttachments              `json:"attachments,omitempty"`
 	Versions            *AddressDataRelationshipsVersions                       `json:"versions,omitempty"`
@@ -306,6 +307,38 @@ func (o *MarketDataRelationships) SetGeocoder(v AddressDataRelationshipsGeocoder
 	o.Geocoder = &v
 }
 
+// GetStores returns the Stores field value if set, zero value otherwise.
+func (o *MarketDataRelationships) GetStores() MarketDataRelationshipsStores {
+	if o == nil || IsNil(o.Stores) {
+		var ret MarketDataRelationshipsStores
+		return ret
+	}
+	return *o.Stores
+}
+
+// GetStoresOk returns a tuple with the Stores field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MarketDataRelationships) GetStoresOk() (*MarketDataRelationshipsStores, bool) {
+	if o == nil || IsNil(o.Stores) {
+		return nil, false
+	}
+	return o.Stores, true
+}
+
+// HasStores returns a boolean if a field has been set.
+func (o *MarketDataRelationships) HasStores() bool {
+	if o != nil && !IsNil(o.Stores) {
+		return true
+	}
+
+	return false
+}
+
+// SetStores gets a reference to the given MarketDataRelationshipsStores and assigns it to the Stores field.
+func (o *MarketDataRelationships) SetStores(v MarketDataRelationshipsStores) {
+	o.Stores = &v
+}
+
 // GetPriceListSchedulers returns the PriceListSchedulers field value if set, zero value otherwise.
 func (o *MarketDataRelationships) GetPriceListSchedulers() MarketDataRelationshipsPriceListSchedulers {
 	if o == nil || IsNil(o.PriceListSchedulers) {
@@ -435,6 +468,9 @@ func (o MarketDataRelationships) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Geocoder) {
 		toSerialize["geocoder"] = o.Geocoder
+	}
+	if !IsNil(o.Stores) {
+		toSerialize["stores"] = o.Stores
 	}
 	if !IsNil(o.PriceListSchedulers) {
 		toSerialize["price_list_schedulers"] = o.PriceListSchedulers

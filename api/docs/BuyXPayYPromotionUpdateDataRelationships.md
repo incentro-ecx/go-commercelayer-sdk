@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | [optional] 
+**Market** | Pointer to [**BundleCreateDataRelationshipsMarket**](BundleCreateDataRelationshipsMarket.md) |  | [optional] 
 **OrderAmountPromotionRule** | Pointer to [**BuyXPayYPromotionCreateDataRelationshipsOrderAmountPromotionRule**](BuyXPayYPromotionCreateDataRelationshipsOrderAmountPromotionRule.md) |  | [optional] 
 **SkuListPromotionRule** | Pointer to [**BuyXPayYPromotionCreateDataRelationshipsSkuListPromotionRule**](BuyXPayYPromotionCreateDataRelationshipsSkuListPromotionRule.md) |  | [optional] 
 **CouponCodesPromotionRule** | Pointer to [**BuyXPayYPromotionCreateDataRelationshipsCouponCodesPromotionRule**](BuyXPayYPromotionCreateDataRelationshipsCouponCodesPromotionRule.md) |  | [optional] 
@@ -33,20 +33,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *BuyXPayYPromotionUpdateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket`
+`func (o *BuyXPayYPromotionUpdateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *BuyXPayYPromotionUpdateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool)`
+`func (o *BuyXPayYPromotionUpdateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *BuyXPayYPromotionUpdateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket)`
+`func (o *BuyXPayYPromotionUpdateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 

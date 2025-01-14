@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Customer** | Pointer to [**POSTCouponRecipients201ResponseDataRelationshipsCustomer**](POSTCouponRecipients201ResponseDataRelationshipsCustomer.md) |  | [optional] 
 **PaymentMethod** | Pointer to [**POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentMethod**](POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentMethod.md) |  | [optional] 
-**PaymentSource** | Pointer to [**POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource**](POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource.md) |  | [optional] 
+**PaymentSource** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource**](GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource.md) |  | [optional] 
 **Versions** | Pointer to [**POSTAddresses201ResponseDataRelationshipsVersions**](POSTAddresses201ResponseDataRelationshipsVersions.md) |  | [optional] 
 
 ## Methods
@@ -80,20 +80,20 @@ HasPaymentMethod returns a boolean if a field has been set.
 
 ### GetPaymentSource
 
-`func (o *POSTCustomerPaymentSources201ResponseDataRelationships) GetPaymentSource() POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource`
+`func (o *POSTCustomerPaymentSources201ResponseDataRelationships) GetPaymentSource() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource`
 
 GetPaymentSource returns the PaymentSource field if non-nil, zero value otherwise.
 
 ### GetPaymentSourceOk
 
-`func (o *POSTCustomerPaymentSources201ResponseDataRelationships) GetPaymentSourceOk() (*POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource, bool)`
+`func (o *POSTCustomerPaymentSources201ResponseDataRelationships) GetPaymentSourceOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource, bool)`
 
 GetPaymentSourceOk returns a tuple with the PaymentSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaymentSource
 
-`func (o *POSTCustomerPaymentSources201ResponseDataRelationships) SetPaymentSource(v POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource)`
+`func (o *POSTCustomerPaymentSources201ResponseDataRelationships) SetPaymentSource(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource)`
 
 SetPaymentSource sets PaymentSource field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -30,7 +30,7 @@ type GETSkuListsSkuListId200ResponseDataAttributes struct {
 	ImageUrl interface{} `json:"image_url,omitempty"`
 	// Indicates if the SKU list is populated manually.
 	Manual interface{} `json:"manual,omitempty"`
-	// The regex that will be evaluated to match the SKU codes.
+	// The regex that will be evaluated to match the SKU codes, max size is 5000.
 	SkuCodeRegex interface{} `json:"sku_code_regex,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`

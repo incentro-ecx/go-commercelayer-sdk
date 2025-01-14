@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,11 @@ var _ MappedNullable = &OrderCreateDataRelationships{}
 
 // OrderCreateDataRelationships struct for OrderCreateDataRelationships
 type OrderCreateDataRelationships struct {
-	Market          *BillingInfoValidationRuleCreateDataRelationshipsMarket    `json:"market,omitempty"`
+	Market          *BundleCreateDataRelationshipsMarket                       `json:"market,omitempty"`
 	Customer        *CouponRecipientCreateDataRelationshipsCustomer            `json:"customer,omitempty"`
 	ShippingAddress *CustomerAddressCreateDataRelationshipsAddress             `json:"shipping_address,omitempty"`
 	BillingAddress  *CustomerAddressCreateDataRelationshipsAddress             `json:"billing_address,omitempty"`
+	Store           *OrderCreateDataRelationshipsStore                         `json:"store,omitempty"`
 	PaymentMethod   *CustomerPaymentSourceCreateDataRelationshipsPaymentMethod `json:"payment_method,omitempty"`
 	PaymentSource   *CustomerPaymentSourceCreateDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
 	Tags            *AddressCreateDataRelationshipsTags                        `json:"tags,omitempty"`
@@ -47,9 +48,9 @@ func NewOrderCreateDataRelationshipsWithDefaults() *OrderCreateDataRelationships
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *OrderCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
+func (o *OrderCreateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket {
 	if o == nil || IsNil(o.Market) {
-		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
+		var ret BundleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -57,7 +58,7 @@ func (o *OrderCreateDataRelationships) GetMarket() BillingInfoValidationRuleCrea
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
+func (o *OrderCreateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool) {
 	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
@@ -73,8 +74,8 @@ func (o *OrderCreateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
-func (o *OrderCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
+// SetMarket gets a reference to the given BundleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *OrderCreateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 
@@ -172,6 +173,38 @@ func (o *OrderCreateDataRelationships) HasBillingAddress() bool {
 // SetBillingAddress gets a reference to the given CustomerAddressCreateDataRelationshipsAddress and assigns it to the BillingAddress field.
 func (o *OrderCreateDataRelationships) SetBillingAddress(v CustomerAddressCreateDataRelationshipsAddress) {
 	o.BillingAddress = &v
+}
+
+// GetStore returns the Store field value if set, zero value otherwise.
+func (o *OrderCreateDataRelationships) GetStore() OrderCreateDataRelationshipsStore {
+	if o == nil || IsNil(o.Store) {
+		var ret OrderCreateDataRelationshipsStore
+		return ret
+	}
+	return *o.Store
+}
+
+// GetStoreOk returns a tuple with the Store field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderCreateDataRelationships) GetStoreOk() (*OrderCreateDataRelationshipsStore, bool) {
+	if o == nil || IsNil(o.Store) {
+		return nil, false
+	}
+	return o.Store, true
+}
+
+// HasStore returns a boolean if a field has been set.
+func (o *OrderCreateDataRelationships) HasStore() bool {
+	if o != nil && !IsNil(o.Store) {
+		return true
+	}
+
+	return false
+}
+
+// SetStore gets a reference to the given OrderCreateDataRelationshipsStore and assigns it to the Store field.
+func (o *OrderCreateDataRelationships) SetStore(v OrderCreateDataRelationshipsStore) {
+	o.Store = &v
 }
 
 // GetPaymentMethod returns the PaymentMethod field value if set, zero value otherwise.
@@ -291,6 +324,9 @@ func (o OrderCreateDataRelationships) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.BillingAddress) {
 		toSerialize["billing_address"] = o.BillingAddress
+	}
+	if !IsNil(o.Store) {
+		toSerialize["store"] = o.Store
 	}
 	if !IsNil(o.PaymentMethod) {
 		toSerialize["payment_method"] = o.PaymentMethod

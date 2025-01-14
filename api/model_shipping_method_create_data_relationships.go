@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ var _ MappedNullable = &ShippingMethodCreateDataRelationships{}
 
 // ShippingMethodCreateDataRelationships struct for ShippingMethodCreateDataRelationships
 type ShippingMethodCreateDataRelationships struct {
-	Market              *BillingInfoValidationRuleCreateDataRelationshipsMarket   `json:"market,omitempty"`
+	Market              *BundleCreateDataRelationshipsMarket                      `json:"market,omitempty"`
 	ShippingZone        *ShippingMethodCreateDataRelationshipsShippingZone        `json:"shipping_zone,omitempty"`
 	ShippingCategory    *ShipmentCreateDataRelationshipsShippingCategory          `json:"shipping_category,omitempty"`
 	StockLocation       *DeliveryLeadTimeCreateDataRelationshipsStockLocation     `json:"stock_location,omitempty"`
@@ -45,9 +45,9 @@ func NewShippingMethodCreateDataRelationshipsWithDefaults() *ShippingMethodCreat
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *ShippingMethodCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
+func (o *ShippingMethodCreateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket {
 	if o == nil || IsNil(o.Market) {
-		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
+		var ret BundleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -55,7 +55,7 @@ func (o *ShippingMethodCreateDataRelationships) GetMarket() BillingInfoValidatio
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
+func (o *ShippingMethodCreateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool) {
 	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *ShippingMethodCreateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
-func (o *ShippingMethodCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
+// SetMarket gets a reference to the given BundleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *ShippingMethodCreateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 

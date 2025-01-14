@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -24,8 +24,10 @@ type POSTExports201ResponseDataAttributes struct {
 	ResourceType interface{} `json:"resource_type"`
 	// The format of the export one of 'json' (default) or 'csv'.
 	Format interface{} `json:"format,omitempty"`
-	// List of related resources that should be included in the export.
+	// List of related resources that should be included in the export (redundant when 'fields' are specified).
 	Includes interface{} `json:"includes,omitempty"`
+	// List of fields to export for the main and related resources (automatically included). Pass the asterisk '*' to include all exportable fields for the main and related resources.
+	Fields interface{} `json:"fields,omitempty"`
 	// The filters used to select the records to be exported.
 	Filters interface{} `json:"filters,omitempty"`
 	// Send this attribute if you want to skip exporting redundant attributes (IDs, timestamps, blanks, etc.), useful when combining export and import to duplicate your dataset.
@@ -146,6 +148,39 @@ func (o *POSTExports201ResponseDataAttributes) HasIncludes() bool {
 // SetIncludes gets a reference to the given interface{} and assigns it to the Includes field.
 func (o *POSTExports201ResponseDataAttributes) SetIncludes(v interface{}) {
 	o.Includes = v
+}
+
+// GetFields returns the Fields field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTExports201ResponseDataAttributes) GetFields() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Fields
+}
+
+// GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTExports201ResponseDataAttributes) GetFieldsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Fields) {
+		return nil, false
+	}
+	return &o.Fields, true
+}
+
+// HasFields returns a boolean if a field has been set.
+func (o *POSTExports201ResponseDataAttributes) HasFields() bool {
+	if o != nil && IsNil(o.Fields) {
+		return true
+	}
+
+	return false
+}
+
+// SetFields gets a reference to the given interface{} and assigns it to the Fields field.
+func (o *POSTExports201ResponseDataAttributes) SetFields(v interface{}) {
+	o.Fields = v
 }
 
 // GetFilters returns the Filters field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -331,6 +366,9 @@ func (o POSTExports201ResponseDataAttributes) ToMap() (map[string]interface{}, e
 	}
 	if o.Includes != nil {
 		toSerialize["includes"] = o.Includes
+	}
+	if o.Fields != nil {
+		toSerialize["fields"] = o.Fields
 	}
 	if o.Filters != nil {
 		toSerialize["filters"] = o.Filters

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -21,6 +21,7 @@ var _ MappedNullable = &CaptureDataRelationships{}
 // CaptureDataRelationships struct for CaptureDataRelationships
 type CaptureDataRelationships struct {
 	Order                  *AdyenPaymentDataRelationshipsOrder             `json:"order,omitempty"`
+	PaymentSource          *AuthorizationDataRelationshipsPaymentSource    `json:"payment_source,omitempty"`
 	Attachments            *AuthorizationDataRelationshipsAttachments      `json:"attachments,omitempty"`
 	Events                 *AddressDataRelationshipsEvents                 `json:"events,omitempty"`
 	Versions               *AddressDataRelationshipsVersions               `json:"versions,omitempty"`
@@ -76,6 +77,38 @@ func (o *CaptureDataRelationships) HasOrder() bool {
 // SetOrder gets a reference to the given AdyenPaymentDataRelationshipsOrder and assigns it to the Order field.
 func (o *CaptureDataRelationships) SetOrder(v AdyenPaymentDataRelationshipsOrder) {
 	o.Order = &v
+}
+
+// GetPaymentSource returns the PaymentSource field value if set, zero value otherwise.
+func (o *CaptureDataRelationships) GetPaymentSource() AuthorizationDataRelationshipsPaymentSource {
+	if o == nil || IsNil(o.PaymentSource) {
+		var ret AuthorizationDataRelationshipsPaymentSource
+		return ret
+	}
+	return *o.PaymentSource
+}
+
+// GetPaymentSourceOk returns a tuple with the PaymentSource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CaptureDataRelationships) GetPaymentSourceOk() (*AuthorizationDataRelationshipsPaymentSource, bool) {
+	if o == nil || IsNil(o.PaymentSource) {
+		return nil, false
+	}
+	return o.PaymentSource, true
+}
+
+// HasPaymentSource returns a boolean if a field has been set.
+func (o *CaptureDataRelationships) HasPaymentSource() bool {
+	if o != nil && !IsNil(o.PaymentSource) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentSource gets a reference to the given AuthorizationDataRelationshipsPaymentSource and assigns it to the PaymentSource field.
+func (o *CaptureDataRelationships) SetPaymentSource(v AuthorizationDataRelationshipsPaymentSource) {
+	o.PaymentSource = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
@@ -282,6 +315,9 @@ func (o CaptureDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
+	}
+	if !IsNil(o.PaymentSource) {
+		toSerialize["payment_source"] = o.PaymentSource
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments

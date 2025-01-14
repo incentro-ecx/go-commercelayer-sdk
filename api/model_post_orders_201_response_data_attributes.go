@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -22,7 +22,7 @@ var _ MappedNullable = &POSTOrders201ResponseDataAttributes{}
 type POSTOrders201ResponseDataAttributes struct {
 	// The order identifier. Can be specified if unique within the organization (for enterprise plans only), default to numeric ID otherwise. Cannot be passed by sales channels.
 	Number interface{} `json:"number,omitempty"`
-	// The affiliate code, if any, the seller will transfer commission on shop by link transactions.
+	// The affiliate code, if any, to track commissions using any third party services.
 	AffiliateCode interface{} `json:"affiliate_code,omitempty"`
 	// Save this attribute as 'false' if you want prevent the order to be refreshed automatically at each change (much faster).
 	Autorefresh interface{} `json:"autorefresh,omitempty"`

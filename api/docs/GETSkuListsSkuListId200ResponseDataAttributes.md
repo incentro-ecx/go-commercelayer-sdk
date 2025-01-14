@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **interface{}** | An internal description of the SKU list. | [optional] 
 **ImageUrl** | Pointer to **interface{}** | The URL of an image that represents the SKU list. | [optional] 
 **Manual** | Pointer to **interface{}** | Indicates if the SKU list is populated manually. | [optional] 
-**SkuCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated to match the SKU codes. | [optional] 
+**SkuCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated to match the SKU codes, max size is 5000. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 

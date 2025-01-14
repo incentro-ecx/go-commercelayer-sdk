@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -1465,6 +1465,98 @@ func (a *PaymentMethodsApiService) GETSatispayGatewayIdPaymentMethodsExecute(r P
 
 	localVarPath := localBasePath + "/satispay_gateways/{satispayGatewayId}/payment_methods"
 	localVarPath = strings.Replace(localVarPath, "{"+"satispayGatewayId"+"}", url.PathEscape(parameterValueToString(r.satispayGatewayId, "satispayGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type PaymentMethodsApiGETStoreIdPaymentMethodsRequest struct {
+	ctx        context.Context
+	ApiService *PaymentMethodsApiService
+	storeId    interface{}
+}
+
+func (r PaymentMethodsApiGETStoreIdPaymentMethodsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETStoreIdPaymentMethodsExecute(r)
+}
+
+/*
+GETStoreIdPaymentMethods Retrieve the payment methods associated to the store
+
+Retrieve the payment methods associated to the store
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param storeId The resource's id
+	@return PaymentMethodsApiGETStoreIdPaymentMethodsRequest
+*/
+func (a *PaymentMethodsApiService) GETStoreIdPaymentMethods(ctx context.Context, storeId interface{}) PaymentMethodsApiGETStoreIdPaymentMethodsRequest {
+	return PaymentMethodsApiGETStoreIdPaymentMethodsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		storeId:    storeId,
+	}
+}
+
+// Execute executes the request
+func (a *PaymentMethodsApiService) GETStoreIdPaymentMethodsExecute(r PaymentMethodsApiGETStoreIdPaymentMethodsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETStoreIdPaymentMethods")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/stores/{storeId}/payment_methods"
+	localVarPath = strings.Replace(localVarPath, "{"+"storeId"+"}", url.PathEscape(parameterValueToString(r.storeId, "storeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

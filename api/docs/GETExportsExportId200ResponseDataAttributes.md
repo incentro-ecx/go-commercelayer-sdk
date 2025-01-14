@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 **ResourceType** | Pointer to **interface{}** | The type of resource being exported. | [optional] 
 **Format** | Pointer to **interface{}** | The format of the export one of &#39;json&#39; (default) or &#39;csv&#39;. | [optional] 
 **Status** | Pointer to **interface{}** | The export job status. One of &#39;pending&#39; (default), &#39;in_progress&#39;, &#39;interrupted&#39;, or &#39;completed&#39;. | [optional] 
-**Includes** | Pointer to **interface{}** | List of related resources that should be included in the export. | [optional] 
+**Includes** | Pointer to **interface{}** | List of related resources that should be included in the export (redundant when &#39;fields&#39; are specified). | [optional] 
+**Fields** | Pointer to **interface{}** | List of fields to export for the main and related resources (automatically included). Pass the asterisk &#39;*&#39; to include all exportable fields for the main and related resources. | [optional] 
 **Filters** | Pointer to **interface{}** | The filters used to select the records to be exported. | [optional] 
 **DryData** | Pointer to **interface{}** | Send this attribute if you want to skip exporting redundant attributes (IDs, timestamps, blanks, etc.), useful when combining export and import to duplicate your dataset. | [optional] 
 **StartedAt** | Pointer to **interface{}** | Time at which the export was started. | [optional] 
@@ -15,6 +16,7 @@ Name | Type | Description | Notes
 **InterruptedAt** | Pointer to **interface{}** | Time at which the export was interrupted. | [optional] 
 **RecordsCount** | Pointer to **interface{}** | Indicates the number of records to be exported. | [optional] 
 **AttachmentUrl** | Pointer to **interface{}** | The URL to the output file, which will be generated upon export completion. | [optional] 
+**ErrorsLog** | Pointer to **interface{}** | Contains the exports errors, if any. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -180,6 +182,41 @@ HasIncludes returns a boolean if a field has been set.
 `func (o *GETExportsExportId200ResponseDataAttributes) UnsetIncludes()`
 
 UnsetIncludes ensures that no value is present for Includes, not even an explicit nil
+### GetFields
+
+`func (o *GETExportsExportId200ResponseDataAttributes) GetFields() interface{}`
+
+GetFields returns the Fields field if non-nil, zero value otherwise.
+
+### GetFieldsOk
+
+`func (o *GETExportsExportId200ResponseDataAttributes) GetFieldsOk() (*interface{}, bool)`
+
+GetFieldsOk returns a tuple with the Fields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFields
+
+`func (o *GETExportsExportId200ResponseDataAttributes) SetFields(v interface{})`
+
+SetFields sets Fields field to given value.
+
+### HasFields
+
+`func (o *GETExportsExportId200ResponseDataAttributes) HasFields() bool`
+
+HasFields returns a boolean if a field has been set.
+
+### SetFieldsNil
+
+`func (o *GETExportsExportId200ResponseDataAttributes) SetFieldsNil(b bool)`
+
+ SetFieldsNil sets the value for Fields to be an explicit nil
+
+### UnsetFields
+`func (o *GETExportsExportId200ResponseDataAttributes) UnsetFields()`
+
+UnsetFields ensures that no value is present for Fields, not even an explicit nil
 ### GetFilters
 
 `func (o *GETExportsExportId200ResponseDataAttributes) GetFilters() interface{}`
@@ -425,6 +462,41 @@ HasAttachmentUrl returns a boolean if a field has been set.
 `func (o *GETExportsExportId200ResponseDataAttributes) UnsetAttachmentUrl()`
 
 UnsetAttachmentUrl ensures that no value is present for AttachmentUrl, not even an explicit nil
+### GetErrorsLog
+
+`func (o *GETExportsExportId200ResponseDataAttributes) GetErrorsLog() interface{}`
+
+GetErrorsLog returns the ErrorsLog field if non-nil, zero value otherwise.
+
+### GetErrorsLogOk
+
+`func (o *GETExportsExportId200ResponseDataAttributes) GetErrorsLogOk() (*interface{}, bool)`
+
+GetErrorsLogOk returns a tuple with the ErrorsLog field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetErrorsLog
+
+`func (o *GETExportsExportId200ResponseDataAttributes) SetErrorsLog(v interface{})`
+
+SetErrorsLog sets ErrorsLog field to given value.
+
+### HasErrorsLog
+
+`func (o *GETExportsExportId200ResponseDataAttributes) HasErrorsLog() bool`
+
+HasErrorsLog returns a boolean if a field has been set.
+
+### SetErrorsLogNil
+
+`func (o *GETExportsExportId200ResponseDataAttributes) SetErrorsLogNil(b bool)`
+
+ SetErrorsLogNil sets the value for ErrorsLog to be an explicit nil
+
+### UnsetErrorsLog
+`func (o *GETExportsExportId200ResponseDataAttributes) UnsetErrorsLog()`
+
+UnsetErrorsLog ensures that no value is present for ErrorsLog, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETExportsExportId200ResponseDataAttributes) GetCreatedAt() interface{}`

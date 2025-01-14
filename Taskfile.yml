@@ -1,0 +1,47 @@
+version: '3'
+
+tasks:
+  generate:
+    cmds:
+      - task: download:specs
+      - task: clean
+      - openapi-generator-cli generate -i "./openapi.yaml" \
+        --generator-name go \
+        --output api \
+        --ignore-file-override .openapi-generator-ignore \
+        --config config.yml
+      - task: format
+
+  download:specs:
+    cmds:
+      - wget https://data.commercelayer.app/schemas/openapi-no-ref.json -o ./openapi.yaml
+
+  tools:
+    cmds:
+      - npm install -g @openapitools/openapi-generator-cli
+
+  clean:
+    cmds:
+      - rm -rf api
+
+  format:
+    cmds:
+      - go fmt ./...
+
+  test:
+    cmds:
+      - go test -v ./...
+
+  docs:
+    cmds:
+      - go generate
+
+  coverage-html:
+    cmds:
+      - go test -race -coverprofile=coverage.txt -covermode=atomic -coverpkg=./... ./...
+      - go tool cover -html=coverage.txt
+
+  coverage:
+    cmds:
+      - go test -race -coverprofile=coverage.txt -covermode=atomic -coverpkg=./... ./...
+      - go tool cover -func=coverage.txt

@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **StockReservations** | Pointer to [**LineItemDataRelationshipsStockReservations**](LineItemDataRelationshipsStockReservations.md) |  | [optional] 
 **StockLineItems** | Pointer to [**LineItemDataRelationshipsStockLineItems**](LineItemDataRelationshipsStockLineItems.md) |  | [optional] 
 **StockTransfers** | Pointer to [**LineItemDataRelationshipsStockTransfers**](LineItemDataRelationshipsStockTransfers.md) |  | [optional] 
+**Notifications** | Pointer to [**LineItemDataRelationshipsNotifications**](LineItemDataRelationshipsNotifications.md) |  | [optional] 
 **Events** | Pointer to [**AddressDataRelationshipsEvents**](AddressDataRelationshipsEvents.md) |  | [optional] 
 **Tags** | Pointer to [**AddressDataRelationshipsTags**](AddressDataRelationshipsTags.md) |  | [optional] 
 
@@ -363,6 +364,31 @@ SetStockTransfers sets StockTransfers field to given value.
 `func (o *LineItemDataRelationships) HasStockTransfers() bool`
 
 HasStockTransfers returns a boolean if a field has been set.
+
+### GetNotifications
+
+`func (o *LineItemDataRelationships) GetNotifications() LineItemDataRelationshipsNotifications`
+
+GetNotifications returns the Notifications field if non-nil, zero value otherwise.
+
+### GetNotificationsOk
+
+`func (o *LineItemDataRelationships) GetNotificationsOk() (*LineItemDataRelationshipsNotifications, bool)`
+
+GetNotificationsOk returns a tuple with the Notifications field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotifications
+
+`func (o *LineItemDataRelationships) SetNotifications(v LineItemDataRelationshipsNotifications)`
+
+SetNotifications sets Notifications field to given value.
+
+### HasNotifications
+
+`func (o *LineItemDataRelationships) HasNotifications() bool`
+
+HasNotifications returns a boolean if a field has been set.
 
 ### GetEvents
 

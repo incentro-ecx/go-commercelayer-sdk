@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,15 +20,15 @@ var _ MappedNullable = &PriceListSchedulerCreateDataRelationships{}
 
 // PriceListSchedulerCreateDataRelationships struct for PriceListSchedulerCreateDataRelationships
 type PriceListSchedulerCreateDataRelationships struct {
-	Market    BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market"`
-	PriceList MarketCreateDataRelationshipsPriceList                 `json:"price_list"`
+	Market    BundleCreateDataRelationshipsMarket    `json:"market"`
+	PriceList MarketCreateDataRelationshipsPriceList `json:"price_list"`
 }
 
 // NewPriceListSchedulerCreateDataRelationships instantiates a new PriceListSchedulerCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceListSchedulerCreateDataRelationships(market BillingInfoValidationRuleCreateDataRelationshipsMarket, priceList MarketCreateDataRelationshipsPriceList) *PriceListSchedulerCreateDataRelationships {
+func NewPriceListSchedulerCreateDataRelationships(market BundleCreateDataRelationshipsMarket, priceList MarketCreateDataRelationshipsPriceList) *PriceListSchedulerCreateDataRelationships {
 	this := PriceListSchedulerCreateDataRelationships{}
 	this.Market = market
 	this.PriceList = priceList
@@ -44,9 +44,9 @@ func NewPriceListSchedulerCreateDataRelationshipsWithDefaults() *PriceListSchedu
 }
 
 // GetMarket returns the Market field value
-func (o *PriceListSchedulerCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
+func (o *PriceListSchedulerCreateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket {
 	if o == nil {
-		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
+		var ret BundleCreateDataRelationshipsMarket
 		return ret
 	}
 
@@ -55,7 +55,7 @@ func (o *PriceListSchedulerCreateDataRelationships) GetMarket() BillingInfoValid
 
 // GetMarketOk returns a tuple with the Market field value
 // and a boolean to check if the value has been set.
-func (o *PriceListSchedulerCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
+func (o *PriceListSchedulerCreateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -63,7 +63,7 @@ func (o *PriceListSchedulerCreateDataRelationships) GetMarketOk() (*BillingInfoV
 }
 
 // SetMarket sets field value
-func (o *PriceListSchedulerCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
+func (o *PriceListSchedulerCreateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket) {
 	o.Market = v
 }
 

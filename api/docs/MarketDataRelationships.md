@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **TaxCalculator** | Pointer to [**MarketDataRelationshipsTaxCalculator**](MarketDataRelationshipsTaxCalculator.md) |  | [optional] 
 **CustomerGroup** | Pointer to [**CustomerDataRelationshipsCustomerGroup**](CustomerDataRelationshipsCustomerGroup.md) |  | [optional] 
 **Geocoder** | Pointer to [**AddressDataRelationshipsGeocoder**](AddressDataRelationshipsGeocoder.md) |  | [optional] 
+**Stores** | Pointer to [**MarketDataRelationshipsStores**](MarketDataRelationshipsStores.md) |  | [optional] 
 **PriceListSchedulers** | Pointer to [**MarketDataRelationshipsPriceListSchedulers**](MarketDataRelationshipsPriceListSchedulers.md) |  | [optional] 
 **Attachments** | Pointer to [**AuthorizationDataRelationshipsAttachments**](AuthorizationDataRelationshipsAttachments.md) |  | [optional] 
 **Versions** | Pointer to [**AddressDataRelationshipsVersions**](AddressDataRelationshipsVersions.md) |  | [optional] 
@@ -234,6 +235,31 @@ SetGeocoder sets Geocoder field to given value.
 `func (o *MarketDataRelationships) HasGeocoder() bool`
 
 HasGeocoder returns a boolean if a field has been set.
+
+### GetStores
+
+`func (o *MarketDataRelationships) GetStores() MarketDataRelationshipsStores`
+
+GetStores returns the Stores field if non-nil, zero value otherwise.
+
+### GetStoresOk
+
+`func (o *MarketDataRelationships) GetStoresOk() (*MarketDataRelationshipsStores, bool)`
+
+GetStoresOk returns a tuple with the Stores field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStores
+
+`func (o *MarketDataRelationships) SetStores(v MarketDataRelationshipsStores)`
+
+SetStores sets Stores field to given value.
+
+### HasStores
+
+`func (o *MarketDataRelationships) HasStores() bool`
+
+HasStores returns a boolean if a field has been set.
 
 ### GetPriceListSchedulers
 

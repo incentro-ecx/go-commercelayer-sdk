@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 **CancelSourceOrder** | Pointer to **interface{}** | Indicates if the source order must be cancelled upon copy. | [optional] 
 **ApplyPromotions** | Pointer to **interface{}** | Indicates if promotions got applied upon copy. | [optional] 
+**SkipErrors** | Pointer to **interface{}** | Indicates to ignore any errors during copy. | [optional] 
 **IgnoreInvalidCoupon** | Pointer to **interface{}** | Indicates to ignore invalid coupon code during copy. | [optional] 
 
 ## Methods
@@ -601,6 +602,41 @@ HasApplyPromotions returns a boolean if a field has been set.
 `func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) UnsetApplyPromotions()`
 
 UnsetApplyPromotions ensures that no value is present for ApplyPromotions, not even an explicit nil
+### GetSkipErrors
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetSkipErrors() interface{}`
+
+GetSkipErrors returns the SkipErrors field if non-nil, zero value otherwise.
+
+### GetSkipErrorsOk
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetSkipErrorsOk() (*interface{}, bool)`
+
+GetSkipErrorsOk returns a tuple with the SkipErrors field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSkipErrors
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) SetSkipErrors(v interface{})`
+
+SetSkipErrors sets SkipErrors field to given value.
+
+### HasSkipErrors
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) HasSkipErrors() bool`
+
+HasSkipErrors returns a boolean if a field has been set.
+
+### SetSkipErrorsNil
+
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) SetSkipErrorsNil(b bool)`
+
+ SetSkipErrorsNil sets the value for SkipErrors to be an explicit nil
+
+### UnsetSkipErrors
+`func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) UnsetSkipErrors()`
+
+UnsetSkipErrors ensures that no value is present for SkipErrors, not even an explicit nil
 ### GetIgnoreInvalidCoupon
 
 `func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetIgnoreInvalidCoupon() interface{}`

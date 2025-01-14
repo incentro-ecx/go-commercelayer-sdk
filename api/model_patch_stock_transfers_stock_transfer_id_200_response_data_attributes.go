@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -24,6 +24,8 @@ type PATCHStockTransfersStockTransferId200ResponseDataAttributes struct {
 	Number interface{} `json:"number,omitempty"`
 	// The code of the associated SKU.
 	SkuCode interface{} `json:"sku_code,omitempty"`
+	// The stock quantity to be transferred from the origin stock location to destination one. Updatable unless stock transfer is completed or cancelled and depending on origin stock availability.
+	Quantity interface{} `json:"quantity,omitempty"`
 	// Send this attribute if you want to mark this stock transfer as upcoming.
 	Upcoming interface{} `json:"_upcoming,omitempty"`
 	// Send this attribute if you want to put this stock transfer on hold.
@@ -125,6 +127,39 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasSkuCode
 // SetSkuCode gets a reference to the given interface{} and assigns it to the SkuCode field.
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) SetSkuCode(v interface{}) {
 	o.SkuCode = v
+}
+
+// GetQuantity returns the Quantity field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetQuantity() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Quantity
+}
+
+// GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetQuantityOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Quantity) {
+		return nil, false
+	}
+	return &o.Quantity, true
+}
+
+// HasQuantity returns a boolean if a field has been set.
+func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasQuantity() bool {
+	if o != nil && IsNil(o.Quantity) {
+		return true
+	}
+
+	return false
+}
+
+// SetQuantity gets a reference to the given interface{} and assigns it to the Quantity field.
+func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) SetQuantity(v interface{}) {
+	o.Quantity = v
 }
 
 // GetUpcoming returns the Upcoming field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -439,6 +474,9 @@ func (o PATCHStockTransfersStockTransferId200ResponseDataAttributes) ToMap() (ma
 	}
 	if o.SkuCode != nil {
 		toSerialize["sku_code"] = o.SkuCode
+	}
+	if o.Quantity != nil {
+		toSerialize["quantity"] = o.Quantity
 	}
 	if o.Upcoming != nil {
 		toSerialize["_upcoming"] = o.Upcoming

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ var _ MappedNullable = &InStockSubscriptionUpdateDataRelationships{}
 
 // InStockSubscriptionUpdateDataRelationships struct for InStockSubscriptionUpdateDataRelationships
 type InStockSubscriptionUpdateDataRelationships struct {
-	Market   *BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market,omitempty"`
-	Customer *CouponRecipientCreateDataRelationshipsCustomer         `json:"customer,omitempty"`
-	Sku      *InStockSubscriptionCreateDataRelationshipsSku          `json:"sku,omitempty"`
+	Market   *BundleCreateDataRelationshipsMarket            `json:"market,omitempty"`
+	Customer *CouponRecipientCreateDataRelationshipsCustomer `json:"customer,omitempty"`
+	Sku      *InStockSubscriptionCreateDataRelationshipsSku  `json:"sku,omitempty"`
 }
 
 // NewInStockSubscriptionUpdateDataRelationships instantiates a new InStockSubscriptionUpdateDataRelationships object
@@ -43,9 +43,9 @@ func NewInStockSubscriptionUpdateDataRelationshipsWithDefaults() *InStockSubscri
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *InStockSubscriptionUpdateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
+func (o *InStockSubscriptionUpdateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket {
 	if o == nil || IsNil(o.Market) {
-		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
+		var ret BundleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -53,7 +53,7 @@ func (o *InStockSubscriptionUpdateDataRelationships) GetMarket() BillingInfoVali
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionUpdateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
+func (o *InStockSubscriptionUpdateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool) {
 	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *InStockSubscriptionUpdateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
-func (o *InStockSubscriptionUpdateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
+// SetMarket gets a reference to the given BundleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *InStockSubscriptionUpdateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 

@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | [optional] 
+**Market** | Pointer to [**BundleCreateDataRelationshipsMarket**](BundleCreateDataRelationshipsMarket.md) |  | [optional] 
 **PaymentGateway** | Pointer to [**PaymentMethodCreateDataRelationshipsPaymentGateway**](PaymentMethodCreateDataRelationshipsPaymentGateway.md) |  | [optional] 
+**Store** | Pointer to [**OrderCreateDataRelationshipsStore**](OrderCreateDataRelationshipsStore.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *PaymentMethodUpdateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket`
+`func (o *PaymentMethodUpdateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *PaymentMethodUpdateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool)`
+`func (o *PaymentMethodUpdateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *PaymentMethodUpdateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket)`
+`func (o *PaymentMethodUpdateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 
@@ -75,6 +76,31 @@ SetPaymentGateway sets PaymentGateway field to given value.
 `func (o *PaymentMethodUpdateDataRelationships) HasPaymentGateway() bool`
 
 HasPaymentGateway returns a boolean if a field has been set.
+
+### GetStore
+
+`func (o *PaymentMethodUpdateDataRelationships) GetStore() OrderCreateDataRelationshipsStore`
+
+GetStore returns the Store field if non-nil, zero value otherwise.
+
+### GetStoreOk
+
+`func (o *PaymentMethodUpdateDataRelationships) GetStoreOk() (*OrderCreateDataRelationshipsStore, bool)`
+
+GetStoreOk returns a tuple with the Store field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStore
+
+`func (o *PaymentMethodUpdateDataRelationships) SetStore(v OrderCreateDataRelationshipsStore)`
+
+SetStore sets Store field to given value.
+
+### HasStore
+
+`func (o *PaymentMethodUpdateDataRelationships) HasStore() bool`
+
+HasStore returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

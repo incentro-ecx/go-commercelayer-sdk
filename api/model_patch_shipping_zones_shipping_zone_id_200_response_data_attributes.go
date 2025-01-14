@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -22,17 +22,17 @@ var _ MappedNullable = &PATCHShippingZonesShippingZoneId200ResponseDataAttribute
 type PATCHShippingZonesShippingZoneId200ResponseDataAttributes struct {
 	// The shipping zone's internal name.
 	Name interface{} `json:"name,omitempty"`
-	// The regex that will be evaluated to match the shipping address country code.
+	// The regex that will be evaluated to match the shipping address country code, max size is 5000.
 	CountryCodeRegex interface{} `json:"country_code_regex,omitempty"`
-	// The regex that will be evaluated as negative match for the shipping address country code.
+	// The regex that will be evaluated as negative match for the shipping address country code, max size is 5000.
 	NotCountryCodeRegex interface{} `json:"not_country_code_regex,omitempty"`
-	// The regex that will be evaluated to match the shipping address state code.
+	// The regex that will be evaluated to match the shipping address state code, max size is 5000.
 	StateCodeRegex interface{} `json:"state_code_regex,omitempty"`
-	// The regex that will be evaluated as negative match for the shipping address state code.
+	// The regex that will be evaluated as negative match for the shipping address state code, max size is 5000.
 	NotStateCodeRegex interface{} `json:"not_state_code_regex,omitempty"`
-	// The regex that will be evaluated to match the shipping address zip code.
+	// The regex that will be evaluated to match the shipping address zip code, max size is 5000.
 	ZipCodeRegex interface{} `json:"zip_code_regex,omitempty"`
-	// The regex that will be evaluated as negative match for the shipping zip country code.
+	// The regex that will be evaluated as negative match for the shipping zip country code, max size is 5000.
 	NotZipCodeRegex interface{} `json:"not_zip_code_regex,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`

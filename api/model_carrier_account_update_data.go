@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -25,7 +25,7 @@ type CarrierAccountUpdateData struct {
 	// The resource's id
 	Id            interface{}                                                   `json:"id"`
 	Attributes    PATCHCarrierAccountsCarrierAccountId200ResponseDataAttributes `json:"attributes"`
-	Relationships *BillingInfoValidationRuleUpdateDataRelationships             `json:"relationships,omitempty"`
+	Relationships *CarrierAccountCreateDataRelationships                        `json:"relationships,omitempty"`
 }
 
 // NewCarrierAccountUpdateData instantiates a new CarrierAccountUpdateData object
@@ -125,9 +125,9 @@ func (o *CarrierAccountUpdateData) SetAttributes(v PATCHCarrierAccountsCarrierAc
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CarrierAccountUpdateData) GetRelationships() BillingInfoValidationRuleUpdateDataRelationships {
+func (o *CarrierAccountUpdateData) GetRelationships() CarrierAccountCreateDataRelationships {
 	if o == nil || IsNil(o.Relationships) {
-		var ret BillingInfoValidationRuleUpdateDataRelationships
+		var ret CarrierAccountCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -135,7 +135,7 @@ func (o *CarrierAccountUpdateData) GetRelationships() BillingInfoValidationRuleU
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CarrierAccountUpdateData) GetRelationshipsOk() (*BillingInfoValidationRuleUpdateDataRelationships, bool) {
+func (o *CarrierAccountUpdateData) GetRelationshipsOk() (*CarrierAccountCreateDataRelationships, bool) {
 	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
@@ -151,8 +151,8 @@ func (o *CarrierAccountUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given BillingInfoValidationRuleUpdateDataRelationships and assigns it to the Relationships field.
-func (o *CarrierAccountUpdateData) SetRelationships(v BillingInfoValidationRuleUpdateDataRelationships) {
+// SetRelationships gets a reference to the given CarrierAccountCreateDataRelationships and assigns it to the Relationships field.
+func (o *CarrierAccountUpdateData) SetRelationships(v CarrierAccountCreateDataRelationships) {
 	o.Relationships = &v
 }
 

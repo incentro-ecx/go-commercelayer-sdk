@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -26,8 +26,10 @@ type GETExportsExportId200ResponseDataAttributes struct {
 	Format interface{} `json:"format,omitempty"`
 	// The export job status. One of 'pending' (default), 'in_progress', 'interrupted', or 'completed'.
 	Status interface{} `json:"status,omitempty"`
-	// List of related resources that should be included in the export.
+	// List of related resources that should be included in the export (redundant when 'fields' are specified).
 	Includes interface{} `json:"includes,omitempty"`
+	// List of fields to export for the main and related resources (automatically included). Pass the asterisk '*' to include all exportable fields for the main and related resources.
+	Fields interface{} `json:"fields,omitempty"`
 	// The filters used to select the records to be exported.
 	Filters interface{} `json:"filters,omitempty"`
 	// Send this attribute if you want to skip exporting redundant attributes (IDs, timestamps, blanks, etc.), useful when combining export and import to duplicate your dataset.
@@ -42,6 +44,8 @@ type GETExportsExportId200ResponseDataAttributes struct {
 	RecordsCount interface{} `json:"records_count,omitempty"`
 	// The URL to the output file, which will be generated upon export completion.
 	AttachmentUrl interface{} `json:"attachment_url,omitempty"`
+	// Contains the exports errors, if any.
+	ErrorsLog interface{} `json:"errors_log,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
@@ -201,6 +205,39 @@ func (o *GETExportsExportId200ResponseDataAttributes) HasIncludes() bool {
 // SetIncludes gets a reference to the given interface{} and assigns it to the Includes field.
 func (o *GETExportsExportId200ResponseDataAttributes) SetIncludes(v interface{}) {
 	o.Includes = v
+}
+
+// GetFields returns the Fields field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETExportsExportId200ResponseDataAttributes) GetFields() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Fields
+}
+
+// GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETExportsExportId200ResponseDataAttributes) GetFieldsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Fields) {
+		return nil, false
+	}
+	return &o.Fields, true
+}
+
+// HasFields returns a boolean if a field has been set.
+func (o *GETExportsExportId200ResponseDataAttributes) HasFields() bool {
+	if o != nil && IsNil(o.Fields) {
+		return true
+	}
+
+	return false
+}
+
+// SetFields gets a reference to the given interface{} and assigns it to the Fields field.
+func (o *GETExportsExportId200ResponseDataAttributes) SetFields(v interface{}) {
+	o.Fields = v
 }
 
 // GetFilters returns the Filters field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -434,6 +471,39 @@ func (o *GETExportsExportId200ResponseDataAttributes) SetAttachmentUrl(v interfa
 	o.AttachmentUrl = v
 }
 
+// GetErrorsLog returns the ErrorsLog field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETExportsExportId200ResponseDataAttributes) GetErrorsLog() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ErrorsLog
+}
+
+// GetErrorsLogOk returns a tuple with the ErrorsLog field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETExportsExportId200ResponseDataAttributes) GetErrorsLogOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ErrorsLog) {
+		return nil, false
+	}
+	return &o.ErrorsLog, true
+}
+
+// HasErrorsLog returns a boolean if a field has been set.
+func (o *GETExportsExportId200ResponseDataAttributes) HasErrorsLog() bool {
+	if o != nil && IsNil(o.ErrorsLog) {
+		return true
+	}
+
+	return false
+}
+
+// SetErrorsLog gets a reference to the given interface{} and assigns it to the ErrorsLog field.
+func (o *GETExportsExportId200ResponseDataAttributes) SetErrorsLog(v interface{}) {
+	o.ErrorsLog = v
+}
+
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETExportsExportId200ResponseDataAttributes) GetCreatedAt() interface{} {
 	if o == nil {
@@ -621,6 +691,9 @@ func (o GETExportsExportId200ResponseDataAttributes) ToMap() (map[string]interfa
 	if o.Includes != nil {
 		toSerialize["includes"] = o.Includes
 	}
+	if o.Fields != nil {
+		toSerialize["fields"] = o.Fields
+	}
 	if o.Filters != nil {
 		toSerialize["filters"] = o.Filters
 	}
@@ -641,6 +714,9 @@ func (o GETExportsExportId200ResponseDataAttributes) ToMap() (map[string]interfa
 	}
 	if o.AttachmentUrl != nil {
 		toSerialize["attachment_url"] = o.AttachmentUrl
+	}
+	if o.ErrorsLog != nil {
+		toSerialize["errors_log"] = o.ErrorsLog
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

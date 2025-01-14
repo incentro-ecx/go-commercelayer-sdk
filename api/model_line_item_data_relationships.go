@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -33,6 +33,7 @@ type LineItemDataRelationships struct {
 	StockReservations *LineItemDataRelationshipsStockReservations  `json:"stock_reservations,omitempty"`
 	StockLineItems    *LineItemDataRelationshipsStockLineItems     `json:"stock_line_items,omitempty"`
 	StockTransfers    *LineItemDataRelationshipsStockTransfers     `json:"stock_transfers,omitempty"`
+	Notifications     *LineItemDataRelationshipsNotifications      `json:"notifications,omitempty"`
 	Events            *AddressDataRelationshipsEvents              `json:"events,omitempty"`
 	Tags              *AddressDataRelationshipsTags                `json:"tags,omitempty"`
 }
@@ -470,6 +471,38 @@ func (o *LineItemDataRelationships) SetStockTransfers(v LineItemDataRelationship
 	o.StockTransfers = &v
 }
 
+// GetNotifications returns the Notifications field value if set, zero value otherwise.
+func (o *LineItemDataRelationships) GetNotifications() LineItemDataRelationshipsNotifications {
+	if o == nil || IsNil(o.Notifications) {
+		var ret LineItemDataRelationshipsNotifications
+		return ret
+	}
+	return *o.Notifications
+}
+
+// GetNotificationsOk returns a tuple with the Notifications field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LineItemDataRelationships) GetNotificationsOk() (*LineItemDataRelationshipsNotifications, bool) {
+	if o == nil || IsNil(o.Notifications) {
+		return nil, false
+	}
+	return o.Notifications, true
+}
+
+// HasNotifications returns a boolean if a field has been set.
+func (o *LineItemDataRelationships) HasNotifications() bool {
+	if o != nil && !IsNil(o.Notifications) {
+		return true
+	}
+
+	return false
+}
+
+// SetNotifications gets a reference to the given LineItemDataRelationshipsNotifications and assigns it to the Notifications field.
+func (o *LineItemDataRelationships) SetNotifications(v LineItemDataRelationshipsNotifications) {
+	o.Notifications = &v
+}
+
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *LineItemDataRelationships) GetEvents() AddressDataRelationshipsEvents {
 	if o == nil || IsNil(o.Events) {
@@ -582,6 +615,9 @@ func (o LineItemDataRelationships) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.StockTransfers) {
 		toSerialize["stock_transfers"] = o.StockTransfers
+	}
+	if !IsNil(o.Notifications) {
+		toSerialize["notifications"] = o.Notifications
 	}
 	if !IsNil(o.Events) {
 		toSerialize["events"] = o.Events

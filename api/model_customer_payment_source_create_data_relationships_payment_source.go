@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,14 +20,14 @@ var _ MappedNullable = &CustomerPaymentSourceCreateDataRelationshipsPaymentSourc
 
 // CustomerPaymentSourceCreateDataRelationshipsPaymentSource struct for CustomerPaymentSourceCreateDataRelationshipsPaymentSource
 type CustomerPaymentSourceCreateDataRelationshipsPaymentSource struct {
-	Data CustomerPaymentSourceDataRelationshipsPaymentSourceData `json:"data"`
+	Data AuthorizationDataRelationshipsPaymentSourceData `json:"data"`
 }
 
 // NewCustomerPaymentSourceCreateDataRelationshipsPaymentSource instantiates a new CustomerPaymentSourceCreateDataRelationshipsPaymentSource object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPaymentSourceCreateDataRelationshipsPaymentSource(data CustomerPaymentSourceDataRelationshipsPaymentSourceData) *CustomerPaymentSourceCreateDataRelationshipsPaymentSource {
+func NewCustomerPaymentSourceCreateDataRelationshipsPaymentSource(data AuthorizationDataRelationshipsPaymentSourceData) *CustomerPaymentSourceCreateDataRelationshipsPaymentSource {
 	this := CustomerPaymentSourceCreateDataRelationshipsPaymentSource{}
 	this.Data = data
 	return &this
@@ -42,9 +42,9 @@ func NewCustomerPaymentSourceCreateDataRelationshipsPaymentSourceWithDefaults() 
 }
 
 // GetData returns the Data field value
-func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetData() CustomerPaymentSourceDataRelationshipsPaymentSourceData {
+func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetData() AuthorizationDataRelationshipsPaymentSourceData {
 	if o == nil {
-		var ret CustomerPaymentSourceDataRelationshipsPaymentSourceData
+		var ret AuthorizationDataRelationshipsPaymentSourceData
 		return ret
 	}
 
@@ -53,7 +53,7 @@ func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetData() Cu
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetDataOk() (*CustomerPaymentSourceDataRelationshipsPaymentSourceData, bool) {
+func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetDataOk() (*AuthorizationDataRelationshipsPaymentSourceData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetDataOk() 
 }
 
 // SetData sets field value
-func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) SetData(v CustomerPaymentSourceDataRelationshipsPaymentSourceData) {
+func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) SetData(v AuthorizationDataRelationshipsPaymentSourceData) {
 	o.Data = v
 }
 

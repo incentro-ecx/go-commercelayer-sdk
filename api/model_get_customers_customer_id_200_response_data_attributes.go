@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -30,6 +30,8 @@ type GETCustomersCustomerId200ResponseDataAttributes struct {
 	TotalOrdersCount interface{} `json:"total_orders_count,omitempty"`
 	// A reference to uniquely identify the shopper during payment sessions.
 	ShopperReference interface{} `json:"shopper_reference,omitempty"`
+	// A reference to uniquely identify the customer on any connected external services.
+	ProfileId interface{} `json:"profile_id,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
@@ -224,6 +226,39 @@ func (o *GETCustomersCustomerId200ResponseDataAttributes) SetShopperReference(v 
 	o.ShopperReference = v
 }
 
+// GetProfileId returns the ProfileId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETCustomersCustomerId200ResponseDataAttributes) GetProfileId() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ProfileId
+}
+
+// GetProfileIdOk returns a tuple with the ProfileId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETCustomersCustomerId200ResponseDataAttributes) GetProfileIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ProfileId) {
+		return nil, false
+	}
+	return &o.ProfileId, true
+}
+
+// HasProfileId returns a boolean if a field has been set.
+func (o *GETCustomersCustomerId200ResponseDataAttributes) HasProfileId() bool {
+	if o != nil && IsNil(o.ProfileId) {
+		return true
+	}
+
+	return false
+}
+
+// SetProfileId gets a reference to the given interface{} and assigns it to the ProfileId field.
+func (o *GETCustomersCustomerId200ResponseDataAttributes) SetProfileId(v interface{}) {
+	o.ProfileId = v
+}
+
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETCustomersCustomerId200ResponseDataAttributes) GetCreatedAt() interface{} {
 	if o == nil {
@@ -413,6 +448,9 @@ func (o GETCustomersCustomerId200ResponseDataAttributes) ToMap() (map[string]int
 	}
 	if o.ShopperReference != nil {
 		toSerialize["shopper_reference"] = o.ShopperReference
+	}
+	if o.ProfileId != nil {
+		toSerialize["profile_id"] = o.ProfileId
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

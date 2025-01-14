@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ var _ MappedNullable = &RefundDataRelationships{}
 
 // RefundDataRelationships struct for RefundDataRelationships
 type RefundDataRelationships struct {
-	Order            *AdyenPaymentDataRelationshipsOrder        `json:"order,omitempty"`
-	Attachments      *AuthorizationDataRelationshipsAttachments `json:"attachments,omitempty"`
-	Events           *AddressDataRelationshipsEvents            `json:"events,omitempty"`
-	Versions         *AddressDataRelationshipsVersions          `json:"versions,omitempty"`
-	ReferenceCapture *AuthorizationDataRelationshipsCaptures    `json:"reference_capture,omitempty"`
-	Return           *CaptureDataRelationshipsReturn            `json:"return,omitempty"`
+	Order            *AdyenPaymentDataRelationshipsOrder          `json:"order,omitempty"`
+	PaymentSource    *AuthorizationDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
+	Attachments      *AuthorizationDataRelationshipsAttachments   `json:"attachments,omitempty"`
+	Events           *AddressDataRelationshipsEvents              `json:"events,omitempty"`
+	Versions         *AddressDataRelationshipsVersions            `json:"versions,omitempty"`
+	ReferenceCapture *AuthorizationDataRelationshipsCaptures      `json:"reference_capture,omitempty"`
+	Return           *CaptureDataRelationshipsReturn              `json:"return,omitempty"`
 }
 
 // NewRefundDataRelationships instantiates a new RefundDataRelationships object
@@ -75,6 +76,38 @@ func (o *RefundDataRelationships) HasOrder() bool {
 // SetOrder gets a reference to the given AdyenPaymentDataRelationshipsOrder and assigns it to the Order field.
 func (o *RefundDataRelationships) SetOrder(v AdyenPaymentDataRelationshipsOrder) {
 	o.Order = &v
+}
+
+// GetPaymentSource returns the PaymentSource field value if set, zero value otherwise.
+func (o *RefundDataRelationships) GetPaymentSource() AuthorizationDataRelationshipsPaymentSource {
+	if o == nil || IsNil(o.PaymentSource) {
+		var ret AuthorizationDataRelationshipsPaymentSource
+		return ret
+	}
+	return *o.PaymentSource
+}
+
+// GetPaymentSourceOk returns a tuple with the PaymentSource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RefundDataRelationships) GetPaymentSourceOk() (*AuthorizationDataRelationshipsPaymentSource, bool) {
+	if o == nil || IsNil(o.PaymentSource) {
+		return nil, false
+	}
+	return o.PaymentSource, true
+}
+
+// HasPaymentSource returns a boolean if a field has been set.
+func (o *RefundDataRelationships) HasPaymentSource() bool {
+	if o != nil && !IsNil(o.PaymentSource) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentSource gets a reference to the given AuthorizationDataRelationshipsPaymentSource and assigns it to the PaymentSource field.
+func (o *RefundDataRelationships) SetPaymentSource(v AuthorizationDataRelationshipsPaymentSource) {
+	o.PaymentSource = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
@@ -249,6 +282,9 @@ func (o RefundDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
+	}
+	if !IsNil(o.PaymentSource) {
+		toSerialize["payment_source"] = o.PaymentSource
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments

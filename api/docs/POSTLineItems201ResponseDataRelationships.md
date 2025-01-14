@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **StockReservations** | Pointer to [**POSTLineItems201ResponseDataRelationshipsStockReservations**](POSTLineItems201ResponseDataRelationshipsStockReservations.md) |  | [optional] 
 **StockLineItems** | Pointer to [**POSTLineItems201ResponseDataRelationshipsStockLineItems**](POSTLineItems201ResponseDataRelationshipsStockLineItems.md) |  | [optional] 
 **StockTransfers** | Pointer to [**POSTLineItems201ResponseDataRelationshipsStockTransfers**](POSTLineItems201ResponseDataRelationshipsStockTransfers.md) |  | [optional] 
+**Notifications** | Pointer to [**POSTLineItems201ResponseDataRelationshipsNotifications**](POSTLineItems201ResponseDataRelationshipsNotifications.md) |  | [optional] 
 **Events** | Pointer to [**POSTAddresses201ResponseDataRelationshipsEvents**](POSTAddresses201ResponseDataRelationshipsEvents.md) |  | [optional] 
 **Tags** | Pointer to [**POSTAddresses201ResponseDataRelationshipsTags**](POSTAddresses201ResponseDataRelationshipsTags.md) |  | [optional] 
 
@@ -363,6 +364,31 @@ SetStockTransfers sets StockTransfers field to given value.
 `func (o *POSTLineItems201ResponseDataRelationships) HasStockTransfers() bool`
 
 HasStockTransfers returns a boolean if a field has been set.
+
+### GetNotifications
+
+`func (o *POSTLineItems201ResponseDataRelationships) GetNotifications() POSTLineItems201ResponseDataRelationshipsNotifications`
+
+GetNotifications returns the Notifications field if non-nil, zero value otherwise.
+
+### GetNotificationsOk
+
+`func (o *POSTLineItems201ResponseDataRelationships) GetNotificationsOk() (*POSTLineItems201ResponseDataRelationshipsNotifications, bool)`
+
+GetNotificationsOk returns a tuple with the Notifications field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotifications
+
+`func (o *POSTLineItems201ResponseDataRelationships) SetNotifications(v POSTLineItems201ResponseDataRelationshipsNotifications)`
+
+SetNotifications sets Notifications field to given value.
+
+### HasNotifications
+
+`func (o *POSTLineItems201ResponseDataRelationships) HasNotifications() bool`
+
+HasNotifications returns a boolean if a field has been set.
 
 ### GetEvents
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -52,6 +52,8 @@ type GETOrderCopiesOrderCopyId200ResponseDataAttributes struct {
 	CancelSourceOrder interface{} `json:"cancel_source_order,omitempty"`
 	// Indicates if promotions got applied upon copy.
 	ApplyPromotions interface{} `json:"apply_promotions,omitempty"`
+	// Indicates to ignore any errors during copy.
+	SkipErrors interface{} `json:"skip_errors,omitempty"`
 	// Indicates to ignore invalid coupon code during copy.
 	IgnoreInvalidCoupon interface{} `json:"ignore_invalid_coupon,omitempty"`
 }
@@ -601,6 +603,39 @@ func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) SetApplyPromotions(
 	o.ApplyPromotions = v
 }
 
+// GetSkipErrors returns the SkipErrors field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetSkipErrors() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.SkipErrors
+}
+
+// GetSkipErrorsOk returns a tuple with the SkipErrors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetSkipErrorsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SkipErrors) {
+		return nil, false
+	}
+	return &o.SkipErrors, true
+}
+
+// HasSkipErrors returns a boolean if a field has been set.
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) HasSkipErrors() bool {
+	if o != nil && IsNil(o.SkipErrors) {
+		return true
+	}
+
+	return false
+}
+
+// SetSkipErrors gets a reference to the given interface{} and assigns it to the SkipErrors field.
+func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) SetSkipErrors(v interface{}) {
+	o.SkipErrors = v
+}
+
 // GetIgnoreInvalidCoupon returns the IgnoreInvalidCoupon field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETOrderCopiesOrderCopyId200ResponseDataAttributes) GetIgnoreInvalidCoupon() interface{} {
 	if o == nil {
@@ -691,6 +726,9 @@ func (o GETOrderCopiesOrderCopyId200ResponseDataAttributes) ToMap() (map[string]
 	}
 	if o.ApplyPromotions != nil {
 		toSerialize["apply_promotions"] = o.ApplyPromotions
+	}
+	if o.SkipErrors != nil {
+		toSerialize["skip_errors"] = o.SkipErrors
 	}
 	if o.IgnoreInvalidCoupon != nil {
 		toSerialize["ignore_invalid_coupon"] = o.IgnoreInvalidCoupon

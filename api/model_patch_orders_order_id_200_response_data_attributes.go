@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -22,7 +22,7 @@ var _ MappedNullable = &PATCHOrdersOrderId200ResponseDataAttributes{}
 type PATCHOrdersOrderId200ResponseDataAttributes struct {
 	// The order identifier. Can be specified if unique within the organization (for enterprise plans only), default to numeric ID otherwise. Cannot be passed by sales channels.
 	Number interface{} `json:"number,omitempty"`
-	// The affiliate code, if any, the seller will transfer commission on shop by link transactions.
+	// The affiliate code, if any, to track commissions using any third party services.
 	AffiliateCode interface{} `json:"affiliate_code,omitempty"`
 	// Save this attribute as 'false' if you want prevent the order to be refreshed automatically at each change (much faster).
 	Autorefresh interface{} `json:"autorefresh,omitempty"`
@@ -86,6 +86,8 @@ type PATCHOrdersOrderId200ResponseDataAttributes struct {
 	UpdateTaxes interface{} `json:"_update_taxes,omitempty"`
 	// Send this attribute if you want to nullify the payment source for this order.
 	NullifyPaymentSource interface{} `json:"_nullify_payment_source,omitempty"`
+	// Send this attribute if you want to set the payment source associated with the last succeeded authorization. At the end of the fix the order should be placed and authorized and ready for approval. Cannot be passed by sales channels.
+	FixPaymentSource interface{} `json:"_fix_payment_source,omitempty"`
 	// The id of the address that you want to clone to create the order's billing address.
 	BillingAddressCloneId interface{} `json:"_billing_address_clone_id,omitempty"`
 	// The id of the address that you want to clone to create the order's shipping address.
@@ -1232,6 +1234,39 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetNullifyPaymentSource(v 
 	o.NullifyPaymentSource = v
 }
 
+// GetFixPaymentSource returns the FixPaymentSource field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetFixPaymentSource() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.FixPaymentSource
+}
+
+// GetFixPaymentSourceOk returns a tuple with the FixPaymentSource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetFixPaymentSourceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.FixPaymentSource) {
+		return nil, false
+	}
+	return &o.FixPaymentSource, true
+}
+
+// HasFixPaymentSource returns a boolean if a field has been set.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasFixPaymentSource() bool {
+	if o != nil && IsNil(o.FixPaymentSource) {
+		return true
+	}
+
+	return false
+}
+
+// SetFixPaymentSource gets a reference to the given interface{} and assigns it to the FixPaymentSource field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetFixPaymentSource(v interface{}) {
+	o.FixPaymentSource = v
+}
+
 // GetBillingAddressCloneId returns the BillingAddressCloneId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressCloneId() interface{} {
 	if o == nil {
@@ -1967,6 +2002,9 @@ func (o PATCHOrdersOrderId200ResponseDataAttributes) ToMap() (map[string]interfa
 	}
 	if o.NullifyPaymentSource != nil {
 		toSerialize["_nullify_payment_source"] = o.NullifyPaymentSource
+	}
+	if o.FixPaymentSource != nil {
+		toSerialize["_fix_payment_source"] = o.FixPaymentSource
 	}
 	if o.BillingAddressCloneId != nil {
 		toSerialize["_billing_address_clone_id"] = o.BillingAddressCloneId

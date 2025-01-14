@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
 **ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **RuleOutcomes** | Pointer to **interface{}** | The rule outcomes. | [optional] 
+**ResourcePayload** | Pointer to **interface{}** | The payload used to evaluate the rules. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
@@ -637,6 +638,41 @@ HasRuleOutcomes returns a boolean if a field has been set.
 `func (o *GETFlexPromotionsFlexPromotionId200ResponseDataAttributes) UnsetRuleOutcomes()`
 
 UnsetRuleOutcomes ensures that no value is present for RuleOutcomes, not even an explicit nil
+### GetResourcePayload
+
+`func (o *GETFlexPromotionsFlexPromotionId200ResponseDataAttributes) GetResourcePayload() interface{}`
+
+GetResourcePayload returns the ResourcePayload field if non-nil, zero value otherwise.
+
+### GetResourcePayloadOk
+
+`func (o *GETFlexPromotionsFlexPromotionId200ResponseDataAttributes) GetResourcePayloadOk() (*interface{}, bool)`
+
+GetResourcePayloadOk returns a tuple with the ResourcePayload field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourcePayload
+
+`func (o *GETFlexPromotionsFlexPromotionId200ResponseDataAttributes) SetResourcePayload(v interface{})`
+
+SetResourcePayload sets ResourcePayload field to given value.
+
+### HasResourcePayload
+
+`func (o *GETFlexPromotionsFlexPromotionId200ResponseDataAttributes) HasResourcePayload() bool`
+
+HasResourcePayload returns a boolean if a field has been set.
+
+### SetResourcePayloadNil
+
+`func (o *GETFlexPromotionsFlexPromotionId200ResponseDataAttributes) SetResourcePayloadNil(b bool)`
+
+ SetResourcePayloadNil sets the value for ResourcePayload to be an explicit nil
+
+### UnsetResourcePayload
+`func (o *GETFlexPromotionsFlexPromotionId200ResponseDataAttributes) UnsetResourcePayload()`
+
+UnsetResourcePayload ensures that no value is present for ResourcePayload, not even an explicit nil
 ### GetMetadata
 
 `func (o *GETFlexPromotionsFlexPromotionId200ResponseDataAttributes) GetMetadata() interface{}`

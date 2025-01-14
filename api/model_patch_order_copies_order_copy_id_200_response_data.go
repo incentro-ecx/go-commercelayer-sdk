@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -23,10 +23,10 @@ type PATCHOrderCopiesOrderCopyId200ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                                                                          `json:"type,omitempty"`
-	Links         *POSTAddresses201ResponseDataLinks                                                   `json:"links,omitempty"`
-	Attributes    *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTOrderCopies201ResponseDataRelationships                                         `json:"relationships,omitempty"`
+	Type          interface{}                                                                        `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks                                                 `json:"links,omitempty"`
+	Attributes    *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *POSTOrderCopies201ResponseDataRelationships                                       `json:"relationships,omitempty"`
 }
 
 // NewPATCHOrderCopiesOrderCopyId200ResponseData instantiates a new PATCHOrderCopiesOrderCopyId200ResponseData object
@@ -145,9 +145,9 @@ func (o *PATCHOrderCopiesOrderCopyId200ResponseData) SetLinks(v POSTAddresses201
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *PATCHOrderCopiesOrderCopyId200ResponseData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes {
+func (o *PATCHOrderCopiesOrderCopyId200ResponseData) GetAttributes() PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes {
 	if o == nil || IsNil(o.Attributes) {
-		var ret PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes
+		var ret PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -155,7 +155,7 @@ func (o *PATCHOrderCopiesOrderCopyId200ResponseData) GetAttributes() PATCHBillin
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrderCopiesOrderCopyId200ResponseData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool) {
+func (o *PATCHOrderCopiesOrderCopyId200ResponseData) GetAttributesOk() (*PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes, bool) {
 	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
@@ -171,8 +171,8 @@ func (o *PATCHOrderCopiesOrderCopyId200ResponseData) HasAttributes() bool {
 	return false
 }
 
-// SetAttributes gets a reference to the given PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes and assigns it to the Attributes field.
-func (o *PATCHOrderCopiesOrderCopyId200ResponseData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) {
+// SetAttributes gets a reference to the given PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes and assigns it to the Attributes field.
+func (o *PATCHOrderCopiesOrderCopyId200ResponseData) SetAttributes(v PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseDataAttributes) {
 	o.Attributes = &v
 }
 

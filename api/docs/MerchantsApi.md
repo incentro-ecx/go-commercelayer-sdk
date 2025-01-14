@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**GETMarketIdMerchant**](MerchantsApi.md#GETMarketIdMerchant) | **Get** /markets/{marketId}/merchant | Retrieve the merchant associated to the market
 [**GETMerchants**](MerchantsApi.md#GETMerchants) | **Get** /merchants | List all merchants
 [**GETMerchantsMerchantId**](MerchantsApi.md#GETMerchantsMerchantId) | **Get** /merchants/{merchantId} | Retrieve a merchant
+[**GETStoreIdMerchant**](MerchantsApi.md#GETStoreIdMerchant) | **Get** /stores/{storeId}/merchant | Retrieve the merchant associated to the store
 [**PATCHMerchantsMerchantId**](MerchantsApi.md#PATCHMerchantsMerchantId) | **Patch** /merchants/{merchantId} | Update a merchant
 [**POSTMerchants**](MerchantsApi.md#POSTMerchants) | **Post** /merchants | Create a merchant
 
@@ -30,7 +31,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -98,7 +99,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -166,7 +167,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -227,7 +228,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -280,6 +281,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETStoreIdMerchant
+
+> GETStoreIdMerchant(ctx, storeId).Execute()
+
+Retrieve the merchant associated to the store
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
+)
+
+func main() {
+    storeId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.MerchantsApi.GETStoreIdMerchant(context.Background(), storeId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `MerchantsApi.GETStoreIdMerchant``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**storeId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStoreIdMerchantRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PATCHMerchantsMerchantId
 
 > PATCHMerchantsMerchantId200Response PATCHMerchantsMerchantId(ctx, merchantId).MerchantUpdate(merchantUpdate).Execute()
@@ -297,7 +366,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -369,7 +438,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "github.com/labd/go-commercelayer-sdk/api"
 )
 
 func main() {

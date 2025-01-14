@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -709,98 +709,6 @@ func (a *VersionsApiService) GETAxervePaymentIdVersionsExecute(r VersionsApiGETA
 
 	localVarPath := localBasePath + "/axerve_payments/{axervePaymentId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterValueToString(r.axervePaymentId, "axervePaymentId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type VersionsApiGETBillingInfoValidationRuleIdVersionsRequest struct {
-	ctx                         context.Context
-	ApiService                  *VersionsApiService
-	billingInfoValidationRuleId interface{}
-}
-
-func (r VersionsApiGETBillingInfoValidationRuleIdVersionsRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GETBillingInfoValidationRuleIdVersionsExecute(r)
-}
-
-/*
-GETBillingInfoValidationRuleIdVersions Retrieve the versions associated to the billing info validation rule
-
-Retrieve the versions associated to the billing info validation rule
-
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param billingInfoValidationRuleId The resource's id
-	@return VersionsApiGETBillingInfoValidationRuleIdVersionsRequest
-*/
-func (a *VersionsApiService) GETBillingInfoValidationRuleIdVersions(ctx context.Context, billingInfoValidationRuleId interface{}) VersionsApiGETBillingInfoValidationRuleIdVersionsRequest {
-	return VersionsApiGETBillingInfoValidationRuleIdVersionsRequest{
-		ApiService:                  a,
-		ctx:                         ctx,
-		billingInfoValidationRuleId: billingInfoValidationRuleId,
-	}
-}
-
-// Execute executes the request
-func (a *VersionsApiService) GETBillingInfoValidationRuleIdVersionsExecute(r VersionsApiGETBillingInfoValidationRuleIdVersionsRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionsApiService.GETBillingInfoValidationRuleIdVersions")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}/versions"
-	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.billingInfoValidationRuleId, "billingInfoValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7977,6 +7885,98 @@ func (a *VersionsApiService) GETStockTransferIdVersionsExecute(r VersionsApiGETS
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/versions"
 	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type VersionsApiGETStoreIdVersionsRequest struct {
+	ctx        context.Context
+	ApiService *VersionsApiService
+	storeId    interface{}
+}
+
+func (r VersionsApiGETStoreIdVersionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETStoreIdVersionsExecute(r)
+}
+
+/*
+GETStoreIdVersions Retrieve the versions associated to the store
+
+Retrieve the versions associated to the store
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param storeId The resource's id
+	@return VersionsApiGETStoreIdVersionsRequest
+*/
+func (a *VersionsApiService) GETStoreIdVersions(ctx context.Context, storeId interface{}) VersionsApiGETStoreIdVersionsRequest {
+	return VersionsApiGETStoreIdVersionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		storeId:    storeId,
+	}
+}
+
+// Execute executes the request
+func (a *VersionsApiService) GETStoreIdVersionsExecute(r VersionsApiGETStoreIdVersionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionsApiService.GETStoreIdVersions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/stores/{storeId}/versions"
+	localVarPath = strings.Replace(localVarPath, "{"+"storeId"+"}", url.PathEscape(parameterValueToString(r.storeId, "storeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

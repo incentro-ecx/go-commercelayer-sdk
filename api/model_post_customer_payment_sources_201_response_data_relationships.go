@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ var _ MappedNullable = &POSTCustomerPaymentSources201ResponseDataRelationships{}
 
 // POSTCustomerPaymentSources201ResponseDataRelationships struct for POSTCustomerPaymentSources201ResponseDataRelationships
 type POSTCustomerPaymentSources201ResponseDataRelationships struct {
-	Customer      *POSTCouponRecipients201ResponseDataRelationshipsCustomer            `json:"customer,omitempty"`
-	PaymentMethod *POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentMethod `json:"payment_method,omitempty"`
-	PaymentSource *POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
-	Versions      *POSTAddresses201ResponseDataRelationshipsVersions                   `json:"versions,omitempty"`
+	Customer      *POSTCouponRecipients201ResponseDataRelationshipsCustomer                  `json:"customer,omitempty"`
+	PaymentMethod *POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentMethod       `json:"payment_method,omitempty"`
+	PaymentSource *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
+	Versions      *POSTAddresses201ResponseDataRelationshipsVersions                         `json:"versions,omitempty"`
 }
 
 // NewPOSTCustomerPaymentSources201ResponseDataRelationships instantiates a new POSTCustomerPaymentSources201ResponseDataRelationships object
@@ -108,9 +108,9 @@ func (o *POSTCustomerPaymentSources201ResponseDataRelationships) SetPaymentMetho
 }
 
 // GetPaymentSource returns the PaymentSource field value if set, zero value otherwise.
-func (o *POSTCustomerPaymentSources201ResponseDataRelationships) GetPaymentSource() POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource {
+func (o *POSTCustomerPaymentSources201ResponseDataRelationships) GetPaymentSource() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource {
 	if o == nil || IsNil(o.PaymentSource) {
-		var ret POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource
 		return ret
 	}
 	return *o.PaymentSource
@@ -118,7 +118,7 @@ func (o *POSTCustomerPaymentSources201ResponseDataRelationships) GetPaymentSourc
 
 // GetPaymentSourceOk returns a tuple with the PaymentSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCustomerPaymentSources201ResponseDataRelationships) GetPaymentSourceOk() (*POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource, bool) {
+func (o *POSTCustomerPaymentSources201ResponseDataRelationships) GetPaymentSourceOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource, bool) {
 	if o == nil || IsNil(o.PaymentSource) {
 		return nil, false
 	}
@@ -134,8 +134,8 @@ func (o *POSTCustomerPaymentSources201ResponseDataRelationships) HasPaymentSourc
 	return false
 }
 
-// SetPaymentSource gets a reference to the given POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource and assigns it to the PaymentSource field.
-func (o *POSTCustomerPaymentSources201ResponseDataRelationships) SetPaymentSource(v POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource) {
+// SetPaymentSource gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource and assigns it to the PaymentSource field.
+func (o *POSTCustomerPaymentSources201ResponseDataRelationships) SetPaymentSource(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource) {
 	o.PaymentSource = &v
 }
 

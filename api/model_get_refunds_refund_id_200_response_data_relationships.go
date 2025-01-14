@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ var _ MappedNullable = &GETRefundsRefundId200ResponseDataRelationships{}
 
 // GETRefundsRefundId200ResponseDataRelationships struct for GETRefundsRefundId200ResponseDataRelationships
 type GETRefundsRefundId200ResponseDataRelationships struct {
-	Order            *POSTAdyenPayments201ResponseDataRelationshipsOrder                      `json:"order,omitempty"`
-	Attachments      *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
-	Events           *POSTAddresses201ResponseDataRelationshipsEvents                         `json:"events,omitempty"`
-	Versions         *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
-	ReferenceCapture *GETRefundsRefundId200ResponseDataRelationshipsReferenceCapture          `json:"reference_capture,omitempty"`
-	Return           *GETCapturesCaptureId200ResponseDataRelationshipsReturn                  `json:"return,omitempty"`
+	Order            *POSTAdyenPayments201ResponseDataRelationshipsOrder                        `json:"order,omitempty"`
+	PaymentSource    *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
+	Attachments      *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments   `json:"attachments,omitempty"`
+	Events           *POSTAddresses201ResponseDataRelationshipsEvents                           `json:"events,omitempty"`
+	Versions         *POSTAddresses201ResponseDataRelationshipsVersions                         `json:"versions,omitempty"`
+	ReferenceCapture *GETRefundsRefundId200ResponseDataRelationshipsReferenceCapture            `json:"reference_capture,omitempty"`
+	Return           *GETCapturesCaptureId200ResponseDataRelationshipsReturn                    `json:"return,omitempty"`
 }
 
 // NewGETRefundsRefundId200ResponseDataRelationships instantiates a new GETRefundsRefundId200ResponseDataRelationships object
@@ -75,6 +76,38 @@ func (o *GETRefundsRefundId200ResponseDataRelationships) HasOrder() bool {
 // SetOrder gets a reference to the given POSTAdyenPayments201ResponseDataRelationshipsOrder and assigns it to the Order field.
 func (o *GETRefundsRefundId200ResponseDataRelationships) SetOrder(v POSTAdyenPayments201ResponseDataRelationshipsOrder) {
 	o.Order = &v
+}
+
+// GetPaymentSource returns the PaymentSource field value if set, zero value otherwise.
+func (o *GETRefundsRefundId200ResponseDataRelationships) GetPaymentSource() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource {
+	if o == nil || IsNil(o.PaymentSource) {
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource
+		return ret
+	}
+	return *o.PaymentSource
+}
+
+// GetPaymentSourceOk returns a tuple with the PaymentSource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETRefundsRefundId200ResponseDataRelationships) GetPaymentSourceOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource, bool) {
+	if o == nil || IsNil(o.PaymentSource) {
+		return nil, false
+	}
+	return o.PaymentSource, true
+}
+
+// HasPaymentSource returns a boolean if a field has been set.
+func (o *GETRefundsRefundId200ResponseDataRelationships) HasPaymentSource() bool {
+	if o != nil && !IsNil(o.PaymentSource) {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentSource gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource and assigns it to the PaymentSource field.
+func (o *GETRefundsRefundId200ResponseDataRelationships) SetPaymentSource(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource) {
+	o.PaymentSource = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
@@ -249,6 +282,9 @@ func (o GETRefundsRefundId200ResponseDataRelationships) ToMap() (map[string]inte
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
+	}
+	if !IsNil(o.PaymentSource) {
+		toSerialize["payment_source"] = o.PaymentSource
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments

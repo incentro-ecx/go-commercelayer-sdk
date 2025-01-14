@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **HasPassword** | Pointer to **interface{}** | Indicates if the customer has a password. | [optional] 
 **TotalOrdersCount** | Pointer to **interface{}** | The total number of orders for the customer. | [optional] 
 **ShopperReference** | Pointer to **interface{}** | A reference to uniquely identify the shopper during payment sessions. | [optional] 
+**ProfileId** | Pointer to **interface{}** | A reference to uniquely identify the customer on any connected external services. | [optional] 
 **CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -209,6 +210,41 @@ HasShopperReference returns a boolean if a field has been set.
 `func (o *GETCustomersCustomerId200ResponseDataAttributes) UnsetShopperReference()`
 
 UnsetShopperReference ensures that no value is present for ShopperReference, not even an explicit nil
+### GetProfileId
+
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) GetProfileId() interface{}`
+
+GetProfileId returns the ProfileId field if non-nil, zero value otherwise.
+
+### GetProfileIdOk
+
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) GetProfileIdOk() (*interface{}, bool)`
+
+GetProfileIdOk returns a tuple with the ProfileId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProfileId
+
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) SetProfileId(v interface{})`
+
+SetProfileId sets ProfileId field to given value.
+
+### HasProfileId
+
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) HasProfileId() bool`
+
+HasProfileId returns a boolean if a field has been set.
+
+### SetProfileIdNil
+
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) SetProfileIdNil(b bool)`
+
+ SetProfileIdNil sets the value for ProfileId to be an explicit nil
+
+### UnsetProfileId
+`func (o *GETCustomersCustomerId200ResponseDataAttributes) UnsetProfileId()`
+
+UnsetProfileId ensures that no value is present for ProfileId, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *GETCustomersCustomerId200ResponseDataAttributes) GetCreatedAt() interface{}`

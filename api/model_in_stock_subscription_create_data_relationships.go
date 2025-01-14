@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ var _ MappedNullable = &InStockSubscriptionCreateDataRelationships{}
 
 // InStockSubscriptionCreateDataRelationships struct for InStockSubscriptionCreateDataRelationships
 type InStockSubscriptionCreateDataRelationships struct {
-	Market   BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market"`
-	Customer CouponRecipientCreateDataRelationshipsCustomer         `json:"customer"`
-	Sku      InStockSubscriptionCreateDataRelationshipsSku          `json:"sku"`
+	Market   BundleCreateDataRelationshipsMarket            `json:"market"`
+	Customer CouponRecipientCreateDataRelationshipsCustomer `json:"customer"`
+	Sku      InStockSubscriptionCreateDataRelationshipsSku  `json:"sku"`
 }
 
 // NewInStockSubscriptionCreateDataRelationships instantiates a new InStockSubscriptionCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInStockSubscriptionCreateDataRelationships(market BillingInfoValidationRuleCreateDataRelationshipsMarket, customer CouponRecipientCreateDataRelationshipsCustomer, sku InStockSubscriptionCreateDataRelationshipsSku) *InStockSubscriptionCreateDataRelationships {
+func NewInStockSubscriptionCreateDataRelationships(market BundleCreateDataRelationshipsMarket, customer CouponRecipientCreateDataRelationshipsCustomer, sku InStockSubscriptionCreateDataRelationshipsSku) *InStockSubscriptionCreateDataRelationships {
 	this := InStockSubscriptionCreateDataRelationships{}
 	this.Market = market
 	this.Customer = customer
@@ -46,9 +46,9 @@ func NewInStockSubscriptionCreateDataRelationshipsWithDefaults() *InStockSubscri
 }
 
 // GetMarket returns the Market field value
-func (o *InStockSubscriptionCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
+func (o *InStockSubscriptionCreateDataRelationships) GetMarket() BundleCreateDataRelationshipsMarket {
 	if o == nil {
-		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
+		var ret BundleCreateDataRelationshipsMarket
 		return ret
 	}
 
@@ -57,7 +57,7 @@ func (o *InStockSubscriptionCreateDataRelationships) GetMarket() BillingInfoVali
 
 // GetMarketOk returns a tuple with the Market field value
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
+func (o *InStockSubscriptionCreateDataRelationships) GetMarketOk() (*BundleCreateDataRelationshipsMarket, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *InStockSubscriptionCreateDataRelationships) GetMarketOk() (*BillingInfo
 }
 
 // SetMarket sets field value
-func (o *InStockSubscriptionCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
+func (o *InStockSubscriptionCreateDataRelationships) SetMarket(v BundleCreateDataRelationshipsMarket) {
 	o.Market = v
 }
 

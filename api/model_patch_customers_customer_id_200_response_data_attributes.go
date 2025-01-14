@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -26,6 +26,8 @@ type PATCHCustomersCustomerId200ResponseDataAttributes struct {
 	Password interface{} `json:"password,omitempty"`
 	// A reference to uniquely identify the shopper during payment sessions.
 	ShopperReference interface{} `json:"shopper_reference,omitempty"`
+	// A reference to uniquely identify the customer on any connected external services.
+	ProfileId interface{} `json:"profile_id,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code.
@@ -150,6 +152,39 @@ func (o *PATCHCustomersCustomerId200ResponseDataAttributes) SetShopperReference(
 	o.ShopperReference = v
 }
 
+// GetProfileId returns the ProfileId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetProfileId() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ProfileId
+}
+
+// GetProfileIdOk returns a tuple with the ProfileId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetProfileIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ProfileId) {
+		return nil, false
+	}
+	return &o.ProfileId, true
+}
+
+// HasProfileId returns a boolean if a field has been set.
+func (o *PATCHCustomersCustomerId200ResponseDataAttributes) HasProfileId() bool {
+	if o != nil && IsNil(o.ProfileId) {
+		return true
+	}
+
+	return false
+}
+
+// SetProfileId gets a reference to the given interface{} and assigns it to the ProfileId field.
+func (o *PATCHCustomersCustomerId200ResponseDataAttributes) SetProfileId(v interface{}) {
+	o.ProfileId = v
+}
+
 // GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetReference() interface{} {
 	if o == nil {
@@ -267,6 +302,9 @@ func (o PATCHCustomersCustomerId200ResponseDataAttributes) ToMap() (map[string]i
 	}
 	if o.ShopperReference != nil {
 		toSerialize["shopper_reference"] = o.ShopperReference
+	}
+	if o.ProfileId != nil {
+		toSerialize["profile_id"] = o.ProfileId
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

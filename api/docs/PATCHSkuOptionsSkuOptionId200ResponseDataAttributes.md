@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **interface{}** | An internal description of the SKU option. | [optional] 
 **PriceAmountCents** | Pointer to **interface{}** | The price of this shipping method, in cents. | [optional] 
 **DelayHours** | Pointer to **interface{}** | The delay time (in hours) that should be added to the delivery lead time when this option is purchased. | [optional] 
-**SkuCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated to match the SKU codes. | [optional] 
+**SkuCodeRegex** | Pointer to **interface{}** | The regex that will be evaluated to match the SKU codes, max size is 5000. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
 **ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 

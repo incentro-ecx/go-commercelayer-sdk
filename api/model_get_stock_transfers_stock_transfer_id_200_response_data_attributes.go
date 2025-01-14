@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -26,7 +26,7 @@ type GETStockTransfersStockTransferId200ResponseDataAttributes struct {
 	SkuCode interface{} `json:"sku_code,omitempty"`
 	// The stock transfer status. One of 'draft' (default), 'upcoming', 'on_hold', 'picking', 'in_transit', 'completed', or 'cancelled'.
 	Status interface{} `json:"status,omitempty"`
-	// The stock quantity to be transferred from the origin stock location to destination one.
+	// The stock quantity to be transferred from the origin stock location to destination one. Updatable unless stock transfer is completed or cancelled and depending on origin stock availability.
 	Quantity interface{} `json:"quantity,omitempty"`
 	// Time at which the stock transfer was put on hold.
 	OnHoldAt interface{} `json:"on_hold_at,omitempty"`

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -52,6 +52,8 @@ type GETPricesPriceId200ResponseDataAttributes struct {
 	Rules interface{} `json:"rules,omitempty"`
 	// The rule outcomes.
 	RuleOutcomes interface{} `json:"rule_outcomes,omitempty"`
+	// The payload used to evaluate the rules.
+	ResourcePayload interface{} `json:"resource_payload,omitempty"`
 	// The custom_claim attached to the current JWT (if any).
 	JwtCustomClaim interface{} `json:"jwt_custom_claim,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
@@ -603,6 +605,39 @@ func (o *GETPricesPriceId200ResponseDataAttributes) SetRuleOutcomes(v interface{
 	o.RuleOutcomes = v
 }
 
+// GetResourcePayload returns the ResourcePayload field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETPricesPriceId200ResponseDataAttributes) GetResourcePayload() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ResourcePayload
+}
+
+// GetResourcePayloadOk returns a tuple with the ResourcePayload field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETPricesPriceId200ResponseDataAttributes) GetResourcePayloadOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ResourcePayload) {
+		return nil, false
+	}
+	return &o.ResourcePayload, true
+}
+
+// HasResourcePayload returns a boolean if a field has been set.
+func (o *GETPricesPriceId200ResponseDataAttributes) HasResourcePayload() bool {
+	if o != nil && IsNil(o.ResourcePayload) {
+		return true
+	}
+
+	return false
+}
+
+// SetResourcePayload gets a reference to the given interface{} and assigns it to the ResourcePayload field.
+func (o *GETPricesPriceId200ResponseDataAttributes) SetResourcePayload(v interface{}) {
+	o.ResourcePayload = v
+}
+
 // GetJwtCustomClaim returns the JwtCustomClaim field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *GETPricesPriceId200ResponseDataAttributes) GetJwtCustomClaim() interface{} {
 	if o == nil {
@@ -726,6 +761,9 @@ func (o GETPricesPriceId200ResponseDataAttributes) ToMap() (map[string]interface
 	}
 	if o.RuleOutcomes != nil {
 		toSerialize["rule_outcomes"] = o.RuleOutcomes
+	}
+	if o.ResourcePayload != nil {
+		toSerialize["resource_payload"] = o.ResourcePayload
 	}
 	if o.JwtCustomClaim != nil {
 		toSerialize["jwt_custom_claim"] = o.JwtCustomClaim

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -24,7 +24,7 @@ type POSTStockTransfers201ResponseDataAttributes struct {
 	Number interface{} `json:"number,omitempty"`
 	// The code of the associated SKU.
 	SkuCode interface{} `json:"sku_code,omitempty"`
-	// The stock quantity to be transferred from the origin stock location to destination one.
+	// The stock quantity to be transferred from the origin stock location to destination one. Updatable unless stock transfer is completed or cancelled and depending on origin stock availability.
 	Quantity interface{} `json:"quantity"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference interface{} `json:"reference,omitempty"`

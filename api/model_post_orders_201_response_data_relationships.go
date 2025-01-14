@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 7.3.1
+API version: 7.6.1
 Contact: support@commercelayer.io
 */
 
@@ -20,40 +20,42 @@ var _ MappedNullable = &POSTOrders201ResponseDataRelationships{}
 
 // POSTOrders201ResponseDataRelationships struct for POSTOrders201ResponseDataRelationships
 type POSTOrders201ResponseDataRelationships struct {
-	Market                          *POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket        `json:"market,omitempty"`
-	Customer                        *POSTCouponRecipients201ResponseDataRelationshipsCustomer                `json:"customer,omitempty"`
-	ShippingAddress                 *POSTOrders201ResponseDataRelationshipsShippingAddress                   `json:"shipping_address,omitempty"`
-	BillingAddress                  *POSTOrders201ResponseDataRelationshipsBillingAddress                    `json:"billing_address,omitempty"`
-	AvailablePaymentMethods         *POSTOrders201ResponseDataRelationshipsAvailablePaymentMethods           `json:"available_payment_methods,omitempty"`
-	AvailableCustomerPaymentSources *POSTOrders201ResponseDataRelationshipsAvailableCustomerPaymentSources   `json:"available_customer_payment_sources,omitempty"`
-	AvailableFreeSkus               *POSTOrders201ResponseDataRelationshipsAvailableFreeSkus                 `json:"available_free_skus,omitempty"`
-	AvailableFreeBundles            *POSTOrders201ResponseDataRelationshipsAvailableFreeBundles              `json:"available_free_bundles,omitempty"`
-	PaymentMethod                   *POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentMethod     `json:"payment_method,omitempty"`
-	PaymentSource                   *POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource     `json:"payment_source,omitempty"`
-	LineItems                       *POSTOrders201ResponseDataRelationshipsLineItems                         `json:"line_items,omitempty"`
-	LineItemOptions                 *POSTLineItems201ResponseDataRelationshipsLineItemOptions                `json:"line_item_options,omitempty"`
-	StockReservations               *POSTLineItems201ResponseDataRelationshipsStockReservations              `json:"stock_reservations,omitempty"`
-	StockLineItems                  *POSTLineItems201ResponseDataRelationshipsStockLineItems                 `json:"stock_line_items,omitempty"`
-	StockTransfers                  *POSTLineItems201ResponseDataRelationshipsStockTransfers                 `json:"stock_transfers,omitempty"`
-	Shipments                       *POSTOrders201ResponseDataRelationshipsShipments                         `json:"shipments,omitempty"`
-	PaymentOptions                  *POSTOrders201ResponseDataRelationshipsPaymentOptions                    `json:"payment_options,omitempty"`
-	Transactions                    *POSTOrders201ResponseDataRelationshipsTransactions                      `json:"transactions,omitempty"`
-	Authorizations                  *POSTOrders201ResponseDataRelationshipsAuthorizations                    `json:"authorizations,omitempty"`
-	Captures                        *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsCaptures    `json:"captures,omitempty"`
-	Voids                           *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsVoids       `json:"voids,omitempty"`
-	Refunds                         *GETCapturesCaptureId200ResponseDataRelationshipsRefunds                 `json:"refunds,omitempty"`
-	Returns                         *POSTCustomers201ResponseDataRelationshipsReturns                        `json:"returns,omitempty"`
-	OrderSubscription               *POSTOrderCopies201ResponseDataRelationshipsOrderSubscription            `json:"order_subscription,omitempty"`
-	OrderSubscriptions              *POSTCustomers201ResponseDataRelationshipsOrderSubscriptions             `json:"order_subscriptions,omitempty"`
-	OrderFactories                  *POSTOrderSubscriptions201ResponseDataRelationshipsOrderFactories        `json:"order_factories,omitempty"`
-	OrderCopies                     *POSTOrders201ResponseDataRelationshipsOrderCopies                       `json:"order_copies,omitempty"`
-	RecurringOrderCopies            *POSTOrderSubscriptions201ResponseDataRelationshipsRecurringOrderCopies  `json:"recurring_order_copies,omitempty"`
-	Attachments                     *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments `json:"attachments,omitempty"`
-	Links                           *POSTOrders201ResponseDataRelationshipsLinks                             `json:"links,omitempty"`
-	ResourceErrors                  *POSTOrders201ResponseDataRelationshipsResourceErrors                    `json:"resource_errors,omitempty"`
-	Events                          *POSTAddresses201ResponseDataRelationshipsEvents                         `json:"events,omitempty"`
-	Tags                            *POSTAddresses201ResponseDataRelationshipsTags                           `json:"tags,omitempty"`
-	Versions                        *POSTAddresses201ResponseDataRelationshipsVersions                       `json:"versions,omitempty"`
+	Market                          *POSTBundles201ResponseDataRelationshipsMarket                             `json:"market,omitempty"`
+	Customer                        *POSTCouponRecipients201ResponseDataRelationshipsCustomer                  `json:"customer,omitempty"`
+	ShippingAddress                 *POSTOrders201ResponseDataRelationshipsShippingAddress                     `json:"shipping_address,omitempty"`
+	BillingAddress                  *POSTOrders201ResponseDataRelationshipsBillingAddress                      `json:"billing_address,omitempty"`
+	Store                           *POSTOrders201ResponseDataRelationshipsStore                               `json:"store,omitempty"`
+	AvailablePaymentMethods         *POSTOrders201ResponseDataRelationshipsAvailablePaymentMethods             `json:"available_payment_methods,omitempty"`
+	AvailableCustomerPaymentSources *POSTOrders201ResponseDataRelationshipsAvailableCustomerPaymentSources     `json:"available_customer_payment_sources,omitempty"`
+	AvailableFreeSkus               *POSTOrders201ResponseDataRelationshipsAvailableFreeSkus                   `json:"available_free_skus,omitempty"`
+	AvailableFreeBundles            *POSTOrders201ResponseDataRelationshipsAvailableFreeBundles                `json:"available_free_bundles,omitempty"`
+	PaymentMethod                   *POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentMethod       `json:"payment_method,omitempty"`
+	PaymentSource                   *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
+	LineItems                       *POSTOrders201ResponseDataRelationshipsLineItems                           `json:"line_items,omitempty"`
+	LineItemOptions                 *POSTLineItems201ResponseDataRelationshipsLineItemOptions                  `json:"line_item_options,omitempty"`
+	StockReservations               *POSTLineItems201ResponseDataRelationshipsStockReservations                `json:"stock_reservations,omitempty"`
+	StockLineItems                  *POSTLineItems201ResponseDataRelationshipsStockLineItems                   `json:"stock_line_items,omitempty"`
+	StockTransfers                  *POSTLineItems201ResponseDataRelationshipsStockTransfers                   `json:"stock_transfers,omitempty"`
+	Shipments                       *POSTOrders201ResponseDataRelationshipsShipments                           `json:"shipments,omitempty"`
+	PaymentOptions                  *POSTOrders201ResponseDataRelationshipsPaymentOptions                      `json:"payment_options,omitempty"`
+	Transactions                    *POSTOrders201ResponseDataRelationshipsTransactions                        `json:"transactions,omitempty"`
+	Authorizations                  *POSTOrders201ResponseDataRelationshipsAuthorizations                      `json:"authorizations,omitempty"`
+	Captures                        *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsCaptures      `json:"captures,omitempty"`
+	Voids                           *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsVoids         `json:"voids,omitempty"`
+	Refunds                         *GETCapturesCaptureId200ResponseDataRelationshipsRefunds                   `json:"refunds,omitempty"`
+	Returns                         *POSTCustomers201ResponseDataRelationshipsReturns                          `json:"returns,omitempty"`
+	OrderSubscription               *POSTOrderCopies201ResponseDataRelationshipsOrderSubscription              `json:"order_subscription,omitempty"`
+	OrderSubscriptions              *POSTCustomers201ResponseDataRelationshipsOrderSubscriptions               `json:"order_subscriptions,omitempty"`
+	OrderFactories                  *POSTOrderSubscriptions201ResponseDataRelationshipsOrderFactories          `json:"order_factories,omitempty"`
+	OrderCopies                     *POSTOrders201ResponseDataRelationshipsOrderCopies                         `json:"order_copies,omitempty"`
+	RecurringOrderCopies            *POSTOrderSubscriptions201ResponseDataRelationshipsRecurringOrderCopies    `json:"recurring_order_copies,omitempty"`
+	Attachments                     *GETAuthorizationsAuthorizationId200ResponseDataRelationshipsAttachments   `json:"attachments,omitempty"`
+	Notifications                   *POSTLineItems201ResponseDataRelationshipsNotifications                    `json:"notifications,omitempty"`
+	Links                           *POSTOrders201ResponseDataRelationshipsLinks                               `json:"links,omitempty"`
+	ResourceErrors                  *POSTOrders201ResponseDataRelationshipsResourceErrors                      `json:"resource_errors,omitempty"`
+	Events                          *POSTAddresses201ResponseDataRelationshipsEvents                           `json:"events,omitempty"`
+	Tags                            *POSTAddresses201ResponseDataRelationshipsTags                             `json:"tags,omitempty"`
+	Versions                        *POSTAddresses201ResponseDataRelationshipsVersions                         `json:"versions,omitempty"`
 }
 
 // NewPOSTOrders201ResponseDataRelationships instantiates a new POSTOrders201ResponseDataRelationships object
@@ -74,9 +76,9 @@ func NewPOSTOrders201ResponseDataRelationshipsWithDefaults() *POSTOrders201Respo
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataRelationships) GetMarket() POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket {
+func (o *POSTOrders201ResponseDataRelationships) GetMarket() POSTBundles201ResponseDataRelationshipsMarket {
 	if o == nil || IsNil(o.Market) {
-		var ret POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket
+		var ret POSTBundles201ResponseDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -84,7 +86,7 @@ func (o *POSTOrders201ResponseDataRelationships) GetMarket() POSTBillingInfoVali
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataRelationships) GetMarketOk() (*POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket, bool) {
+func (o *POSTOrders201ResponseDataRelationships) GetMarketOk() (*POSTBundles201ResponseDataRelationshipsMarket, bool) {
 	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
@@ -100,8 +102,8 @@ func (o *POSTOrders201ResponseDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket and assigns it to the Market field.
-func (o *POSTOrders201ResponseDataRelationships) SetMarket(v POSTBillingInfoValidationRules201ResponseDataRelationshipsMarket) {
+// SetMarket gets a reference to the given POSTBundles201ResponseDataRelationshipsMarket and assigns it to the Market field.
+func (o *POSTOrders201ResponseDataRelationships) SetMarket(v POSTBundles201ResponseDataRelationshipsMarket) {
 	o.Market = &v
 }
 
@@ -199,6 +201,38 @@ func (o *POSTOrders201ResponseDataRelationships) HasBillingAddress() bool {
 // SetBillingAddress gets a reference to the given POSTOrders201ResponseDataRelationshipsBillingAddress and assigns it to the BillingAddress field.
 func (o *POSTOrders201ResponseDataRelationships) SetBillingAddress(v POSTOrders201ResponseDataRelationshipsBillingAddress) {
 	o.BillingAddress = &v
+}
+
+// GetStore returns the Store field value if set, zero value otherwise.
+func (o *POSTOrders201ResponseDataRelationships) GetStore() POSTOrders201ResponseDataRelationshipsStore {
+	if o == nil || IsNil(o.Store) {
+		var ret POSTOrders201ResponseDataRelationshipsStore
+		return ret
+	}
+	return *o.Store
+}
+
+// GetStoreOk returns a tuple with the Store field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTOrders201ResponseDataRelationships) GetStoreOk() (*POSTOrders201ResponseDataRelationshipsStore, bool) {
+	if o == nil || IsNil(o.Store) {
+		return nil, false
+	}
+	return o.Store, true
+}
+
+// HasStore returns a boolean if a field has been set.
+func (o *POSTOrders201ResponseDataRelationships) HasStore() bool {
+	if o != nil && !IsNil(o.Store) {
+		return true
+	}
+
+	return false
+}
+
+// SetStore gets a reference to the given POSTOrders201ResponseDataRelationshipsStore and assigns it to the Store field.
+func (o *POSTOrders201ResponseDataRelationships) SetStore(v POSTOrders201ResponseDataRelationshipsStore) {
+	o.Store = &v
 }
 
 // GetAvailablePaymentMethods returns the AvailablePaymentMethods field value if set, zero value otherwise.
@@ -362,9 +396,9 @@ func (o *POSTOrders201ResponseDataRelationships) SetPaymentMethod(v POSTCustomer
 }
 
 // GetPaymentSource returns the PaymentSource field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataRelationships) GetPaymentSource() POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource {
+func (o *POSTOrders201ResponseDataRelationships) GetPaymentSource() GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource {
 	if o == nil || IsNil(o.PaymentSource) {
-		var ret POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource
+		var ret GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource
 		return ret
 	}
 	return *o.PaymentSource
@@ -372,7 +406,7 @@ func (o *POSTOrders201ResponseDataRelationships) GetPaymentSource() POSTCustomer
 
 // GetPaymentSourceOk returns a tuple with the PaymentSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataRelationships) GetPaymentSourceOk() (*POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource, bool) {
+func (o *POSTOrders201ResponseDataRelationships) GetPaymentSourceOk() (*GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource, bool) {
 	if o == nil || IsNil(o.PaymentSource) {
 		return nil, false
 	}
@@ -388,8 +422,8 @@ func (o *POSTOrders201ResponseDataRelationships) HasPaymentSource() bool {
 	return false
 }
 
-// SetPaymentSource gets a reference to the given POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource and assigns it to the PaymentSource field.
-func (o *POSTOrders201ResponseDataRelationships) SetPaymentSource(v POSTCustomerPaymentSources201ResponseDataRelationshipsPaymentSource) {
+// SetPaymentSource gets a reference to the given GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource and assigns it to the PaymentSource field.
+func (o *POSTOrders201ResponseDataRelationships) SetPaymentSource(v GETAuthorizationsAuthorizationId200ResponseDataRelationshipsPaymentSource) {
 	o.PaymentSource = &v
 }
 
@@ -1001,6 +1035,38 @@ func (o *POSTOrders201ResponseDataRelationships) SetAttachments(v GETAuthorizati
 	o.Attachments = &v
 }
 
+// GetNotifications returns the Notifications field value if set, zero value otherwise.
+func (o *POSTOrders201ResponseDataRelationships) GetNotifications() POSTLineItems201ResponseDataRelationshipsNotifications {
+	if o == nil || IsNil(o.Notifications) {
+		var ret POSTLineItems201ResponseDataRelationshipsNotifications
+		return ret
+	}
+	return *o.Notifications
+}
+
+// GetNotificationsOk returns a tuple with the Notifications field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTOrders201ResponseDataRelationships) GetNotificationsOk() (*POSTLineItems201ResponseDataRelationshipsNotifications, bool) {
+	if o == nil || IsNil(o.Notifications) {
+		return nil, false
+	}
+	return o.Notifications, true
+}
+
+// HasNotifications returns a boolean if a field has been set.
+func (o *POSTOrders201ResponseDataRelationships) HasNotifications() bool {
+	if o != nil && !IsNil(o.Notifications) {
+		return true
+	}
+
+	return false
+}
+
+// SetNotifications gets a reference to the given POSTLineItems201ResponseDataRelationshipsNotifications and assigns it to the Notifications field.
+func (o *POSTOrders201ResponseDataRelationships) SetNotifications(v POSTLineItems201ResponseDataRelationshipsNotifications) {
+	o.Notifications = &v
+}
+
 // GetLinks returns the Links field value if set, zero value otherwise.
 func (o *POSTOrders201ResponseDataRelationships) GetLinks() POSTOrders201ResponseDataRelationshipsLinks {
 	if o == nil || IsNil(o.Links) {
@@ -1183,6 +1249,9 @@ func (o POSTOrders201ResponseDataRelationships) ToMap() (map[string]interface{},
 	if !IsNil(o.BillingAddress) {
 		toSerialize["billing_address"] = o.BillingAddress
 	}
+	if !IsNil(o.Store) {
+		toSerialize["store"] = o.Store
+	}
 	if !IsNil(o.AvailablePaymentMethods) {
 		toSerialize["available_payment_methods"] = o.AvailablePaymentMethods
 	}
@@ -1257,6 +1326,9 @@ func (o POSTOrders201ResponseDataRelationships) ToMap() (map[string]interface{},
 	}
 	if !IsNil(o.Attachments) {
 		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.Notifications) {
+		toSerialize["notifications"] = o.Notifications
 	}
 	if !IsNil(o.Links) {
 		toSerialize["links"] = o.Links

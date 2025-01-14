@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Email** | Pointer to **interface{}** | The customer&#39;s email address. | [optional] 
 **Password** | Pointer to **interface{}** | The customer&#39;s password. Initiate a customer password reset flow if you need to change it. | [optional] 
 **ShopperReference** | Pointer to **interface{}** | A reference to uniquely identify the shopper during payment sessions. | [optional] 
+**ProfileId** | Pointer to **interface{}** | A reference to uniquely identify the customer on any connected external services. | [optional] 
 **Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
 **ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code. | [optional] 
 **Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
@@ -135,6 +136,41 @@ HasShopperReference returns a boolean if a field has been set.
 `func (o *PATCHCustomersCustomerId200ResponseDataAttributes) UnsetShopperReference()`
 
 UnsetShopperReference ensures that no value is present for ShopperReference, not even an explicit nil
+### GetProfileId
+
+`func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetProfileId() interface{}`
+
+GetProfileId returns the ProfileId field if non-nil, zero value otherwise.
+
+### GetProfileIdOk
+
+`func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetProfileIdOk() (*interface{}, bool)`
+
+GetProfileIdOk returns a tuple with the ProfileId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProfileId
+
+`func (o *PATCHCustomersCustomerId200ResponseDataAttributes) SetProfileId(v interface{})`
+
+SetProfileId sets ProfileId field to given value.
+
+### HasProfileId
+
+`func (o *PATCHCustomersCustomerId200ResponseDataAttributes) HasProfileId() bool`
+
+HasProfileId returns a boolean if a field has been set.
+
+### SetProfileIdNil
+
+`func (o *PATCHCustomersCustomerId200ResponseDataAttributes) SetProfileIdNil(b bool)`
+
+ SetProfileIdNil sets the value for ProfileId to be an explicit nil
+
+### UnsetProfileId
+`func (o *PATCHCustomersCustomerId200ResponseDataAttributes) UnsetProfileId()`
+
+UnsetProfileId ensures that no value is present for ProfileId, not even an explicit nil
 ### GetReference
 
 `func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetReference() interface{}`

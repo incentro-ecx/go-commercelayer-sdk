@@ -1,9 +1,10 @@
 ---
-gitUserId: incentro-dc
+gitUserId: labd
 gitRepoId: go-commercelayer-sdk
 enablePostProcessFile: false
 additionalProperties:
   packageName: api
+  withGoMod: false # Generate go.mod and go.sum
   enumClassPrefix: true # Prefix enum with class name
   generateInterfaces: false # Generate interfaces for api classes
   hideGenerationTimestamp: true # Hides the generation timestamp when files are generated.
