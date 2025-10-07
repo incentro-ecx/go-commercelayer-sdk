@@ -1,3 +1,6 @@
+> [!WARNING]
+> This SDK has been deprecated. We recommend you to generate a Commercelayer Go client yourself based on the API specifications from Commercelayer.
+
 # Go Commercelayer SDK
 
 This projects provides an API client to connect with the Commercelayer apis. It is automatically generated from the 
